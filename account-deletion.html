@@ -3,163 +3,116 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Account Deletion Portal — Madrasah Hub (মাদরাসা হাব)</title>
-  <meta name="description" content="Official Google Play 2026 compliant Account & Data Deletion Portal for Madrasah Hub (মাদরাসা হাব) by AM Core Studios.">
-  <meta name="theme-color" content="#030b08">
+  <title>Account Deletion Portal — Jamia Islamia Darul Ulum Sheikhdi</title>
+  <meta name="description" content="Official Google Play 2026 compliant Account & Data Deletion Portal for Jamia Islamia Darul Ulum Sheikhdi (জামিয়া ইসলামিয়া দারুল উলুম শেখদী) by AM Core Studios.">
+  <meta name="theme-color" content="#06080f">
   <link rel="icon" type="image/png" href="logo.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Hind+Siliguri:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
     :root {
       color-scheme: dark;
-      --bg: #030b08;
-      --surface: rgba(10, 26, 20, 0.78);
-      --surface-strong: rgba(13, 33, 25, 0.94);
-      --surface-soft: rgba(16, 185, 129, 0.08);
-      --surface-gold-soft: rgba(242, 201, 104, 0.1);
-      --ink: #f5f2ea;
-      --muted: #a2b8ae;
-      --dim: #6e867c;
+      --bg: #06080f;
+      --surface: rgba(14, 19, 32, 0.78);
+      --surface-strong: rgba(19, 26, 43, 0.94);
+      --surface-glass: rgba(255, 255, 255, 0.04);
+      --ink: #f8fafc;
+      --muted: #94a3b8;
+      --dim: #64748b;
       --line: rgba(255, 255, 255, 0.09);
-      --line-gold: rgba(242, 201, 104, 0.25);
+      --gold: #f5c451;
+      --gold-soft: rgba(245, 196, 81, 0.12);
+      --gold-line: rgba(245, 196, 81, 0.3);
       --emerald: #10b981;
       --emerald-bright: #34d399;
-      --emerald-deep: #064d38;
-      --gold: #f2c968;
-      --danger: #ef4444;
-      --danger-soft: rgba(239, 68, 68, 0.12);
-      --shadow-card: 0 28px 75px rgba(0, 0, 0, 0.52), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+      --shadow: 0 28px 80px rgba(0, 0, 0, 0.58);
       --font-en: 'Plus Jakarta Sans', system-ui, sans-serif;
       --font-bn: 'Hind Siliguri', var(--font-en);
       --font-mono: 'JetBrains Mono', monospace;
-      --ease-spring: cubic-bezier(0.22, 1, 0.36, 1);
-      --ease-bounce: cubic-bezier(0.34, 1.56, 0.64, 1);
+      --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+      --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
     }
 
     [data-theme="light"] {
       color-scheme: light;
-      --bg: #f8f5ec;
+      --bg: #f6f8fb;
       --surface: rgba(255, 255, 255, 0.88);
       --surface-strong: rgba(255, 255, 255, 0.98);
-      --surface-soft: rgba(5, 138, 96, 0.08);
-      --surface-gold-soft: rgba(180, 125, 20, 0.1);
-      --ink: #0b2219;
-      --muted: #455d53;
-      --dim: #6f857b;
-      --line: rgba(11, 34, 25, 0.1);
-      --line-gold: rgba(180, 125, 20, 0.28);
-      --emerald: #058a60;
-      --emerald-bright: #059669;
-      --emerald-deep: #064d38;
-      --gold: #b47a12;
-      --danger: #dc2626;
-      --danger-soft: rgba(220, 38, 38, 0.08);
-      --shadow-card: 0 24px 60px rgba(10, 42, 30, 0.1), inset 0 1px 0 #ffffff;
+      --surface-glass: rgba(15, 23, 42, 0.04);
+      --ink: #0b1320;
+      --muted: #475569;
+      --dim: #64748b;
+      --line: rgba(15, 23, 42, 0.1);
+      --gold: #b45309;
+      --gold-soft: rgba(217, 119, 6, 0.1);
+      --gold-line: rgba(217, 119, 6, 0.28);
+      --emerald: #059669;
+      --emerald-bright: #047857;
+      --shadow: 0 24px 60px rgba(15, 23, 42, 0.1);
     }
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     body {
-      background: var(--bg);
-      color: var(--ink);
-      font-family: var(--font-en);
-      line-height: 1.68;
-      min-height: 100vh;
-      overflow-x: hidden;
-      transition: background-color 0.5s var(--ease-spring), color 0.4s var(--ease-spring);
+      background: var(--bg); color: var(--ink);
+      font-family: var(--font-en); line-height: 1.68;
+      min-height: 100vh; overflow-x: hidden;
+      transition: background-color 0.45s var(--ease-out), color 0.35s var(--ease-out);
     }
     body.lang-bn { font-family: var(--font-bn); }
     button, input, select { font-family: inherit; }
 
-    .ambient {
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
-      z-index: 0;
-      overflow: hidden;
-    }
-    .orb-a, .orb-b {
-      position: absolute;
-      border-radius: 50%;
-      filter: blur(95px);
-    }
+    .ambient { position: fixed; inset: 0; pointer-events: none; z-index: 0; overflow: hidden; }
+    .orb-a, .orb-b { position: absolute; border-radius: 50%; filter: blur(105px); }
     .orb-a {
-      width: 560px; height: 560px; top: -180px; left: -120px;
-      background: radial-gradient(circle, rgba(16, 185, 129, 0.2), transparent 70%);
-      animation: drift 16s ease-in-out infinite alternate;
+      width: 580px; height: 580px; top: -180px; left: -120px;
+      background: radial-gradient(circle, rgba(16, 185, 129, 0.2), transparent 68%);
+      animation: drift 17s ease-in-out infinite alternate;
     }
     .orb-b {
       width: 520px; height: 520px; bottom: -160px; right: -120px;
-      background: radial-gradient(circle, rgba(242, 201, 104, 0.14), transparent 70%);
-      animation: drift 20s ease-in-out infinite alternate-reverse;
+      background: radial-gradient(circle, rgba(245, 196, 81, 0.14), transparent 68%);
+      animation: drift 21s ease-in-out infinite alternate-reverse;
     }
-    @keyframes drift {
-      from { transform: translate3d(0, 0, 0); }
-      to { transform: translate3d(34px, 28px, 0); }
-    }
+    @keyframes drift { from { transform: translate3d(0, 0, 0); } to { transform: translate3d(38px, 30px, 0); } }
 
     .wrap {
-      position: relative;
-      z-index: 1;
+      position: relative; z-index: 1;
       width: min(860px, calc(100% - 28px));
-      margin: 0 auto;
-      padding: 24px 0 64px;
+      margin: 0 auto; padding: 24px 0 64px;
     }
 
     .topbar {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 12px;
-      margin-bottom: 24px;
-      padding: 10px 14px;
-      border-radius: 999px;
-      background: var(--surface);
-      backdrop-filter: blur(18px);
-      border: 1px solid var(--line);
-      box-shadow: var(--shadow-card);
+      display: flex; align-items: center; justify-content: space-between; gap: 12px;
+      margin-bottom: 24px; padding: 10px 14px; border-radius: 999px;
+      background: var(--surface); backdrop-filter: blur(20px);
+      border: 1px solid var(--line); box-shadow: var(--shadow);
     }
-
     .back-pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      color: var(--ink);
-      text-decoration: none;
-      font-size: 0.84rem;
-      font-weight: 700;
-      padding: 6px 12px;
-      border-radius: 999px;
-      background: var(--surface-soft);
-      border: 1px solid rgba(16, 185, 129, 0.25);
-      transition: transform 0.25s var(--ease-spring);
+      display: inline-flex; align-items: center; gap: 8px;
+      color: var(--ink); text-decoration: none; font-size: 0.84rem; font-weight: 700;
+      padding: 6px 13px; border-radius: 999px;
+      background: var(--surface-glass); border: 1px solid var(--line);
+      transition: transform 0.25s var(--ease-spring), border-color 0.25s ease;
     }
-    .back-pill:hover { transform: translateX(-2px); }
+    .back-pill:hover { transform: translateX(-2px); border-color: var(--gold-line); }
 
     .controls { display: flex; align-items: center; gap: 8px; }
-
-    .lang-switch {
-      position: relative;
-      display: inline-grid;
-      grid-template-columns: 1fr 1fr;
-      padding: 3px;
-      border-radius: 999px;
-      background: rgba(255, 255, 255, 0.04);
-      border: 1px solid var(--line);
+    .lang-seg {
+      position: relative; display: inline-grid; grid-template-columns: 1fr 1fr;
+      padding: 3px; border-radius: 999px;
+      background: var(--surface-glass); border: 1px solid var(--line);
     }
-    [data-theme="light"] .lang-switch { background: rgba(11, 34, 25, 0.05); }
     .lang-glider {
-      position: absolute;
-      top: 3px; left: 3px;
+      position: absolute; top: 3px; left: 3px;
       width: calc((100% - 6px) / 2); height: calc(100% - 6px);
       border-radius: 999px;
-      background: linear-gradient(135deg, var(--emerald), var(--emerald-deep));
-      transition: transform 0.36s var(--ease-bounce);
+      background: linear-gradient(135deg, var(--emerald), #047857);
+      transition: transform 0.4s var(--ease-spring);
     }
     body.lang-bn .lang-glider { transform: translateX(100%); }
     .lang-btn {
-      position: relative; z-index: 1;
-      border: 0; background: transparent;
+      position: relative; z-index: 1; border: 0; background: transparent;
       padding: 5px 12px; font-size: 0.78rem; font-weight: 700;
       color: var(--muted); cursor: pointer;
     }
@@ -167,161 +120,101 @@
 
     .theme-btn {
       width: 40px; height: 34px; border-radius: 999px;
-      border: 1px solid var(--line);
-      background: var(--surface-soft);
-      color: var(--gold);
-      display: grid; place-items: center;
-      cursor: pointer;
+      border: 1px solid var(--line); background: var(--surface-glass);
+      color: var(--gold); display: grid; place-items: center; cursor: pointer;
     }
 
     .card {
-      background: var(--surface);
-      backdrop-filter: blur(22px);
-      border: 1px solid var(--line);
-      border-radius: 26px;
-      padding: 34px;
-      box-shadow: var(--shadow-card);
-      animation: fadeIn 0.65s var(--ease-spring) both;
+      background: var(--surface); backdrop-filter: blur(22px);
+      border: 1px solid var(--line); border-radius: 26px;
+      padding: 34px; box-shadow: var(--shadow);
+      animation: fadeIn 0.65s var(--ease-out) both;
     }
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(18px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
 
     .hero-head {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-      padding-bottom: 22px;
-      margin-bottom: 22px;
+      display: flex; align-items: center; gap: 16px;
+      padding-bottom: 22px; margin-bottom: 22px;
       border-bottom: 1px solid var(--line);
     }
     .logo {
-      width: 56px; height: 56px;
-      border-radius: 14px;
-      border: 1px solid var(--line-gold);
-      object-fit: cover;
-      flex-shrink: 0;
+      width: 56px; height: 56px; border-radius: 14px;
+      border: 1px solid var(--gold-line); object-fit: cover; flex-shrink: 0;
     }
-    h1 {
-      font-size: clamp(1.45rem, 3vw, 2rem);
-      font-weight: 800;
-      letter-spacing: -0.03em;
-      line-height: 1.15;
-    }
+    h1 { font-size: clamp(1.38rem, 2.8vw, 1.95rem); font-weight: 800; letter-spacing: -0.03em; line-height: 1.18; }
     .badge {
-      display: inline-flex; align-items: center; gap: 6px;
-      margin-top: 6px; padding: 3px 10px;
-      border-radius: 999px; font-size: 0.72rem; font-weight: 700;
-      background: var(--surface-gold-soft);
-      color: var(--gold); border: 1px solid var(--line-gold);
+      display: inline-flex; align-items: center; gap: 6px; margin-top: 6px;
+      padding: 3px 10px; border-radius: 999px; font-size: 0.72rem; font-weight: 700;
+      background: var(--gold-soft); color: var(--gold); border: 1px solid var(--gold-line);
     }
-
     .lead { color: var(--muted); margin-bottom: 22px; font-size: 0.96rem; }
 
     .step-box {
-      padding: 20px 22px;
-      border-radius: 18px;
-      background: rgba(255, 255, 255, 0.028);
-      border: 1px solid var(--line);
+      padding: 20px 22px; border-radius: 18px;
+      background: var(--surface-glass); border: 1px solid var(--line);
       margin-bottom: 16px;
     }
-    [data-theme="light"] .step-box { background: rgba(11, 34, 25, 0.022); }
     .step-box h2 {
-      font-size: 1.05rem;
-      font-weight: 800;
-      margin-bottom: 10px;
+      font-size: 1.04rem; font-weight: 800; margin-bottom: 10px;
       display: flex; align-items: center; gap: 9px;
     }
     .step-num {
-      width: 26px; height: 26px; border-radius: 8px;
-      display: grid; place-items: center;
+      width: 26px; height: 26px; border-radius: 8px; display: grid; place-items: center;
       font-family: var(--font-mono); font-size: 0.75rem;
-      background: var(--surface-soft); color: var(--emerald-bright);
-      border: 1px solid rgba(16, 185, 129, 0.25);
+      background: rgba(16, 185, 129, 0.14); color: var(--emerald-bright);
+      border: 1px solid rgba(16, 185, 129, 0.28);
     }
-    .step-box ol, .step-box ul {
-      padding-left: 20px;
-      color: var(--muted);
-      font-size: 0.92rem;
-    }
-    .step-box li { margin-bottom: 7px; }
+    .step-box ol { padding-left: 20px; color: var(--muted); font-size: 0.92rem; }
+    .step-box li { margin-bottom: 8px; }
     .step-box strong { color: var(--ink); }
 
-    .builder-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 12px;
-      margin: 14px 0 18px;
-    }
+    .builder-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 14px 0 18px; }
     .field-group { display: flex; flex-direction: column; gap: 6px; }
     .field-group.full { grid-column: 1 / -1; }
-    .field-group label {
-      font-size: 0.78rem;
-      font-weight: 700;
-      color: var(--muted);
-    }
+    .field-group label { font-size: 0.78rem; font-weight: 700; color: var(--muted); }
     .input {
-      width: 100%;
-      padding: 11px 13px;
-      border-radius: 12px;
-      border: 1px solid var(--line);
-      background: rgba(255, 255, 255, 0.04);
-      color: var(--ink);
-      font-size: 0.9rem;
-      outline: none;
+      width: 100%; padding: 11px 13px; border-radius: 12px;
+      border: 1px solid var(--line); background: var(--surface-glass);
+      color: var(--ink); font-size: 0.9rem; outline: none;
       transition: border-color 0.25s ease;
     }
-    [data-theme="light"] .input { background: rgba(255, 255, 255, 0.9); }
     .input:focus { border-color: var(--emerald-bright); }
 
-    .cta-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      align-items: center;
-    }
+    .cta-row { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
     .btn-danger {
-      display: inline-flex; align-items: center; gap: 8px;
-      padding: 12px 22px; border-radius: 999px;
-      background: linear-gradient(135deg, #ef4444, #b91c1c);
+      display: inline-flex; align-items: center; gap: 8px; padding: 12px 22px;
+      border-radius: 999px; background: linear-gradient(135deg, #ef4444, #b91c1c);
       color: #ffffff; font-weight: 700; font-size: 0.9rem;
       text-decoration: none; border: 0; cursor: pointer;
       box-shadow: 0 10px 24px rgba(239, 68, 68, 0.34);
       transition: transform 0.25s var(--ease-spring), box-shadow 0.25s ease;
     }
     .btn-danger:hover { transform: translateY(-2px); box-shadow: 0 14px 30px rgba(239, 68, 68, 0.45); }
-
     .btn-ghost {
-      display: inline-flex; align-items: center; gap: 8px;
-      padding: 11px 18px; border-radius: 999px;
-      background: var(--surface-soft);
-      border: 1px solid var(--line-gold);
-      color: var(--ink); font-weight: 700; font-size: 0.88rem;
-      cursor: pointer;
+      display: inline-flex; align-items: center; gap: 8px; padding: 11px 18px;
+      border-radius: 999px; background: var(--surface-glass);
+      border: 1px solid var(--gold-line); color: var(--ink);
+      font-weight: 700; font-size: 0.88rem; cursor: pointer;
       transition: transform 0.25s var(--ease-spring);
     }
     .btn-ghost:hover { transform: translateY(-2px); }
 
     .retention-note {
-      margin-top: 18px;
-      padding: 16px 18px;
-      border-radius: 14px;
-      background: var(--surface-gold-soft);
-      border: 1px solid var(--line-gold);
-      font-size: 0.86rem;
-      color: var(--muted);
+      margin-top: 18px; padding: 16px 18px; border-radius: 14px;
+      background: var(--gold-soft); border: 1px solid var(--gold-line);
+      font-size: 0.86rem; color: var(--muted);
     }
     .retention-note strong { color: var(--ink); }
+    .retention-note code { font-family: var(--font-mono); color: var(--gold); }
 
     .toast {
       position: fixed; bottom: 22px; left: 50%;
       transform: translateX(-50%) translateY(20px);
       padding: 10px 18px; border-radius: 999px;
-      background: var(--surface-strong); border: 1px solid var(--line-gold);
+      background: var(--surface-strong); border: 1px solid var(--gold-line);
       color: var(--ink); font-size: 0.84rem; font-weight: 700;
       opacity: 0; pointer-events: none; z-index: 200;
-      transition: opacity 0.25s ease, transform 0.35s var(--ease-bounce);
+      transition: opacity 0.25s ease, transform 0.35s var(--ease-spring);
     }
     .toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
 
@@ -347,7 +240,7 @@
         <span data-i18n="backPolicy">Back to Privacy Policy</span>
       </a>
       <div class="controls">
-        <div class="lang-switch" role="group" aria-label="Language">
+        <div class="lang-seg" role="group" aria-label="Language">
           <div class="lang-glider" aria-hidden="true"></div>
           <button type="button" class="lang-btn" id="btnEn" aria-pressed="true" onclick="setLanguage('en')">EN</button>
           <button type="button" class="lang-btn" id="btnBn" aria-pressed="false" onclick="setLanguage('bn')">বাংলা</button>
@@ -358,38 +251,38 @@
 
     <main class="card">
       <div class="hero-head">
-        <img src="logo.png" alt="Madrasah Hub Logo" class="logo">
+        <img src="logo.png" alt="Jamia Islamia Darul Ulum Sheikhdi Logo" class="logo">
         <div>
-          <h1 data-i18n="title">Madrasah Hub Account &amp; Data Deletion</h1>
+          <h1 data-i18n="title">Jamia Islamia Darul Ulum Sheikhdi — Account Deletion</h1>
           <div class="badge" data-i18n="badge">Google Play 2026 Compliant Deletion Portal · AM Core Studios</div>
         </div>
       </div>
 
       <p class="lead" data-i18n="lead">
-        Madrasah Hub accounts are provisioned for institutional staff (Muhtamims &amp; Ustads) and linked Guardians. Use the options below to request permanent account removal or wipe local device data at any time.
+        Accounts in Jamia Islamia Darul Ulum Sheikhdi (জামিয়া ইসলামিয়া দারুল উলুম শেখদী) are provisioned for Muhtamims, Ustads, and linked Guardians. Use the options below to request permanent account removal or clear local app data anytime.
       </p>
 
       <section class="step-box">
-        <h2><span class="step-num">01</span> <span data-i18n="m1Title">Institutional Removal (Through Your Madrasah Office)</span></h2>
+        <h2><span class="step-num">01</span> <span data-i18n="m1Title">Institutional Removal (Through Madrasah Office)</span></h2>
         <ol>
-          <li data-i18n-html="m1L1"><strong>Ustads:</strong> Your Muhtamim can immediately deactivate your access under <em>More → Ustads → Deactivate</em> and remove your Firebase Auth profile.</li>
-          <li data-i18n-html="m1L2"><strong>Guardians / Students:</strong> Contact your Madrasah office to unlink your mobile number or archive/permanently delete the student profile inside the app.</li>
-          <li data-i18n-html="m1L3"><strong>Local App Data:</strong> Clearing app data in Android Settings or uninstalling Madrasah Hub permanently erases all local Room caches, downloaded kitabs/audio, and on-device receipt photos.</li>
+          <li data-i18n-html="m1L1"><strong>Ustads:</strong> The Muhtamim can immediately deactivate your access under <em>More → Ustads → Deactivate</em> and remove your Firebase Auth profile.</li>
+          <li data-i18n-html="m1L2"><strong>Guardians / Students:</strong> Contact the Madrasah office to unlink your mobile number or archive/permanently delete the student profile inside the app.</li>
+          <li data-i18n-html="m1L3"><strong>Local App Data:</strong> Clearing app data in Android Settings or uninstalling the app permanently erases all local Room caches, downloaded kitabs/audio, and on-device receipt photos.</li>
         </ol>
       </section>
 
       <section class="step-box">
         <h2><span class="step-num">02</span> <span data-i18n="m2Title">Direct Developer Deletion Request (Processed Within 48h)</span></h2>
         <p style="color: var(--muted); font-size: 0.9rem; margin-bottom: 10px;" data-i18n="m2Desc">
-          Prepare a pre-filled deletion email to AM Core Studios (<strong>arifmullikh.personal@gmail.com</strong>):
+          Prepare a pre-filled deletion email to AM Core Studios (arifmullikh.personal@gmail.com):
         </p>
         <div class="builder-grid">
           <div class="field-group">
             <label for="roleSelect" data-i18n="lblRole">Account Role</label>
             <select id="roleSelect" class="input">
-              <option value="Guardian" data-i18n="optGuardian">Guardian (অভিভাবক)</option>
-              <option value="Ustad" data-i18n="optUstad">Ustad / Teacher (উস্তাদ)</option>
-              <option value="Muhtamim / Admin" data-i18n="optAdmin">Muhtamim / Admin (মুহতামিম)</option>
+              <option value="Guardian">Guardian (অভিভাবক)</option>
+              <option value="Ustad">Ustad / Teacher (উস্তাদ)</option>
+              <option value="Muhtamim / Admin">Muhtamim / Admin (মুহতামিম)</option>
             </select>
           </div>
           <div class="field-group">
@@ -397,8 +290,8 @@
             <input id="idInput" type="text" class="input" placeholder="e.g. 017XXXXXXXX or name@madrasah.bd">
           </div>
           <div class="field-group full">
-            <label for="madrasaInput" data-i18n="lblMadrasa">Madrasah Name (Optional)</label>
-            <input id="madrasaInput" type="text" class="input" placeholder="e.g. Jamia Islamia Darul Uloom">
+            <label for="madrasaInput" data-i18n="lblMadrasa">Madrasah / Branch Note (Optional)</label>
+            <input id="madrasaInput" type="text" class="input" value="Jamia Islamia Darul Ulum Sheikhdi">
           </div>
         </div>
 
@@ -412,7 +305,7 @@
       </section>
 
       <div class="retention-note" data-i18n-html="retention">
-        <strong>What Is Deleted vs. Retained:</strong> Upon verified request, your Firebase Authentication credential, device notification tokens, and personal account profile (<code>users</code> / <code>teachers</code>) are permanently deleted within 48 hours. Where a madrasah uses institutional fee/attendance bookkeeping, financial receipts and attendance audit records owned by that institution may be anonymized or retained only as legally/administratively required by the madrasah.
+        <strong>What Is Deleted vs. Retained:</strong> Upon verified request, your Firebase Authentication credential, device notification tokens, and personal account profile (<code>users</code> / <code>teachers</code>) are permanently deleted within 48 hours. Institutional fee receipts and attendance audit records owned by the madrasah may be anonymized or retained only as administratively required.
       </div>
     </main>
   </div>
@@ -423,28 +316,28 @@
     const DICT = {
       en: {
         backPolicy: "Back to Privacy Policy",
-        title: "Madrasah Hub Account & Data Deletion",
+        title: "Jamia Islamia Darul Ulum Sheikhdi — Account Deletion",
         badge: "Google Play 2026 Compliant Deletion Portal · AM Core Studios",
-        lead: "Madrasah Hub accounts are provisioned for institutional staff (Muhtamims & Ustads) and linked Guardians. Use the options below to request permanent account removal or wipe local device data at any time.",
-        m1Title: "Institutional Removal (Through Your Madrasah Office)",
-        m1L1: "<strong>Ustads:</strong> Your Muhtamim can immediately deactivate your access under <em>More → Ustads → Deactivate</em> and remove your Firebase Auth profile.",
-        m1L2: "<strong>Guardians / Students:</strong> Contact your Madrasah office to unlink your mobile number or archive/permanently delete the student profile inside the app.",
-        m1L3: "<strong>Local App Data:</strong> Clearing app data in Android Settings or uninstalling Madrasah Hub permanently erases all local Room caches, downloaded kitabs/audio, and on-device receipt photos.",
+        lead: "Accounts in Jamia Islamia Darul Ulum Sheikhdi (জামিয়া ইসলামিয়া দারুল উলুম শেখদী) are provisioned for Muhtamims, Ustads, and linked Guardians. Use the options below to request permanent account removal or clear local app data anytime.",
+        m1Title: "Institutional Removal (Through Madrasah Office)",
+        m1L1: "<strong>Ustads:</strong> The Muhtamim can immediately deactivate your access under <em>More → Ustads → Deactivate</em> and remove your Firebase Auth profile.",
+        m1L2: "<strong>Guardians / Students:</strong> Contact the Madrasah office to unlink your mobile number or archive/permanently delete the student profile inside the app.",
+        m1L3: "<strong>Local App Data:</strong> Clearing app data in Android Settings or uninstalling the app permanently erases all local Room caches, downloaded kitabs/audio, and on-device receipt photos.",
         m2Title: "Direct Developer Deletion Request (Processed Within 48h)",
         m2Desc: "Prepare a pre-filled deletion email to AM Core Studios (arifmullikh.personal@gmail.com):",
         lblRole: "Account Role",
         lblId: "Registered Email or Phone",
-        lblMadrasa: "Madrasah Name (Optional)",
+        lblMadrasa: "Madrasah / Branch Note (Optional)",
         btnSend: "Open Pre-Filled Deletion Email",
         btnCopy: "Copy Request Text",
-        retention: "<strong>What Is Deleted vs. Retained:</strong> Upon verified request, your Firebase Authentication credential, device notification tokens, and personal account profile (<code>users</code> / <code>teachers</code>) are permanently deleted within 48 hours. Where a madrasah uses institutional fee/attendance bookkeeping, financial receipts and attendance audit records owned by that institution may be anonymized or retained only as legally/administratively required by the madrasah.",
+        retention: "<strong>What Is Deleted vs. Retained:</strong> Upon verified request, your Firebase Authentication credential, device notification tokens, and personal account profile (<code>users</code> / <code>teachers</code>) are permanently deleted within 48 hours. Institutional fee receipts and attendance audit records owned by the madrasah may be anonymized or retained only as administratively required.",
         copied: "Deletion request copied to clipboard!"
       },
       bn: {
         backPolicy: "গোপনীয়তা নীতিতে ফিরুন",
-        title: "মাদরাসা হাব অ্যাকাউন্ট ও ডেটা ডিলিট পোর্টাল",
+        title: "জামিয়া ইসলামিয়া দারুল উলুম শেখদী — অ্যাকাউন্ট ডিলিট",
         badge: "Google Play ২০২৬ সম্মত ডিলিট পোর্টাল · AM Core Studios",
-        lead: "মাদরাসা হাব অ্যাকাউন্ট মুহতামিম, উস্তাদ ও নিবন্ধিত অভিভাবকদের জন্য নির্ধারিত। নিচের যেকোনো পদ্ধতিতে অ্যাকাউন্ট অপসারণ বা ফোনের ডেটা মুছে ফেলতে পারেন।",
+        lead: "জামিয়া ইসলামিয়া দারুল উলুম শেখদী অ্যাপের অ্যাকাউন্ট মুহতামিম, উস্তাদ ও নিবন্ধিত অভিভাবকদের জন্য নির্ধারিত। নিচের যেকোনো পদ্ধতিতে অ্যাকাউন্ট অপসারণ বা ফোনের ডেটা মুছে ফেলতে পারেন।",
         m1Title: "মাদরাসা অফিসের মাধ্যমে অপসারণ",
         m1L1: "<strong>উস্তাদ:</strong> মুহতামিম <em>আরও → উস্তাদ → নিষ্ক্রিয়</em> থেকে তাৎক্ষণিক অ্যাক্সেস বন্ধ করতে এবং Firebase Auth অ্যাকাউন্ট মুছতে পারেন।",
         m1L2: "<strong>অভিভাবক / ছাত্র:</strong> মোবাইল নম্বর আনলিঙ্ক করতে বা ছাত্র রেকর্ড স্থায়ীভাবে মুছতে আপনার মাদরাসা অফিসে যোগাযোগ করুন।",
@@ -453,29 +346,26 @@
         m2Desc: "AM Core Studios (arifmullikh.personal@gmail.com)-এ পাঠানোর জন্য ইমেইল তৈরি করুন:",
         lblRole: "অ্যাকাউন্টের ধরন",
         lblId: "নিবন্ধিত ইমেইল বা ফোন নম্বর",
-        lblMadrasa: "মাদরাসার নাম (ঐচ্ছিক)",
+        lblMadrasa: "মাদরাসার নাম / নোট (ঐচ্ছিক)",
         btnSend: "প্রি-ফিল্ড ইমেইল খুলুন",
         btnCopy: "অনুরোধের লেখা কপি করুন",
-        retention: "<strong>কোন তথ্য মুছে ফেলা হয় বনাম সংরক্ষিত থাকে:</strong> যাচাইকৃত অনুরোধের পর ৪৮ ঘণ্টার মধ্যে আপনার Firebase Auth অ্যাকাউন্ট, ডিভাইস টোকেন ও ব্যক্তিগত প্রোফাইল (<code>users</code> / <code>teachers</code>) স্থায়ীভাবে মুছে ফেলা হয়। প্রাতিষ্ঠানিক বেতন রসিদ ও হাজিরা অডিট রেকর্ড কেবল সংশ্লিষ্ট মাদরাসার প্রাতিষ্ঠানিক প্রয়োজনে অ্যানোনিমাইজড বা সংরক্ষিত থাকতে পারে।",
+        retention: "<strong>কোন তথ্য মুছে ফেলা হয় বনাম সংরক্ষিত থাকে:</strong> যাচাইকৃত অনুরোধের পর ৪৮ ঘণ্টার মধ্যে আপনার Firebase Auth অ্যাকাউন্ট, ডিভাইস টোকেন ও ব্যক্তিগত প্রোফাইল (<code>users</code> / <code>teachers</code>) স্থায়ীভাবে মুছে ফেলা হয়। প্রাতিষ্ঠানিক বেতন রসিদ ও হাজিরা অডিট রেকর্ড কেবল মাদরাসার প্রাতিষ্ঠানিক প্রয়োজনে অ্যানোনিমাইজড বা সংরক্ষিত থাকতে পারে।",
         copied: "ডিলিট অনুরোধ কপি করা হয়েছে!"
       }
     };
 
     let lang = 'en';
-
     function buildBody() {
       const role = document.getElementById('roleSelect').value;
       const ident = document.getElementById('idInput').value.trim() || '[Enter your registered phone or email]';
-      const madrasa = document.getElementById('madrasaInput').value.trim() || '[Madrasah name]';
-      return `Please delete my Madrasah Hub (com.amcorestudios.madrasa1) account and personal profile records.\n\nRole: ${role}\nRegistered Phone / Email: ${ident}\nMadrasah: ${madrasa}\n\nI confirm that I am requesting permanent account deletion.`;
+      const madrasa = document.getElementById('madrasaInput').value.trim() || 'Jamia Islamia Darul Ulum Sheikhdi';
+      return `Please delete my Jamia Islamia Darul Ulum Sheikhdi (com.amcorestudios.madrasa1) account and personal profile records.\n\nRole: ${role}\nRegistered Phone / Email: ${ident}\nMadrasah: ${madrasa}\n\nI confirm that I am requesting permanent account deletion.`;
     }
-
     function updateMailto() {
-      const subject = encodeURIComponent("Madrasah Hub Account Deletion Request");
+      const subject = encodeURIComponent("Jamia Islamia Darul Ulum Sheikhdi Account Deletion Request");
       const body = encodeURIComponent(buildBody());
       document.getElementById('mailtoBtn').href = `mailto:arifmullikh.personal@gmail.com?subject=${subject}&body=${body}`;
     }
-
     function copyTemplate() {
       if (navigator.clipboard && navigator.clipboard.writeText) {
         navigator.clipboard.writeText(buildBody()).then(() => {
@@ -486,7 +376,6 @@
         }).catch(() => {});
       }
     }
-
     function setLanguage(next, save = true) {
       lang = next === 'bn' ? 'bn' : 'en';
       document.documentElement.lang = lang;
@@ -502,29 +391,25 @@
         const k = el.getAttribute('data-i18n-html');
         if (d[k] !== undefined) el.innerHTML = d[k];
       });
-      if (save) { try { localStorage.setItem('mh_privacy_lang', lang); } catch (_) {} }
+      if (save) { try { localStorage.setItem('jidus_privacy_lang', lang); } catch (_) {} }
     }
-
     function applyTheme(t, save = true) {
       const theme = t === 'light' ? 'light' : 'dark';
       document.documentElement.setAttribute('data-theme', theme);
-      if (save) { try { localStorage.setItem('mh_privacy_theme', theme); } catch (_) {} }
+      if (save) { try { localStorage.setItem('jidus_privacy_theme', theme); } catch (_) {} }
     }
-
     document.getElementById('themeBtn').addEventListener('click', () => {
       applyTheme(document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
     });
-
     ['roleSelect', 'idInput', 'madrasaInput'].forEach(id => {
       document.getElementById(id).addEventListener('input', updateMailto);
       document.getElementById(id).addEventListener('change', updateMailto);
     });
-
     (function boot() {
       let t = 'dark', l = 'en';
       try {
-        t = localStorage.getItem('mh_privacy_theme') || 'dark';
-        l = localStorage.getItem('mh_privacy_lang') || 'en';
+        t = localStorage.getItem('jidus_privacy_theme') || 'dark';
+        l = localStorage.getItem('jidus_privacy_lang') || 'en';
       } catch (_) {}
       applyTheme(t, false);
       setLanguage(l, false);
