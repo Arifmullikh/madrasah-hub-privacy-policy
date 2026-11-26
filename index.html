@@ -8,8 +8,8 @@
   <meta name="theme-color" content="#000000">
   <meta property="og:title" content="Privacy Policy — Jamia Islamia Darul Ulum Sheikhdi">
   <meta property="og:description" content="Privacy is built in. Not bolted on. Official Privacy Policy for Jamia Islamia Darul Ulum Sheikhdi by AM Core Studios.">
-  <meta property="og:image" content="logo.png">
-  <link rel="icon" type="image/png" href="logo.png">
+  <meta property="og:image" content="sheikhdi-seal.png">
+  <link rel="icon" type="image/png" href="sheikhdi-seal.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500;600&family=Noto+Serif+Bengali:wght@600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -194,7 +194,7 @@
     .nav-brand:hover { text-decoration: none; }
     .nav-crest {
       width: 34px; height: 34px; flex: 0 0 34px;
-      border-radius: 50%;
+      border-radius: 10px;
       background: #ffffff;
       padding: 2px;
       box-shadow: 0 2px 10px rgba(0, 0, 0, 0.22);
@@ -306,14 +306,14 @@
       transform-origin: center top;
     }
 
-    /* Official Seal Medallion */
+    /* Official Seal Medallion (Apple Squircle Frame) */
     .seal-medallion {
       position: relative;
-      width: 138px; height: 138px;
+      width: 144px; height: 144px;
       margin: 0 auto 30px;
-      border-radius: 50%;
+      border-radius: 34px;
       background: #ffffff;
-      padding: 9px;
+      padding: 10px;
       box-shadow:
         0 0 0 1px rgba(255, 255, 255, 0.2),
         0 0 0 14px rgba(20, 184, 166, 0.06),
@@ -329,22 +329,25 @@
     .seal-medallion::before {
       content: '';
       position: absolute;
-      inset: -16px;
-      border-radius: 50%;
+      inset: -14px;
+      border-radius: 44px;
       border: 1px dashed var(--gold-line);
-      animation: spinSlow 40s linear infinite;
+      animation: pulseHalo 4s ease-in-out infinite alternate;
+    }
+    @keyframes pulseHalo {
+      from { transform: scale(1); opacity: 0.45; }
+      to { transform: scale(1.04); opacity: 0.9; }
     }
     .seal-medallion::after {
       content: '';
       position: absolute;
       inset: 0;
-      border-radius: 50%;
-      background: linear-gradient(125deg, rgba(255, 255, 255, 0.5) 0%, transparent 45%);
+      border-radius: 34px;
+      background: linear-gradient(125deg, rgba(255, 255, 255, 0.45) 0%, transparent 45%);
       pointer-events: none;
     }
     .seal-medallion img {
       width: 100%; height: 100%; object-fit: contain; display: block;
-      border-radius: 50%;
     }
     @keyframes spinSlow { to { transform: rotate(360deg); } }
     @keyframes medallionEnter {
@@ -977,7 +980,7 @@
 
     @media (max-width: 980px) {
       .showcase-grid { grid-template-columns: 1fr; gap: 36px; }
-      .device-sticky { position: static; max-width: 440px; margin: 0 auto; }
+      .device-sticky { position: static; width: 100%; max-width: 440px; margin: 0 auto; }
       .span-7, .span-5, .span-4 { grid-column: span 12; }
       .role-cols { grid-template-columns: 1fr; }
       .details-layout { grid-template-columns: 1fr; }
@@ -988,7 +991,7 @@
       .nav-title { max-width: 130px; font-size: 0.84rem; }
       .nav-ghost-btn .print-txt, .kbd { display: none; }
       .hero-stage { padding: 44px 0 56px; }
-      .seal-medallion { width: 112px; height: 112px; }
+      .seal-medallion { width: 118px; height: 118px; border-radius: 28px; padding: 8px; }
       .band-elevated, .section-band { padding: 62px 0; }
       .role-section { padding: 24px 18px; }
       .chapter { padding: 20px 18px; }
@@ -1020,7 +1023,7 @@
   <header class="apple-nav" id="appleNav">
     <div class="container nav-inner">
       <a href="#top" class="nav-brand">
-        <span class="nav-crest"><img src="logo.png" alt="Jamia Islamia Darul Ulum Sheikhdi Seal"></span>
+        <span class="nav-crest"><img src="sheikhdi-seal.png" alt="Jamia Islamia Darul Ulum Sheikhdi Seal"></span>
         <span class="nav-title" data-en="Jamia Islamia Darul Ulum Sheikhdi" data-bn="জামিয়া ইসলামিয়া দারুল উলুম শেখদী">Jamia Islamia Darul Ulum Sheikhdi</span>
       </a>
 
@@ -1050,7 +1053,7 @@
     <section class="hero-stage">
       <div class="container hero-inner" id="heroInner">
         <div class="seal-medallion">
-          <img src="logo.png" alt="Official Emblem — Jamia Islamia Darul Ulum Sheikhdi">
+          <img src="sheikhdi-seal.png" alt="Official Emblem — Jamia Islamia Darul Ulum Sheikhdi">
         </div>
 
         <div class="hero-eyebrow" data-en="JAMIA ISLAMIA DARUL ULUM SHEIKHDI · PRIVACY" data-bn="জামিয়া ইসলামিয়া দারুল উলুম শেখদী · গোপনীয়তা নীতি">
