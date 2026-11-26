@@ -1,0 +1,2907 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy — Madrasah Hub (মাদরাসা হাব)</title>
+  <meta name="description" content="Official Privacy Policy & Data Safety Architecture for Madrasah Hub (মাদরাসা হাব) by AM Core Studios. Role-scoped institutional management & ad-free Islamic learning.">
+  <meta name="theme-color" content="#030b08">
+  <meta property="og:title" content="Privacy Policy — Madrasah Hub (মাদরাসা হাব)">
+  <meta property="og:description" content="Transparent, role-scoped privacy architecture for Muhtamims, Ustads, and Guardians. Zero ads, zero tracking, Google Play 2026 compliant.">
+  <meta property="og:image" content="logo.png">
+  <link rel="icon" type="image/png" href="logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Hind+Siliguri:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #030b08;
+      --bg-elevated: #071510;
+      --surface: rgba(10, 26, 20, 0.72);
+      --surface-strong: rgba(13, 33, 25, 0.9);
+      --surface-soft: rgba(16, 185, 129, 0.08);
+      --surface-gold-soft: rgba(242, 201, 104, 0.1);
+      --ink: #f5f2ea;
+      --muted: #a2b8ae;
+      --dim: #6e867c;
+      --line: rgba(255, 255, 255, 0.09);
+      --line-gold: rgba(242, 201, 104, 0.24);
+      --emerald: #10b981;
+      --emerald-bright: #34d399;
+      --emerald-deep: #064d38;
+      --gold: #f2c968;
+      --gold-strong: #d9a441;
+      --danger: #f87171;
+      --shadow-card: 0 24px 60px rgba(0, 0, 0, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.06);
+      --shadow-float: 0 28px 80px rgba(0, 0, 0, 0.6);
+      --spotlight: rgba(52, 211, 153, 0.14);
+      --spotlight-gold: rgba(242, 201, 104, 0.12);
+      --font-en: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+      --font-serif: 'Instrument Serif', Georgia, serif;
+      --font-bn: 'Hind Siliguri', var(--font-en);
+      --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+      --ease-spring: cubic-bezier(0.22, 1, 0.36, 1);
+      --ease-bounce: cubic-bezier(0.34, 1.56, 0.64, 1);
+      --radius-sm: 10px;
+      --radius-md: 16px;
+      --radius-lg: 22px;
+      --radius-xl: 28px;
+    }
+
+    [data-theme="light"] {
+      color-scheme: light;
+      --bg: #f8f5ec;
+      --bg-elevated: #ffffff;
+      --surface: rgba(255, 255, 255, 0.84);
+      --surface-strong: rgba(255, 255, 255, 0.96);
+      --surface-soft: rgba(5, 122, 85, 0.08);
+      --surface-gold-soft: rgba(180, 125, 20, 0.1);
+      --ink: #0b2219;
+      --muted: #455d53;
+      --dim: #6f857b;
+      --line: rgba(11, 34, 25, 0.1);
+      --line-gold: rgba(180, 125, 20, 0.28);
+      --emerald: #058a60;
+      --emerald-bright: #059669;
+      --emerald-deep: #064d38;
+      --gold: #b47a12;
+      --gold-strong: #926008;
+      --danger: #dc2626;
+      --shadow-card: 0 18px 46px rgba(10, 42, 30, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.95);
+      --shadow-float: 0 24px 64px rgba(10, 42, 30, 0.13);
+      --spotlight: rgba(5, 138, 96, 0.09);
+      --spotlight-gold: rgba(180, 125, 20, 0.08);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 104px;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--ink);
+      font-family: var(--font-en);
+      line-height: 1.7;
+      min-height: 100vh;
+      overflow-x: hidden;
+      transition: background-color 0.55s var(--ease-spring), color 0.45s var(--ease-spring);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body.lang-bn {
+      font-family: var(--font-bn);
+      line-height: 1.78;
+    }
+
+    ::selection {
+      background: rgba(16, 185, 129, 0.28);
+      color: var(--ink);
+    }
+
+    a { color: var(--emerald-bright); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    button { font-family: inherit; color: inherit; cursor: pointer; }
+
+    /* Top Reading Progress Bar */
+    .scroll-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      z-index: 200;
+      pointer-events: none;
+      background: linear-gradient(90deg, var(--emerald), var(--gold), var(--emerald-bright));
+      transform-origin: left center;
+      transform: scaleX(0);
+      box-shadow: 0 0 14px rgba(16, 185, 129, 0.65);
+    }
+
+    /* Ambient Canvas & Aurora Backdrop */
+    .ambient-stage {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+      overflow: hidden;
+    }
+
+    #starfield {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0.72;
+      transition: opacity 0.5s ease;
+    }
+
+    [data-theme="light"] #starfield {
+      opacity: 0.42;
+    }
+
+    .aurora {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(95px);
+      will-change: transform;
+    }
+
+    .aurora-1 {
+      width: 680px;
+      height: 680px;
+      top: -220px;
+      left: -120px;
+      background: radial-gradient(circle, rgba(16, 185, 129, 0.2) 0%, transparent 70%);
+      animation: auroraFloatA 18s ease-in-out infinite alternate;
+    }
+
+    .aurora-2 {
+      width: 620px;
+      height: 620px;
+      top: 18%;
+      right: -180px;
+      background: radial-gradient(circle, rgba(242, 201, 104, 0.14) 0%, transparent 70%);
+      animation: auroraFloatB 22s ease-in-out infinite alternate;
+    }
+
+    .aurora-3 {
+      width: 560px;
+      height: 560px;
+      bottom: -160px;
+      left: 26%;
+      background: radial-gradient(circle, rgba(6, 77, 56, 0.34) 0%, transparent 72%);
+      animation: auroraFloatA 26s ease-in-out infinite alternate-reverse;
+    }
+
+    [data-theme="light"] .aurora-1 { background: radial-gradient(circle, rgba(16, 185, 129, 0.16) 0%, transparent 70%); }
+    [data-theme="light"] .aurora-2 { background: radial-gradient(circle, rgba(217, 164, 65, 0.16) 0%, transparent 70%); }
+    [data-theme="light"] .aurora-3 { background: radial-gradient(circle, rgba(16, 185, 129, 0.1) 0%, transparent 72%); }
+
+    .grid-mesh {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(var(--line) 1px, transparent 1px),
+        linear-gradient(90deg, var(--line) 1px, transparent 1px);
+      background-size: 56px 56px;
+      opacity: 0.36;
+      mask-image: radial-gradient(ellipse 80% 55% at 50% 18%, black 20%, transparent 85%);
+      -webkit-mask-image: radial-gradient(ellipse 80% 55% at 50% 18%, black 20%, transparent 85%);
+    }
+
+    @keyframes auroraFloatA {
+      0% { transform: translate3d(0, 0, 0) scale(1); }
+      100% { transform: translate3d(42px, 34px, 0) scale(1.1); }
+    }
+
+    @keyframes auroraFloatB {
+      0% { transform: translate3d(0, 0, 0) scale(1); }
+      100% { transform: translate3d(-46px, 28px, 0) scale(1.08); }
+    }
+
+    .container {
+      width: min(1220px, calc(100% - 36px));
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Floating Glass Navbar */
+    header.navbar {
+      position: sticky;
+      top: 14px;
+      z-index: 120;
+      padding-top: 14px;
+      transition: transform 0.35s var(--ease-spring);
+    }
+
+    .nav-shell {
+      background: var(--surface);
+      backdrop-filter: blur(22px) saturate(1.4);
+      -webkit-backdrop-filter: blur(22px) saturate(1.4);
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 8px 12px 8px 14px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      box-shadow: var(--shadow-float);
+      transition: border-color 0.3s ease, background-color 0.4s ease, padding 0.35s var(--ease-spring);
+    }
+
+    header.navbar.is-scrolled .nav-shell {
+      border-color: var(--line-gold);
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      color: var(--ink);
+      text-decoration: none;
+      min-width: 0;
+    }
+
+    .brand:hover { text-decoration: none; }
+
+    .brand-crest {
+      position: relative;
+      width: 40px;
+      height: 40px;
+      flex: 0 0 40px;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid var(--line-gold);
+      box-shadow: 0 6px 20px rgba(6, 77, 56, 0.45);
+    }
+
+    .brand-crest img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .brand-crest::after {
+      content: '';
+      position: absolute;
+      inset: -40%;
+      background: linear-gradient(115deg, transparent 36%, rgba(255, 255, 255, 0.48) 50%, transparent 64%);
+      transform: translateX(-110%);
+      animation: crestSheen 6s 1.2s ease-in-out infinite;
+    }
+
+    @keyframes crestSheen {
+      0%, 72%, 100% { transform: translateX(-110%); }
+      86% { transform: translateX(110%); }
+    }
+
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.18;
+    }
+
+    .brand-title {
+      font-weight: 800;
+      font-size: 1rem;
+      letter-spacing: -0.02em;
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      white-space: nowrap;
+    }
+
+    .brand-pill {
+      font-size: 0.62rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 2px 7px;
+      border-radius: 999px;
+      background: var(--surface-gold-soft);
+      color: var(--gold);
+      border: 1px solid var(--line-gold);
+    }
+
+    .brand-sub {
+      font-size: 0.72rem;
+      color: var(--dim);
+      font-weight: 500;
+      white-space: nowrap;
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-shrink: 0;
+    }
+
+    /* Sliding Language Pill */
+    .lang-switch {
+      position: relative;
+      display: inline-grid;
+      grid-template-columns: 1fr 1fr;
+      padding: 3px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid var(--line);
+    }
+
+    [data-theme="light"] .lang-switch {
+      background: rgba(11, 34, 25, 0.05);
+    }
+
+    .lang-glider {
+      position: absolute;
+      top: 3px;
+      left: 3px;
+      width: calc((100% - 6px) / 2);
+      height: calc(100% - 6px);
+      border-radius: 999px;
+      background: linear-gradient(135deg, var(--emerald), var(--emerald-deep));
+      box-shadow: 0 4px 14px rgba(16, 185, 129, 0.35);
+      transition: transform 0.38s var(--ease-bounce);
+      z-index: 0;
+    }
+
+    body.lang-bn .lang-glider {
+      transform: translateX(100%);
+    }
+
+    .lang-btn {
+      position: relative;
+      z-index: 1;
+      border: 0;
+      background: transparent;
+      padding: 6px 13px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--muted);
+      transition: color 0.25s ease;
+      white-space: nowrap;
+    }
+
+    .lang-btn[aria-pressed="true"] {
+      color: #ffffff;
+    }
+
+    /* Animated Sun / Crescent Moon Theme Switch */
+    .theme-toggle {
+      --night: 1;
+      position: relative;
+      width: 66px;
+      height: 36px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: linear-gradient(135deg, #071f17, #0b2e23);
+      overflow: hidden;
+      padding: 0;
+      transition: background 0.55s var(--ease-spring), border-color 0.3s ease, transform 0.25s var(--ease-spring);
+      box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.45);
+    }
+
+    [data-theme="light"] .theme-toggle {
+      --night: 0;
+      background: linear-gradient(135deg, #60b6f7, #95d5ff);
+      box-shadow: inset 0 2px 6px rgba(15, 70, 115, 0.22);
+    }
+
+    .theme-toggle:hover { transform: scale(1.04); border-color: var(--line-gold); }
+
+    .sky-orb {
+      position: absolute;
+      top: 4px;
+      left: 4px;
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 35% 35%, #fff7c2, #f5c242);
+      box-shadow: 0 0 14px rgba(245, 194, 66, 0.75);
+      transform: translateX(0) rotate(0deg);
+      transition: transform 0.6s var(--ease-bounce), background 0.5s ease, box-shadow 0.5s ease;
+    }
+
+    [data-theme="dark"] .sky-orb {
+      transform: translateX(30px) rotate(-25deg);
+      background: #f6e7b8;
+      box-shadow: inset -7px -2px 0 1px #09251b, 0 0 14px rgba(242, 201, 104, 0.45);
+    }
+
+    .sky-stars {
+      position: absolute;
+      inset: 0;
+      transition: opacity 0.4s ease, transform 0.45s var(--ease-spring);
+    }
+
+    [data-theme="light"] .sky-stars {
+      opacity: 0;
+      transform: translateY(8px);
+    }
+
+    .sky-stars span {
+      position: absolute;
+      width: 2.5px;
+      height: 2.5px;
+      border-radius: 50%;
+      background: #fff6d1;
+      box-shadow: 0 0 6px #fff6d1;
+      animation: twinkle 2.8s ease-in-out infinite;
+    }
+
+    .sky-stars span:nth-child(1) { top: 9px; left: 11px; animation-delay: 0s; }
+    .sky-stars span:nth-child(2) { top: 21px; left: 17px; width: 2px; height: 2px; animation-delay: 0.9s; }
+    .sky-stars span:nth-child(3) { top: 12px; left: 26px; width: 2px; height: 2px; animation-delay: 1.7s; }
+
+    @keyframes twinkle {
+      0%, 100% { opacity: 0.4; transform: scale(0.85); }
+      50% { opacity: 1; transform: scale(1.25); }
+    }
+
+    .sky-cloud {
+      position: absolute;
+      right: 9px;
+      bottom: 6px;
+      width: 22px;
+      height: 9px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.92);
+      transition: opacity 0.35s ease, transform 0.5s var(--ease-spring);
+    }
+
+    .sky-cloud::before {
+      content: '';
+      position: absolute;
+      width: 11px;
+      height: 11px;
+      border-radius: 50%;
+      background: inherit;
+      top: -5px;
+      left: 3px;
+    }
+
+    [data-theme="dark"] .sky-cloud {
+      opacity: 0;
+      transform: translateX(14px);
+    }
+
+    .nav-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.04);
+      color: var(--ink);
+      text-decoration: none;
+      transition: transform 0.25s var(--ease-spring), border-color 0.25s ease, background 0.25s ease, box-shadow 0.25s ease;
+      white-space: nowrap;
+    }
+
+    .nav-btn:hover {
+      text-decoration: none;
+      transform: translateY(-1px);
+      border-color: var(--line-gold);
+      background: var(--surface-soft);
+    }
+
+    .nav-btn-accent {
+      background: linear-gradient(135deg, var(--emerald), #057a55);
+      border-color: transparent;
+      color: #ffffff;
+      box-shadow: 0 6px 18px rgba(16, 185, 129, 0.32);
+    }
+
+    .nav-btn-accent:hover {
+      background: linear-gradient(135deg, var(--emerald-bright), var(--emerald));
+      box-shadow: 0 10px 24px rgba(16, 185, 129, 0.42);
+    }
+
+    /* Hero Section */
+    .hero {
+      position: relative;
+      padding: 58px 0 42px;
+    }
+
+    .hero-mandala {
+      position: absolute;
+      top: -20px;
+      right: -60px;
+      width: 540px;
+      height: 540px;
+      opacity: 0.09;
+      color: var(--gold);
+      pointer-events: none;
+      animation: spinSlow 95s linear infinite;
+      z-index: 0;
+    }
+
+    [data-theme="light"] .hero-mandala { opacity: 0.07; color: var(--emerald-deep); }
+
+    @keyframes spinSlow {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    .hero-grid {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: minmax(0, 1.15fr) minmax(320px, 0.85fr);
+      gap: 42px;
+      align-items: center;
+    }
+
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      padding: 7px 15px;
+      border-radius: 999px;
+      background: var(--surface-soft);
+      border: 1px solid rgba(16, 185, 129, 0.28);
+      color: var(--emerald-bright);
+      font-size: 0.74rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 22px;
+      animation: fadeSlideUp 0.7s var(--ease-spring) both;
+    }
+
+    .pulse-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--emerald-bright);
+      box-shadow: 0 0 0 0 rgba(52, 211, 153, 0.7);
+      animation: pulseRing 2.2s infinite;
+    }
+
+    @keyframes pulseRing {
+      0% { box-shadow: 0 0 0 0 rgba(52, 211, 153, 0.65); }
+      70% { box-shadow: 0 0 0 10px rgba(52, 211, 153, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(52, 211, 153, 0); }
+    }
+
+    .hero-title {
+      font-size: clamp(2.5rem, 5.2vw, 4.35rem);
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      line-height: 1.04;
+      margin-bottom: 20px;
+      animation: fadeSlideUp 0.8s 0.08s var(--ease-spring) both;
+    }
+
+    body.lang-bn .hero-title {
+      font-size: clamp(2.15rem, 4.5vw, 3.65rem);
+      letter-spacing: -0.015em;
+      line-height: 1.18;
+    }
+
+    .hero-title .serif-accent {
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-weight: 400;
+      background: linear-gradient(135deg, var(--gold) 0%, #ffe6a3 50%, var(--emerald-bright) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      padding-right: 4px;
+    }
+
+    body.lang-bn .hero-title .serif-accent {
+      font-family: inherit;
+      font-style: normal;
+      font-weight: 800;
+    }
+
+    [data-theme="light"] .hero-title .serif-accent {
+      background: linear-gradient(135deg, #065f46 0%, #b47a12 75%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-subtitle {
+      font-size: clamp(1rem, 1.7vw, 1.16rem);
+      color: var(--muted);
+      max-width: 600px;
+      margin-bottom: 26px;
+      animation: fadeSlideUp 0.85s 0.16s var(--ease-spring) both;
+    }
+
+    .hero-cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 26px;
+      animation: fadeSlideUp 0.9s 0.24s var(--ease-spring) both;
+    }
+
+    .cta-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      padding: 13px 22px;
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: 0.92rem;
+      background: linear-gradient(135deg, var(--emerald-bright), #047857);
+      color: #ffffff;
+      border: 0;
+      box-shadow: 0 12px 30px rgba(16, 185, 129, 0.35);
+      transition: transform 0.28s var(--ease-spring), box-shadow 0.28s ease;
+      text-decoration: none;
+    }
+
+    .cta-primary:hover {
+      text-decoration: none;
+      transform: translateY(-2px);
+      box-shadow: 0 16px 36px rgba(16, 185, 129, 0.48);
+    }
+
+    .cta-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 20px;
+      border-radius: 999px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      background: var(--surface);
+      border: 1px solid var(--line-gold);
+      color: var(--ink);
+      backdrop-filter: blur(16px);
+      transition: transform 0.28s var(--ease-spring), border-color 0.25s ease, background 0.25s ease;
+      text-decoration: none;
+    }
+
+    .cta-secondary:hover {
+      text-decoration: none;
+      transform: translateY(-2px);
+      background: var(--surface-gold-soft);
+    }
+
+    .meta-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      animation: fadeSlideUp 0.95s 0.32s var(--ease-spring) both;
+    }
+
+    .meta-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 7px 12px;
+      border-radius: 10px;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      font-size: 0.78rem;
+      color: var(--muted);
+      backdrop-filter: blur(12px);
+    }
+
+    .meta-chip code {
+      font-family: var(--font-mono);
+      font-size: 0.74rem;
+      color: var(--gold);
+    }
+
+    @keyframes fadeSlideUp {
+      from { opacity: 0; transform: translateY(22px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Interactive 3D Privacy Vault Card */
+    .vault-stage {
+      position: relative;
+      perspective: 1200px;
+      padding: 16px 6px;
+      animation: fadeSlideUp 0.95s 0.18s var(--ease-spring) both;
+    }
+
+    .vault-orbit {
+      position: absolute;
+      inset: 50% auto auto 50%;
+      width: 390px;
+      height: 390px;
+      transform: translate(-50%, -50%);
+      border-radius: 50%;
+      border: 1px dashed var(--line-gold);
+      opacity: 0.45;
+      pointer-events: none;
+      animation: spinSlow 45s linear infinite reverse;
+    }
+
+    .vault-card {
+      position: relative;
+      border-radius: 26px;
+      padding: 24px;
+      background: linear-gradient(155deg, rgba(13, 35, 27, 0.92), rgba(6, 18, 13, 0.95));
+      border: 1px solid rgba(242, 201, 104, 0.28);
+      box-shadow: 0 36px 90px rgba(0, 0, 0, 0.55), inset 0 1px 0 rgba(255, 255, 255, 0.12);
+      transform-style: preserve-3d;
+      will-change: transform;
+      overflow: hidden;
+    }
+
+    [data-theme="light"] .vault-card {
+      background: linear-gradient(155deg, rgba(255, 255, 255, 0.96), rgba(244, 249, 246, 0.94));
+      border-color: rgba(5, 138, 96, 0.25);
+      box-shadow: 0 32px 72px rgba(7, 45, 32, 0.16), inset 0 1px 0 #ffffff;
+    }
+
+    .vault-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(360px circle at var(--mx, 75%) var(--my, 20%), rgba(242, 201, 104, 0.16), transparent 65%);
+      pointer-events: none;
+    }
+
+    .vault-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 18px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .vault-id {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+    }
+
+    .vault-logo {
+      width: 38px;
+      height: 38px;
+      border-radius: 10px;
+      border: 1px solid var(--line-gold);
+      object-fit: cover;
+    }
+
+    .vault-id strong {
+      display: block;
+      font-size: 0.92rem;
+      letter-spacing: -0.01em;
+    }
+
+    .vault-id span {
+      display: block;
+      font-size: 0.72rem;
+      color: var(--emerald-bright);
+      font-weight: 600;
+    }
+
+    .vault-shield {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 5px 10px;
+      border-radius: 999px;
+      font-size: 0.68rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      background: rgba(16, 185, 129, 0.14);
+      color: var(--emerald-bright);
+      border: 1px solid rgba(16, 185, 129, 0.32);
+    }
+
+    .vault-roles {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 6px;
+      padding: 4px;
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid var(--line);
+      margin-bottom: 16px;
+    }
+
+    [data-theme="light"] .vault-roles {
+      background: rgba(11, 34, 25, 0.04);
+    }
+
+    .vault-role-btn {
+      border: 0;
+      background: transparent;
+      padding: 7px 6px;
+      border-radius: 8px;
+      font-size: 0.74rem;
+      font-weight: 700;
+      color: var(--muted);
+      transition: all 0.25s var(--ease-spring);
+    }
+
+    .vault-role-btn.active {
+      background: linear-gradient(135deg, var(--emerald), var(--emerald-deep));
+      color: #ffffff;
+      box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+    }
+
+    .vault-rows {
+      display: grid;
+      gap: 10px;
+    }
+
+    .vault-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 11px 13px;
+      border-radius: 13px;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--line);
+      transition: transform 0.28s var(--ease-spring), border-color 0.25s ease, opacity 0.25s ease;
+    }
+
+    [data-theme="light"] .vault-row {
+      background: rgba(11, 34, 25, 0.028);
+    }
+
+    .vault-row:hover {
+      transform: translateX(3px);
+      border-color: var(--line-gold);
+    }
+
+    .vault-row-left {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      min-width: 0;
+    }
+
+    .vault-row-icon {
+      width: 32px;
+      height: 32px;
+      border-radius: 9px;
+      display: grid;
+      place-items: center;
+      background: var(--surface-soft);
+      color: var(--emerald-bright);
+      flex-shrink: 0;
+    }
+
+    .vault-row-copy strong {
+      display: block;
+      font-size: 0.82rem;
+      line-height: 1.25;
+    }
+
+    .vault-row-copy small {
+      display: block;
+      font-size: 0.72rem;
+      color: var(--muted);
+      line-height: 1.3;
+    }
+
+    .vault-badge {
+      font-size: 0.67rem;
+      font-weight: 700;
+      padding: 4px 8px;
+      border-radius: 999px;
+      background: var(--surface-gold-soft);
+      color: var(--gold);
+      border: 1px solid var(--line-gold);
+      white-space: nowrap;
+    }
+
+    .floating-pill {
+      position: absolute;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 9px 13px;
+      border-radius: 12px;
+      background: var(--surface-strong);
+      border: 1px solid var(--line-gold);
+      box-shadow: 0 14px 32px rgba(0, 0, 0, 0.38);
+      backdrop-filter: blur(14px);
+      font-size: 0.74rem;
+      font-weight: 700;
+      color: var(--ink);
+      pointer-events: none;
+      animation: floatGentle 5.5s ease-in-out infinite;
+    }
+
+    .floating-pill.pill-top { top: -4px; right: 12px; animation-delay: -1.4s; }
+    .floating-pill.pill-bottom { bottom: -6px; left: 10px; animation-delay: -3.2s; }
+
+    @keyframes floatGentle {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-7px); }
+    }
+
+    /* Section Headings */
+    .section-block {
+      margin: 44px 0 64px;
+    }
+
+    .section-head {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 24px;
+      flex-wrap: wrap;
+    }
+
+    .section-kicker {
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 6px;
+    }
+
+    .section-heading {
+      font-size: clamp(1.5rem, 2.8vw, 2.15rem);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1.15;
+    }
+
+    .section-desc {
+      max-width: 500px;
+      font-size: 0.92rem;
+      color: var(--muted);
+    }
+
+    /* Bento Grid with Spotlight Tracking */
+    .bento-grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 16px;
+    }
+
+    .spotlight-card {
+      position: relative;
+      background: var(--surface);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-card);
+      overflow: hidden;
+      transition: transform 0.35s var(--ease-spring), border-color 0.3s ease, box-shadow 0.35s ease;
+    }
+
+    .spotlight-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(380px circle at var(--mx, -200px) var(--my, -200px), var(--spotlight), transparent 60%);
+      opacity: 0;
+      transition: opacity 0.35s ease;
+      pointer-events: none;
+    }
+
+    .spotlight-card:hover::before {
+      opacity: 1;
+    }
+
+    .spotlight-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--line-gold);
+    }
+
+    .bento-card {
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 18px;
+    }
+
+    .span-4 { grid-column: span 4; }
+    .span-6 { grid-column: span 6; }
+
+    .bento-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 13px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, var(--surface-soft), var(--surface-gold-soft));
+      border: 1px solid var(--line-gold);
+      color: var(--emerald-bright);
+      margin-bottom: 14px;
+    }
+
+    .bento-title {
+      font-size: 1.08rem;
+      font-weight: 700;
+      letter-spacing: -0.015em;
+      margin-bottom: 7px;
+    }
+
+    .bento-desc {
+      font-size: 0.9rem;
+      color: var(--muted);
+      line-height: 1.62;
+    }
+
+    .bento-tag {
+      align-self: flex-start;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      padding: 5px 10px;
+      border-radius: 8px;
+      background: var(--surface-soft);
+      color: var(--emerald-bright);
+      border: 1px solid rgba(16, 185, 129, 0.24);
+    }
+
+    /* Interactive Role Privacy Matrix */
+    .role-explorer {
+      padding: 26px;
+      border-radius: var(--radius-xl);
+    }
+
+    .role-tabs-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-bottom: 22px;
+      padding-bottom: 18px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .role-tabs {
+      position: relative;
+      display: inline-grid;
+      grid-template-columns: repeat(3, 1fr);
+      padding: 4px;
+      border-radius: 14px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid var(--line);
+      min-width: min(100%, 420px);
+    }
+
+    [data-theme="light"] .role-tabs {
+      background: rgba(11, 34, 25, 0.04);
+    }
+
+    .role-tab-glider {
+      position: absolute;
+      top: 4px;
+      left: 4px;
+      width: calc((100% - 8px) / 3);
+      height: calc(100% - 8px);
+      border-radius: 10px;
+      background: linear-gradient(135deg, var(--emerald), var(--emerald-deep));
+      box-shadow: 0 6px 16px rgba(16, 185, 129, 0.35);
+      transition: transform 0.38s var(--ease-bounce);
+      z-index: 0;
+    }
+
+    .role-tab {
+      position: relative;
+      z-index: 1;
+      border: 0;
+      background: transparent;
+      padding: 9px 12px;
+      font-size: 0.84rem;
+      font-weight: 700;
+      color: var(--muted);
+      transition: color 0.25s ease;
+      text-align: center;
+    }
+
+    .role-tab[aria-selected="true"] {
+      color: #ffffff;
+    }
+
+    .role-columns {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      transition: opacity 0.22s ease, transform 0.28s var(--ease-spring);
+    }
+
+    .role-columns.is-swapping {
+      opacity: 0;
+      transform: translateY(8px);
+    }
+
+    .role-col {
+      padding: 18px;
+      border-radius: 16px;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--line);
+    }
+
+    [data-theme="light"] .role-col {
+      background: rgba(11, 34, 25, 0.025);
+    }
+
+    .role-col-label {
+      font-size: 0.72rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--gold);
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 7px;
+    }
+
+    .role-col ul {
+      list-style: none;
+      display: grid;
+      gap: 8px;
+    }
+
+    .role-col li {
+      position: relative;
+      padding-left: 16px;
+      font-size: 0.87rem;
+      color: var(--muted);
+      line-height: 1.55;
+    }
+
+    .role-col li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 8px;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--emerald-bright);
+    }
+
+    /* Main Policy Two-Column Layout */
+    .policy-layout {
+      display: grid;
+      grid-template-columns: 270px minmax(0, 1fr);
+      gap: 34px;
+      align-items: start;
+      margin-bottom: 70px;
+    }
+
+    /* Sticky Animated TOC */
+    .toc-rail {
+      position: sticky;
+      top: 94px;
+      padding: 20px 16px;
+      border-radius: 22px;
+      background: var(--surface);
+      backdrop-filter: blur(20px);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow-card);
+    }
+
+    .toc-title {
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold);
+      padding: 0 10px 12px;
+      margin-bottom: 8px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .toc-links {
+      position: relative;
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+
+    .toc-indicator {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 3px;
+      height: 28px;
+      border-radius: 99px;
+      background: linear-gradient(180deg, var(--emerald-bright), var(--gold));
+      box-shadow: 0 0 12px rgba(16, 185, 129, 0.7);
+      transition: transform 0.34s var(--ease-spring), height 0.34s var(--ease-spring), opacity 0.2s ease;
+      pointer-events: none;
+    }
+
+    .toc-link {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      padding: 8px 11px 8px 14px;
+      border-radius: 10px;
+      font-size: 0.83rem;
+      font-weight: 500;
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.22s ease, background-color 0.22s ease;
+    }
+
+    .toc-link:hover {
+      text-decoration: none;
+      color: var(--ink);
+      background: var(--surface-soft);
+    }
+
+    .toc-link.active {
+      color: var(--emerald-bright);
+      background: var(--surface-soft);
+      font-weight: 700;
+    }
+
+    .toc-num {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      color: var(--dim);
+      min-width: 20px;
+    }
+
+    .toc-link.active .toc-num {
+      color: var(--gold);
+    }
+
+    /* Search Box */
+    .search-wrap {
+      position: relative;
+      margin-bottom: 22px;
+    }
+
+    .search-field {
+      width: 100%;
+      padding: 15px 120px 15px 46px;
+      border-radius: 16px;
+      background: var(--surface);
+      backdrop-filter: blur(18px);
+      border: 1px solid var(--line);
+      color: var(--ink);
+      font-size: 0.94rem;
+      font-family: inherit;
+      outline: none;
+      box-shadow: var(--shadow-card);
+      transition: border-color 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .search-field:focus {
+      border-color: var(--emerald-bright);
+      box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.14), var(--shadow-card);
+    }
+
+    .search-icon {
+      position: absolute;
+      left: 16px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--dim);
+      pointer-events: none;
+    }
+
+    .search-meta {
+      position: absolute;
+      right: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .search-count {
+      font-size: 0.74rem;
+      font-weight: 700;
+      color: var(--emerald-bright);
+      background: var(--surface-soft);
+      padding: 3px 8px;
+      border-radius: 999px;
+      display: none;
+    }
+
+    .search-count.visible { display: inline-block; }
+
+    .kbd-hint {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      color: var(--dim);
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      padding: 2px 7px;
+      background: rgba(255, 255, 255, 0.03);
+    }
+
+    .search-clear {
+      display: none;
+      border: 1px solid var(--line);
+      background: var(--surface-soft);
+      color: var(--ink);
+      border-radius: 999px;
+      padding: 3px 9px;
+      font-size: 0.74rem;
+      font-weight: 700;
+    }
+
+    .search-clear.visible { display: inline-block; }
+
+    /* Policy Articles */
+    .policy-stream {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .policy-block {
+      padding: 30px 32px;
+      scroll-margin-top: 104px;
+    }
+
+    .policy-block.is-hidden-by-search {
+      display: none;
+    }
+
+    .policy-block-top {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding-bottom: 16px;
+      margin-bottom: 18px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .block-num {
+      width: 38px;
+      height: 38px;
+      border-radius: 11px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, var(--surface-soft), var(--surface-gold-soft));
+      border: 1px solid var(--line-gold);
+      font-family: var(--font-mono);
+      font-size: 0.86rem;
+      font-weight: 700;
+      color: var(--gold);
+      flex-shrink: 0;
+    }
+
+    .block-title {
+      font-size: 1.28rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+    }
+
+    .policy-block p {
+      color: var(--muted);
+      margin-bottom: 14px;
+      font-size: 0.96rem;
+    }
+
+    .policy-block p:last-child { margin-bottom: 0; }
+
+    .policy-block strong {
+      color: var(--ink);
+      font-weight: 700;
+    }
+
+    .policy-list {
+      list-style: none;
+      display: grid;
+      gap: 10px;
+      margin: 14px 0;
+    }
+
+    .policy-list li {
+      position: relative;
+      padding: 12px 14px 12px 36px;
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.025);
+      border: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 0.92rem;
+      transition: border-color 0.25s ease, transform 0.25s var(--ease-spring);
+    }
+
+    [data-theme="light"] .policy-list li {
+      background: rgba(11, 34, 25, 0.02);
+    }
+
+    .policy-list li:hover {
+      border-color: var(--line-gold);
+      transform: translateX(3px);
+    }
+
+    .policy-list li::before {
+      content: '';
+      position: absolute;
+      left: 14px;
+      top: 19px;
+      width: 8px;
+      height: 8px;
+      border: 2px solid var(--emerald-bright);
+      border-radius: 2px;
+      transform: rotate(45deg);
+    }
+
+    .callout {
+      margin: 16px 0;
+      padding: 15px 18px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, var(--surface-soft), rgba(242, 201, 104, 0.06));
+      border: 1px solid rgba(16, 185, 129, 0.28);
+      border-left: 4px solid var(--emerald-bright);
+      color: var(--ink);
+      font-size: 0.91rem;
+      line-height: 1.65;
+    }
+
+    /* Permission Grid */
+    .perm-list {
+      display: grid;
+      gap: 11px;
+      margin-top: 14px;
+    }
+
+    .perm-item {
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      gap: 15px;
+      align-items: center;
+      padding: 16px 18px;
+      border-radius: 15px;
+      background: rgba(255, 255, 255, 0.025);
+      border: 1px solid var(--line);
+      transition: transform 0.28s var(--ease-spring), border-color 0.25s ease, background 0.25s ease;
+    }
+
+    [data-theme="light"] .perm-item {
+      background: rgba(11, 34, 25, 0.02);
+    }
+
+    .perm-item:hover {
+      transform: translateY(-2px);
+      border-color: var(--line-gold);
+      background: var(--surface-soft);
+    }
+
+    .perm-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 11px;
+      display: grid;
+      place-items: center;
+      background: var(--surface-soft);
+      border: 1px solid rgba(16, 185, 129, 0.24);
+      color: var(--emerald-bright);
+    }
+
+    .perm-body h4 {
+      font-size: 0.96rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 4px;
+    }
+
+    .perm-code {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      font-weight: 600;
+      padding: 2px 7px;
+      border-radius: 6px;
+      background: rgba(0, 0, 0, 0.3);
+      color: var(--gold);
+      border: 1px solid var(--line);
+      cursor: pointer;
+    }
+
+    [data-theme="light"] .perm-code {
+      background: rgba(11, 34, 25, 0.06);
+    }
+
+    .perm-body p {
+      margin: 0 !important;
+      font-size: 0.87rem !important;
+      line-height: 1.58;
+    }
+
+    .perm-pill {
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 5px 11px;
+      border-radius: 999px;
+      background: var(--surface-soft);
+      color: var(--emerald-bright);
+      border: 1px solid rgba(16, 185, 129, 0.3);
+      white-space: nowrap;
+    }
+
+    /* Empty search state */
+    .no-results {
+      display: none;
+      padding: 36px 24px;
+      text-align: center;
+      border-radius: 20px;
+    }
+
+    .no-results.visible { display: block; }
+
+    /* Contact Card */
+    .contact-banner {
+      margin-top: 12px;
+      padding: 36px 32px;
+      text-align: center;
+      background:
+        radial-gradient(ellipse at 50% 0%, rgba(16, 185, 129, 0.16), transparent 65%),
+        radial-gradient(ellipse at 90% 100%, rgba(242, 201, 104, 0.12), transparent 55%),
+        var(--surface);
+      border-color: var(--line-gold);
+    }
+
+    .contact-banner h3 {
+      font-size: 1.55rem;
+      font-weight: 800;
+      margin-bottom: 10px;
+    }
+
+    .contact-banner p {
+      max-width: 580px;
+      margin: 0 auto 22px !important;
+    }
+
+    .email-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 16px;
+      border-radius: 999px;
+      background: rgba(0, 0, 0, 0.28);
+      border: 1px solid var(--line-gold);
+      font-family: var(--font-mono);
+      font-size: 0.9rem;
+      color: var(--gold);
+      margin-bottom: 20px;
+      cursor: pointer;
+      transition: transform 0.25s var(--ease-spring), border-color 0.25s ease;
+    }
+
+    [data-theme="light"] .email-pill {
+      background: rgba(11, 34, 25, 0.05);
+    }
+
+    .email-pill:hover { transform: translateY(-2px); border-color: var(--emerald-bright); }
+
+    .contact-actions {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    /* Scroll Reveal */
+    .reveal {
+      opacity: 0;
+      transform: translateY(22px);
+      transition: opacity 0.7s var(--ease-spring), transform 0.75s var(--ease-spring);
+    }
+
+    .reveal.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Toast */
+    .toast {
+      position: fixed;
+      bottom: 24px;
+      left: 50%;
+      transform: translateX(-50%) translateY(24px);
+      padding: 11px 18px;
+      border-radius: 999px;
+      background: var(--surface-strong);
+      border: 1px solid var(--line-gold);
+      color: var(--ink);
+      font-size: 0.84rem;
+      font-weight: 700;
+      box-shadow: 0 18px 42px rgba(0, 0, 0, 0.45);
+      opacity: 0;
+      pointer-events: none;
+      z-index: 300;
+      transition: opacity 0.28s ease, transform 0.35s var(--ease-bounce);
+    }
+
+    .toast.show {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
+    }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid var(--line);
+      padding: 34px 0 44px;
+      color: var(--dim);
+      font-size: 0.84rem;
+    }
+
+    .footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+      list-style: none;
+    }
+
+    .footer-links a {
+      color: var(--muted);
+      font-weight: 600;
+    }
+
+    .footer-links a:hover { color: var(--emerald-bright); }
+
+    /* Responsive */
+    @media (max-width: 980px) {
+      .hero-grid { grid-template-columns: 1fr; gap: 30px; }
+      .vault-stage { max-width: 480px; margin: 0 auto; width: 100%; }
+      .span-4, .span-6 { grid-column: span 12; }
+      .role-columns { grid-template-columns: 1fr; }
+      .policy-layout { grid-template-columns: 1fr; }
+      .toc-rail { display: none; }
+    }
+
+    @media (max-width: 680px) {
+      .container { width: calc(100% - 24px); }
+      .nav-shell { padding: 7px 10px; border-radius: 20px; }
+      .brand-sub, .nav-btn-print .btn-label, .kbd-hint { display: none; }
+      .nav-btn-del { padding: 7px 10px; font-size: 0.74rem; }
+      .nav-btn-print { padding: 7px 10px; }
+      .lang-btn { padding: 5px 10px; font-size: 0.74rem; }
+      .hero { padding: 34px 0 28px; }
+      .vault-card { padding: 18px; }
+      .floating-pill { display: none; }
+      .policy-block { padding: 22px 18px; }
+      .perm-item { grid-template-columns: 1fr; align-items: flex-start; }
+      .perm-pill { justify-self: flex-start; }
+      .search-field { padding-right: 76px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation: none !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+      .reveal { opacity: 1; transform: none; }
+    }
+
+    @media print {
+      body { background: #ffffff !important; color: #111111 !important; }
+      .ambient-stage, .scroll-progress, header.navbar, .toc-rail, .search-wrap, .hero-cta-row, .toast, .floating-pill {
+        display: none !important;
+      }
+      .spotlight-card, .vault-card, .policy-block, .role-explorer {
+        background: #ffffff !important;
+        color: #111111 !important;
+        border: 1px solid #d1d5db !important;
+        box-shadow: none !important;
+        break-inside: avoid;
+      }
+      .policy-block p, .policy-list li, .bento-desc, .hero-subtitle, .role-col li {
+        color: #333333 !important;
+      }
+      .hero-title .serif-accent {
+        -webkit-text-fill-color: #064d38 !important;
+        color: #064d38 !important;
+      }
+      .reveal { opacity: 1 !important; transform: none !important; }
+    }
+  </style>
+</head>
+<body class="lang-en">
+  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
+  <div class="ambient-stage" aria-hidden="true">
+    <canvas id="starfield"></canvas>
+    <div class="aurora aurora-1"></div>
+    <div class="aurora aurora-2"></div>
+    <div class="aurora aurora-3"></div>
+    <div class="grid-mesh"></div>
+  </div>
+
+  <header class="navbar" id="navbar">
+    <div class="container">
+      <div class="nav-shell">
+        <a href="#top" class="brand">
+          <span class="brand-crest">
+            <img src="logo.png" alt="Madrasah Hub Logo">
+          </span>
+          <span class="brand-text">
+            <span class="brand-title">
+              <span data-i18n="brandName">Madrasah Hub</span>
+              <span class="brand-pill" data-i18n="brandBadge">Official</span>
+            </span>
+            <span class="brand-sub" data-i18n="brandSub">AM Core Studios · Privacy Architecture</span>
+          </span>
+        </a>
+
+        <div class="nav-actions">
+          <div class="lang-switch" role="group" aria-label="Language Switcher">
+            <div class="lang-glider" aria-hidden="true"></div>
+            <button type="button" class="lang-btn" id="btnEn" aria-pressed="true" onclick="setLanguage('en')">EN</button>
+            <button type="button" class="lang-btn" id="btnBn" aria-pressed="false" onclick="setLanguage('bn')">বাংলা</button>
+          </div>
+
+          <button type="button" class="theme-toggle" id="themeToggle" aria-label="Toggle light and dark theme" aria-pressed="true" title="Switch theme">
+            <span class="sky-stars" aria-hidden="true"><span></span><span></span><span></span></span>
+            <span class="sky-cloud" aria-hidden="true"></span>
+            <span class="sky-orb" aria-hidden="true"></span>
+          </button>
+
+          <a href="account-deletion.html" class="nav-btn nav-btn-accent nav-btn-del" data-i18n="navDelete">Delete Account</a>
+
+          <button type="button" class="nav-btn nav-btn-print" onclick="window.print()" title="Print or Save PDF">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9V2h12v7"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+            <span class="btn-label" data-i18n="navPrint">Print</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main id="top" class="container">
+    <!-- Hero -->
+    <section class="hero">
+      <svg class="hero-mandala" viewBox="0 0 200 200" fill="none" stroke="currentColor" stroke-width="0.6" aria-hidden="true">
+        <rect x="35" y="35" width="130" height="130" rx="4"/>
+        <rect x="35" y="35" width="130" height="130" rx="4" transform="rotate(45 100 100)"/>
+        <circle cx="100" cy="100" r="88" stroke-dasharray="3 4"/>
+        <circle cx="100" cy="100" r="64"/>
+        <circle cx="100" cy="100" r="38" stroke-dasharray="2 3"/>
+        <polygon points="100,12 118,82 188,100 118,118 100,188 82,118 12,100 82,82"/>
+      </svg>
+
+      <div class="hero-grid">
+        <div>
+          <div class="hero-eyebrow">
+            <span class="pulse-dot"></span>
+            <span data-i18n="heroEyebrow">MADRASAH HUB · PRIVACY &amp; TRUST</span>
+          </div>
+
+          <h1 class="hero-title" data-i18n-html="heroTitle">
+            Your Madrasah.<br><span class="serif-accent">Protected</span> by Design.
+          </h1>
+
+          <p class="hero-subtitle" data-i18n="heroSubtitle">
+            A clear, verifiable guide to how Madrasah Hub (মাদরাসা হাব) safeguards student records, guardian access, attendance alerts, fee receipts, and offline Islamic study tools — with zero ads and zero third-party tracking.
+          </p>
+
+          <div class="hero-cta-row">
+            <a href="#glance" class="cta-primary">
+              <span data-i18n="heroExplore">Explore Privacy Architecture</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14"/><path d="m19 12-7 7-7-7"/></svg>
+            </a>
+            <a href="account-deletion.html" class="cta-secondary">
+              <span data-i18n="heroDeletion">Account Deletion Portal</span>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </a>
+          </div>
+
+          <div class="meta-chips">
+            <div class="meta-chip">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+              <span data-i18n="metaEffective">Effective: November 26, 2026</span>
+            </div>
+            <div class="meta-chip">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="m9 12 2 2 4-4"/></svg>
+              <span data-i18n="metaPlay">Google Play 2026 Compliant</span>
+            </div>
+            <div class="meta-chip">
+              <code>com.amcorestudios.madrasa1</code>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3D Tilt Interactive Privacy Vault -->
+        <div class="vault-stage" id="vaultStage">
+          <div class="vault-orbit" aria-hidden="true"></div>
+          <div class="vault-card" id="vaultCard">
+            <div class="vault-header">
+              <div class="vault-id">
+                <img src="logo.png" alt="" class="vault-logo">
+                <div>
+                  <strong data-i18n="vaultTitle">Trust &amp; Access Vault</strong>
+                  <span data-i18n="vaultStatus">Role-Scoped Rules Active</span>
+                </div>
+              </div>
+              <div class="vault-shield">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/></svg>
+                <span data-i18n="vaultNoAds">0 Ad SDKs</span>
+              </div>
+            </div>
+
+            <div class="vault-roles" role="tablist" aria-label="Preview privacy by role">
+              <button type="button" class="vault-role-btn active" data-vault-role="guardian" onclick="setVaultRole('guardian')" data-i18n="roleGuardianShort">Guardian</button>
+              <button type="button" class="vault-role-btn" data-vault-role="ustad" onclick="setVaultRole('ustad')" data-i18n="roleUstadShort">Ustad</button>
+              <button type="button" class="vault-role-btn" data-vault-role="admin" onclick="setVaultRole('admin')" data-i18n="roleAdminShort">Muhtamim</button>
+            </div>
+
+            <div class="vault-rows" id="vaultRows"></div>
+          </div>
+
+          <div class="floating-pill pill-top">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--emerald-bright)" stroke-width="2.2"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+            <span data-i18n="pillReceipt">On-Device Receipt Photos</span>
+          </div>
+
+          <div class="floating-pill pill-bottom">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2.2"><circle cx="12" cy="12" r="10"/><path d="m16.24 7.76-2.12 6.36-6.36 2.12 2.12-6.36 6.36-2.12z"/></svg>
+            <span data-i18n="pillLocation">Foreground-Only Qibla</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bento Grid Summary -->
+    <section class="section-block" id="glance">
+      <div class="section-head reveal">
+        <div>
+          <div class="section-kicker" data-i18n="glanceKicker">TRANSPARENCY OVERVIEW</div>
+          <h2 class="section-heading" data-i18n="glanceTitle">Privacy at a Glance</h2>
+        </div>
+        <p class="section-desc" data-i18n="glanceDesc">Every subsystem in Madrasah Hub is audited to collect only what institutional workflows and worship tools strictly require.</p>
+      </div>
+
+      <div class="bento-grid">
+        <article class="spotlight-card bento-card span-4 reveal">
+          <div>
+            <div class="bento-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="m4.93 4.93 14.14 14.14"/></svg>
+            </div>
+            <h3 class="bento-title" data-i18n="b1Title">Zero Ads &amp; Zero Tracking</h3>
+            <p class="bento-desc" data-i18n="b1Desc">No AdMob, no advertising identifiers, no behavioral analytics, and no third-party data brokers. Your madrasah records and daily worship remain private.</p>
+          </div>
+          <span class="bento-tag" data-i18n="b1Tag">100% Ad-Free</span>
+        </article>
+
+        <article class="spotlight-card bento-card span-4 reveal">
+          <div>
+            <div class="bento-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="m9 12 2 2 4-4"/></svg>
+            </div>
+            <h3 class="bento-title" data-i18n="b2Title">Strict Role-Based Rules</h3>
+            <p class="bento-desc" data-i18n="b2Desc">Server-enforced Cloud Firestore security rules strictly isolate Muhtamim, Ustad, and Guardian access so each person sees only authorized records.</p>
+          </div>
+          <span class="bento-tag" data-i18n="b2Tag">Server-Enforced</span>
+        </article>
+
+        <article class="spotlight-card bento-card span-4 reveal">
+          <div>
+            <div class="bento-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+            </div>
+            <h3 class="bento-title" data-i18n="b3Title">On-Device Receipt Photos</h3>
+            <p class="bento-desc" data-i18n="b3Desc">CameraX paper receipt photos stay compressed inside your device's private app directory—never uploaded to Firebase Storage unless you share them via WhatsApp.</p>
+          </div>
+          <span class="bento-tag" data-i18n="b3Tag">Local Storage Only</span>
+        </article>
+
+        <article class="spotlight-card bento-card span-6 reveal">
+          <div>
+            <div class="bento-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <h3 class="bento-title" data-i18n="b4Title">Foreground-Only Location for Worship</h3>
+            <p class="bento-desc" data-i18n="b4Desc">Location is requested only when you tap to detect Qibla, Prayer Times, or Nearby Mosques. No background tracking exists; coordinates are rounded (~100 m) before calling Aladhan.</p>
+          </div>
+          <span class="bento-tag" data-i18n="b4Tag">Zero Background GPS</span>
+        </article>
+
+        <article class="spotlight-card bento-card span-6 reveal">
+          <div>
+            <div class="bento-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            </div>
+            <h3 class="bento-title" data-i18n="b5Title">Offline Cache &amp; Safe Backups</h3>
+            <p class="bento-desc" data-i18n="b5Desc">Offline-first SQLite Room &amp; Firestore cache keeps daily attendance working without internet. Muhtamim Excel/JSON backups automatically strip passwords, PINs, and tokens.</p>
+          </div>
+          <span class="bento-tag" data-i18n="b5Tag">Sanitized Exports</span>
+        </article>
+      </div>
+    </section>
+
+    <!-- Interactive Role Data Matrix -->
+    <section class="section-block reveal">
+      <div class="spotlight-card role-explorer">
+        <div class="role-tabs-wrap">
+          <div>
+            <div class="section-kicker" data-i18n="roleKicker">INTERACTIVE ACCESS EXPLORER</div>
+            <h2 class="section-heading" data-i18n="roleTitle">What Data Applies to Your Role?</h2>
+          </div>
+          <div class="role-tabs" role="tablist" aria-label="Role access explorer">
+            <div class="role-tab-glider" id="roleGlider" aria-hidden="true"></div>
+            <button type="button" class="role-tab" role="tab" aria-selected="true" onclick="selectExplorerRole(0)" data-i18n="roleGuardianShort">Guardian</button>
+            <button type="button" class="role-tab" role="tab" aria-selected="false" onclick="selectExplorerRole(1)" data-i18n="roleUstadShort">Ustad</button>
+            <button type="button" class="role-tab" role="tab" aria-selected="false" onclick="selectExplorerRole(2)" data-i18n="roleAdminShort">Muhtamim</button>
+          </div>
+        </div>
+
+        <div class="role-columns" id="roleColumns"></div>
+      </div>
+    </section>
+
+    <!-- Full Policy Layout -->
+    <div class="policy-layout">
+      <aside class="toc-rail" aria-label="Table of Contents">
+        <div class="toc-title" data-i18n="tocTitle">On This Page</div>
+        <ul class="toc-links" id="tocList">
+          <div class="toc-indicator" id="tocIndicator" aria-hidden="true"></div>
+          <li><a href="#overview" class="toc-link active"><span class="toc-num">01</span><span data-i18n="toc1">Overview &amp; Scope</span></a></li>
+          <li><a href="#roles-auth" class="toc-link"><span class="toc-num">02</span><span data-i18n="toc2">Accounts &amp; Auth</span></a></li>
+          <li><a href="#data-processed" class="toc-link"><span class="toc-num">03</span><span data-i18n="toc3">Institutional Data</span></a></li>
+          <li><a href="#permissions" class="toc-link"><span class="toc-num">04</span><span data-i18n="toc4">App Permissions</span></a></li>
+          <li><a href="#location" class="toc-link"><span class="toc-num">05</span><span data-i18n="toc5">Location &amp; Qibla</span></a></li>
+          <li><a href="#messaging" class="toc-link"><span class="toc-num">06</span><span data-i18n="toc6">Messaging &amp; Receipts</span></a></li>
+          <li><a href="#islamic-services" class="toc-link"><span class="toc-num">07</span><span data-i18n="toc7">Islamic Media &amp; APIs</span></a></li>
+          <li><a href="#payments" class="toc-link"><span class="toc-num">08</span><span data-i18n="toc8">Fee Records Notice</span></a></li>
+          <li><a href="#children" class="toc-link"><span class="toc-num">09</span><span data-i18n="toc9">Children's Privacy</span></a></li>
+          <li><a href="#retention-deletion" class="toc-link"><span class="toc-num">10</span><span data-i18n="toc10">Retention &amp; Deletion</span></a></li>
+        </ul>
+      </aside>
+
+      <div class="policy-stream" id="policyStream">
+        <div class="search-wrap">
+          <svg class="search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          <input type="text" id="policySearch" class="search-field" placeholder="Search privacy policy (e.g., camera, guardian, deletion, location)..." aria-label="Search privacy policy">
+          <div class="search-meta">
+            <span class="search-count" id="searchCount"></span>
+            <button type="button" class="search-clear" id="searchClear" onclick="clearSearch()" data-i18n="searchClear">Clear</button>
+            <span class="kbd-hint">/</span>
+          </div>
+        </div>
+
+        <div class="spotlight-card no-results" id="noResults">
+          <h3 style="margin-bottom: 6px; font-size: 1.1rem;" data-i18n="noResultsTitle">No matching clauses found</h3>
+          <p style="color: var(--muted); font-size: 0.9rem;" data-i18n="noResultsDesc">Try searching for camera, location, guardian, Firebase, WhatsApp, or deletion.</p>
+        </div>
+
+        <article class="spotlight-card policy-block reveal" id="overview">
+          <div class="policy-block-top">
+            <div class="block-num">01</div>
+            <h2 class="block-title" data-i18n="s1Title">Overview &amp; Scope</h2>
+          </div>
+          <p data-i18n-html="s1P1">This Privacy Policy explains how <strong>Madrasah Hub (মাদরাসা হাব)</strong> (Android package <code>com.amcorestudios.madrasa1</code>), developed by <strong>AM Core Studios</strong> ("we", "our", or "us"), collects, stores, uses, and protects information when used by madrasah administrators (Muhtamims), teachers (Ustads), and guardians.</p>
+          <p data-i18n-html="s1P2">Madrasah Hub combines institutional madrasah administration (attendance, student rosters, tuition and fee receipts, exam marksheets, notices, and staff leave) with offline-first Islamic worship and study tools (Quran, Tafsir, Hadith, Qawmi Kitab, Prayer Times, and Qibla).</p>
+          <div class="callout" data-i18n-html="s1Callout"><strong>Core Commitment:</strong> Madrasah Hub contains <strong>no advertisements</strong>, <strong>no ad-network SDKs</strong>, and <strong>no behavioral profiling</strong>. We never sell, rent, or trade student, guardian, or staff information to marketers or data brokers.</div>
+        </article>
+
+        <article class="spotlight-card policy-block reveal" id="roles-auth">
+          <div class="policy-block-top">
+            <div class="block-num">02</div>
+            <h2 class="block-title" data-i18n="s2Title">Accounts, Roles &amp; Authentication</h2>
+          </div>
+          <p data-i18n="s2P1">Access inside Madrasah Hub is strictly role-based and provisioned through Firebase Authentication:</p>
+          <ul class="policy-list">
+            <li data-i18n-html="s2L1"><strong>Muhtamim / Admin:</strong> Authenticates via email and password. Has institutional oversight over classes (jamats), students, staff accounts, fees, exams, notices, settings, and local data exports.</li>
+            <li data-i18n-html="s2L2"><strong>Ustad (Teacher):</strong> Authenticates via office-assigned email and password. Access is scoped by server-enforced Firestore rules strictly to their assigned jamats and specific permissions granted by the Muhtamim (e.g., attendance, messaging, student addition, or fee collection).</li>
+            <li data-i18n-html="s2L3"><strong>Guardian (Parent):</strong> Authenticates using their registered Bangladesh mobile number and a 4–6 digit secret PIN (which they can change anytime inside Settings). Guardians have read-only access limited strictly to their linked child's attendance, fee receipts, notices, and published exam results.</li>
+          </ul>
+          <p data-i18n-html="s2P2">Passwords and guardian PINs are handled by <strong>Firebase Authentication</strong> and are never stored in plain text inside Cloud Firestore or included in exported office backups.</p>
+        </article>
+
+        <article class="spotlight-card policy-block reveal" id="data-processed">
+          <div class="policy-block-top">
+            <div class="block-num">03</div>
+            <h2 class="block-title" data-i18n="s3Title">Institutional &amp; App Data We Process</h2>
+          </div>
+          <p data-i18n="s3P1">Depending on your madrasah's configuration and your assigned role, the app processes the following categories of data:</p>
+          <ul class="policy-list">
+            <li data-i18n-html="s3L1"><strong>Account &amp; Profile Metadata:</strong> Display name, role (<code>admin</code>, <code>ustad</code>, <code>guardian</code>), staff email address, guardian phone number, assigned class IDs, linked student IDs, and active/inactive account status.</li>
+            <li data-i18n-html="s3L2"><strong>Student &amp; Academic Records:</strong> Student name, optional roll number, admission date, jamat/class assignment, monthly tuition rate, guardian name, primary/alternate guardian phone numbers, WhatsApp availability flag, daily attendance records (<code>present</code>, <code>absent</code>, <code>late</code>, <code>leave</code>), class routines, exam subjects, and exam marks.</li>
+            <li data-i18n-html="s3L3"><strong>Tuition &amp; Fee Collection Logs:</strong> Tuition payment months, fee types, amounts, payment dates, payment method labels (Cash, bKash, Nagad, Rocket, Bank), receipt numbers, and optional notes recorded by authorized staff.</li>
+            <li data-i18n-html="s3L4"><strong>Staff Leave, Notices &amp; Audit Logs:</strong> Leave dates and reason categories (<code>illness</code>, <code>family</code>, <code>emergency</code>, <code>travel</code>, <code>other</code>), madrasah notices, message dispatch history, and staff activity logs for administrative accountability.</li>
+            <li data-i18n-html="s3L5"><strong>On-Device Worship &amp; Reading Preferences:</strong> Quran reading progress, bookmarks, ayah notes, hifz practice state, tasbih counts, daily prayer tracker masks, typography/theme preferences, and downloaded audio/kitab files — stored locally via Android Room, SharedPreferences, and Jetpack DataStore.</li>
+          </ul>
+        </article>
+
+        <article class="spotlight-card policy-block reveal" id="permissions">
+          <div class="policy-block-top">
+            <div class="block-num">04</div>
+            <h2 class="block-title" data-i18n="s4Title">Android System Permissions</h2>
+          </div>
+          <p data-i18n="s4P1">Madrasah Hub requests runtime permissions only at the exact moment you use a corresponding feature. Click any permission badge to copy its Android identifier:</p>
+
+          <div class="perm-list">
+            <div class="perm-item">
+              <div class="perm-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+              </div>
+              <div class="perm-body">
+                <h4><span data-i18n="pCamTitle">Camera</span> <span class="perm-code" onclick="copyText('android.permission.CAMERA')">CAMERA</span></h4>
+                <p data-i18n="pCamDesc">Used exclusively inside the in-app Receipt Camera screen so authorized staff can photograph paper tuition/fee receipts. Captured images are compressed and stored strictly inside your device's private app storage — never uploaded to cloud servers.</p>
+              </div>
+              <span class="perm-pill" data-i18n="pCamPill">On-Device Only</span>
+            </div>
+
+            <div class="perm-item">
+              <div class="perm-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+              </div>
+              <div class="perm-body">
+                <h4><span data-i18n="pLocTitle">Location (Fine &amp; Coarse)</span> <span class="perm-code" onclick="copyText('ACCESS_FINE_LOCATION')">ACCESS_FINE_LOCATION</span></h4>
+                <p data-i18n="pLocDesc">Requested strictly in the foreground when you calibrate the Qibla compass, refresh Prayer Times, or search Nearby Mosques. Alternatively, you can pick any Bangladesh district manually without granting location permission.</p>
+              </div>
+              <span class="perm-pill" data-i18n="pLocPill">Foreground Only</span>
+            </div>
+
+            <div class="perm-item">
+              <div class="perm-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+              </div>
+              <div class="perm-body">
+                <h4><span data-i18n="pNotifTitle">Notifications</span> <span class="perm-code" onclick="copyText('POST_NOTIFICATIONS')">POST_NOTIFICATIONS</span></h4>
+                <p data-i18n="pNotifDesc">Used for local prayer/Quran reminders and optional Firebase Cloud Messaging (FCM) alerts for attendance updates or madrasah notices when configured.</p>
+              </div>
+              <span class="perm-pill" data-i18n="pNotifPill">Alerts &amp; Prayer</span>
+            </div>
+
+            <div class="perm-item">
+              <div class="perm-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/></svg>
+              </div>
+              <div class="perm-body">
+                <h4><span data-i18n="pMediaTitle">Foreground Media Playback</span> <span class="perm-code" onclick="copyText('FOREGROUND_SERVICE_MEDIA_PLAYBACK')">MEDIA_PLAYBACK</span></h4>
+                <p data-i18n="pMediaDesc">Allows Media3 ExoPlayer to stream or play downloaded Quran audio recitations smoothly in the background with lock-screen controls.</p>
+              </div>
+              <span class="perm-pill" data-i18n="pMediaPill">Quran Audio</span>
+            </div>
+
+            <div class="perm-item">
+              <div class="perm-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg>
+              </div>
+              <div class="perm-body">
+                <h4><span data-i18n="pNetTitle">Network, Wake Lock &amp; Vibrate</span> <span class="perm-code" onclick="copyText('INTERNET / WAKE_LOCK')">INTERNET</span></h4>
+                <p data-i18n="pNetDesc">Used to synchronize Firestore madrasah records, download optional Quran/Hadith/Kitab packs, play live Makkah/Madinah streams, keep the screen awake while reading if enabled, and provide subtle Tasbih/UI haptics.</p>
+              </div>
+              <span class="perm-pill" data-i18n="pNetPill">Sync &amp; Utility</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="spotlight-card policy-block reveal" id="location">
+          <div class="policy-block-top">
+            <div class="block-num">05</div>
+            <h2 class="block-title" data-i18n="s5Title">Location, Qibla, Prayer Times &amp; Mosques</h2>
+          </div>
+          <p data-i18n="s5P1">Madrasah Hub never runs background location tracking, geofencing, or location history logging. A single foreground GPS/network fix is requested only when you tap to locate inside Qibla, Prayer Times, or Nearby Mosques.</p>
+          <ul class="policy-list">
+            <li data-i18n-html="s5L1"><strong>Prayer Times (Aladhan API):</strong> Coordinates are rounded to approximately <strong>100 meters</strong> (<code>%.3f</code> precision) along with your device timezone when querying <code>api.aladhan.com</code>, then cached on-device per month.</li>
+            <li data-i18n-html="s5L2"><strong>Nearby Mosques (OpenStreetMap):</strong> Queries public OpenStreetMap Overpass API mirrors (<code>overpass.private.coffee</code>, <code>maps.mail.ru</code>, <code>overpass-api.de</code>) and caches nearby mosque results locally. Opening directions hands off to your chosen maps app (e.g., Google Maps).</li>
+          </ul>
+        </article>
+
+        <article class="spotlight-card policy-block reveal" id="messaging">
+          <div class="policy-block-top">
+            <div class="block-num">06</div>
+            <h2 class="block-title" data-i18n="s6Title">Guardian Messaging, WhatsApp, SMS &amp; Receipts</h2>
+          </div>
+          <p data-i18n="s6P1">When staff send attendance alerts, dues reminders, notices, marksheet PDFs, or fee receipts:</p>
+          <ul class="policy-list">
+            <li data-i18n-html="s6L1"><strong>User-Initiated Local Dispatch:</strong> In standard mode, Madrasah Hub queries whether WhatsApp or WhatsApp Business is installed and opens a pre-filled <code>wa.me</code> chat, native SMS composer, or Android Share Sheet one guardian at a time—strictly upon staff action.</li>
+            <li data-i18n-html="s6L2"><strong>Optional Server-Side Cloud Functions Backend:</strong> If an institution deploys the optional Firebase Cloud Functions + Neon PostgreSQL API, attendance/notice templates can be dispatched via Meta WhatsApp Cloud API, an institutional Bangladesh SMS gateway, or FCM push notifications using stored device tokens.</li>
+            <li data-i18n-html="s6L3"><strong>No Contact List Harvesting:</strong> The app never accesses or uploads your phone's address book or contacts list; only guardian phone numbers explicitly entered into student records by madrasah staff are used.</li>
+          </ul>
+        </article>
+
+        <article class="spotlight-card policy-block reveal" id="islamic-services">
+          <div class="policy-block-top">
+            <div class="block-num">07</div>
+            <h2 class="block-title" data-i18n="s7Title">Islamic Content, Media Streams &amp; Third-Party Services</h2>
+          </div>
+          <p data-i18n="s7P1">Core Quran Mushafs, translations, duas, and foundational Islamic guides are bundled offline inside the app. When you stream or download optional online resources, your device connects directly to:</p>
+          <ul class="policy-list">
+            <li data-i18n-html="s7L1"><strong>Google Firebase:</strong> Firebase Authentication, Cloud Firestore (with local persistence), and Firebase Cloud Messaging for secure institutional login, data sync, and notifications.</li>
+            <li data-i18n-html="s7L2"><strong>Quran, Tafsir &amp; Recitation Providers:</strong> <code>api.quran.com</code>, <code>api.alquran.cloud</code>, <code>everyayah.com</code>, and <code>islamicapi.com</code> (Ruqyah audio) when downloading recitations, tafsir, or word meanings.</li>
+            <li data-i18n-html="s7L3"><strong>Qawmi Kitab &amp; Hadith Packs:</strong> Public content packs hosted via GitHub (<code>Arifmullikh/annur-content</code>, <code>Arifmullikh/qawmi-kitab</code>) for optional offline PDF/book downloads.</li>
+            <li data-i18n-html="s7L4"><strong>Live Makkah &amp; Madinah Broadcasts:</strong> Saudi Broadcasting Authority (SBA) Quran TV and Sunnah TV HLS streams distributed via Globecast/Akamai CDN (<code>cdn-globecast.akamaized.net</code>).</li>
+          </ul>
+        </article>
+
+        <article class="spotlight-card policy-block reveal" id="payments">
+          <div class="policy-block-top">
+            <div class="block-num">08</div>
+            <h2 class="block-title" data-i18n="s8Title">Tuition &amp; Fee Ledger Transparency</h2>
+          </div>
+          <div class="callout" data-i18n-html="s8Callout"><strong>Important Clarification:</strong> Madrasah Hub provides a <strong>bookkeeping ledger and receipt generator</strong> for cash, bKash, Nagad, Rocket, and bank payments already settled with the madrasah office. The app does <strong>not</strong> process live card transactions, mobile-banking PINs, OTPs, or payment gateway credentials.</div>
+        </article>
+
+        <article class="spotlight-card policy-block reveal" id="children">
+          <div class="policy-block-top">
+            <div class="block-num">09</div>
+            <h2 class="block-title" data-i18n="s9Title">Children's &amp; Student Privacy</h2>
+          </div>
+          <p data-i18n="s9P1">Madrasah Hub is built for adult administrators, ustads, and parents/guardians. Students do not create self-service public accounts, and the app contains zero advertisements, zero social feeds, and zero unmoderated chat.</p>
+          <p data-i18n="s9P2">Student enrollment, attendance, fee, and academic records are entered solely by authorized madrasah officials and are accessible strictly to authorized institutional staff and the linked guardian in accordance with applicable privacy standards.</p>
+        </article>
+
+        <article class="spotlight-card policy-block reveal" id="retention-deletion">
+          <div class="policy-block-top">
+            <div class="block-num">10</div>
+            <h2 class="block-title" data-i18n="s10Title">Data Retention, Backups &amp; Deletion Rights</h2>
+          </div>
+          <p data-i18n="s10P1">You and your madrasah retain control over stored records:</p>
+          <ul class="policy-list">
+            <li data-i18n-html="s10L1"><strong>Institutional Record Management:</strong> Muhtamims can deactivate ustad accounts, archive or permanently delete student profiles, and export sanitized Excel (<code>.xlsx</code>) or JSON backups locally via <em>Settings → Data Backup</em>.</li>
+            <li data-i18n-html="s10L2"><strong>Local Device Wipe:</strong> Uninstalling Madrasah Hub or clearing Android App Storage permanently removes all cached local databases, preferences, downloaded books/audio, and on-device receipt photos.</li>
+            <li data-i18n-html="s10L3"><strong>Account &amp; Cloud Data Deletion:</strong> To request removal of your Firebase Auth account or personal profile records, contact your Madrasah office or use our dedicated <a href="account-deletion.html">Account Deletion Portal</a>. Requests sent to <strong>arifmullikh.personal@gmail.com</strong> are verified and processed within <strong>48 hours</strong> (subject to institutional retention of required financial/audit ledgers where applicable).</li>
+            <li data-i18n-html="s10L4"><strong>Policy Updates:</strong> Material updates to this policy will be posted on this page with an updated effective date.</li>
+          </ul>
+        </article>
+
+        <section class="spotlight-card policy-block contact-banner reveal" id="contact">
+          <h3 data-i18n="contactTitle">Questions or Privacy Requests?</h3>
+          <p data-i18n="contactDesc">If you are a Muhtamim, Ustad, Guardian, or Play Store reviewer with questions about data handling, security rules, or deletion requests, reach AM Core Studios directly.</p>
+          <div>
+            <button type="button" class="email-pill" onclick="copyText('arifmullikh.personal@gmail.com')" title="Click to copy email">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+              <span>arifmullikh.personal@gmail.com</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+            </button>
+          </div>
+          <div class="contact-actions">
+            <a href="mailto:arifmullikh.personal@gmail.com?subject=Madrasah%20Hub%20Privacy%20Inquiry" class="cta-primary" data-i18n="contactEmailBtn">Email Developer Support</a>
+            <a href="account-deletion.html" class="cta-secondary" data-i18n="contactDeleteBtn">Open Deletion Portal</a>
+          </div>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <div data-i18n-html="footerCopy">© 2026 <strong>Madrasah Hub (মাদরাসা হাব)</strong> · Built by <strong>AM Core Studios</strong>. All rights reserved.</div>
+      <ul class="footer-links">
+        <li><a href="#overview" data-i18n="fOverview">Overview</a></li>
+        <li><a href="#permissions" data-i18n="fPerms">Permissions</a></li>
+        <li><a href="account-deletion.html" data-i18n="fDelete">Account Deletion</a></li>
+        <li><a href="mailto:arifmullikh.personal@gmail.com" data-i18n="fContact">Contact</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script>
+    const I18N = {
+      en: {
+        brandName: "Madrasah Hub",
+        brandBadge: "Official",
+        brandSub: "AM Core Studios · Privacy Architecture",
+        navDelete: "Delete Account",
+        navPrint: "Print",
+        heroEyebrow: "MADRASAH HUB · PRIVACY & TRUST",
+        heroTitle: 'Your Madrasah.<br><span class="serif-accent">Protected</span> by Design.',
+        heroSubtitle: "A clear, verifiable guide to how Madrasah Hub (মাদরাসা হাব) safeguards student records, guardian access, attendance alerts, fee receipts, and offline Islamic study tools — with zero ads and zero third-party tracking.",
+        heroExplore: "Explore Privacy Architecture",
+        heroDeletion: "Account Deletion Portal",
+        metaEffective: "Effective: November 26, 2026",
+        metaPlay: "Google Play 2026 Compliant",
+        vaultTitle: "Trust & Access Vault",
+        vaultStatus: "Role-Scoped Rules Active",
+        vaultNoAds: "0 Ad SDKs",
+        roleGuardianShort: "Guardian",
+        roleUstadShort: "Ustad",
+        roleAdminShort: "Muhtamim",
+        pillReceipt: "On-Device Receipt Photos",
+        pillLocation: "Foreground-Only Qibla",
+        glanceKicker: "TRANSPARENCY OVERVIEW",
+        glanceTitle: "Privacy at a Glance",
+        glanceDesc: "Every subsystem in Madrasah Hub is audited to collect only what institutional workflows and worship tools strictly require.",
+        b1Title: "Zero Ads & Zero Tracking",
+        b1Desc: "No AdMob, no advertising identifiers, no behavioral analytics, and no third-party data brokers. Your madrasah records and daily worship remain private.",
+        b1Tag: "100% Ad-Free",
+        b2Title: "Strict Role-Based Rules",
+        b2Desc: "Server-enforced Cloud Firestore security rules strictly isolate Muhtamim, Ustad, and Guardian access so each person sees only authorized records.",
+        b2Tag: "Server-Enforced",
+        b3Title: "On-Device Receipt Photos",
+        b3Desc: "CameraX paper receipt photos stay compressed inside your device's private app directory—never uploaded to Firebase Storage unless you share them via WhatsApp.",
+        b3Tag: "Local Storage Only",
+        b4Title: "Foreground-Only Location for Worship",
+        b4Desc: "Location is requested only when you tap to detect Qibla, Prayer Times, or Nearby Mosques. No background tracking exists; coordinates are rounded (~100 m) before calling Aladhan.",
+        b4Tag: "Zero Background GPS",
+        b5Title: "Offline Cache & Safe Backups",
+        b5Desc: "Offline-first SQLite Room & Firestore cache keeps daily attendance working without internet. Muhtamim Excel/JSON backups automatically strip passwords, PINs, and tokens.",
+        b5Tag: "Sanitized Exports",
+        roleKicker: "INTERACTIVE ACCESS EXPLORER",
+        roleTitle: "What Data Applies to Your Role?",
+        tocTitle: "On This Page",
+        toc1: "Overview & Scope",
+        toc2: "Accounts & Auth",
+        toc3: "Institutional Data",
+        toc4: "App Permissions",
+        toc5: "Location & Qibla",
+        toc6: "Messaging & Receipts",
+        toc7: "Islamic Media & APIs",
+        toc8: "Fee Records Notice",
+        toc9: "Children's Privacy",
+        toc10: "Retention & Deletion",
+        searchPlaceholder: "Search privacy policy (e.g., camera, guardian, deletion, location)...",
+        searchClear: "Clear",
+        noResultsTitle: "No matching clauses found",
+        noResultsDesc: "Try searching for camera, location, guardian, Firebase, WhatsApp, or deletion.",
+        s1Title: "Overview & Scope",
+        s1P1: 'This Privacy Policy explains how <strong>Madrasah Hub (মাদরাসা হাব)</strong> (Android package <code>com.amcorestudios.madrasa1</code>), developed by <strong>AM Core Studios</strong> ("we", "our", or "us"), collects, stores, uses, and protects information when used by madrasah administrators (Muhtamims), teachers (Ustads), and guardians.',
+        s1P2: "Madrasah Hub combines institutional madrasah administration (attendance, student rosters, tuition and fee receipts, exam marksheets, notices, and staff leave) with offline-first Islamic worship and study tools (Quran, Tafsir, Hadith, Qawmi Kitab, Prayer Times, and Qibla).",
+        s1Callout: "<strong>Core Commitment:</strong> Madrasah Hub contains <strong>no advertisements</strong>, <strong>no ad-network SDKs</strong>, and <strong>no behavioral profiling</strong>. We never sell, rent, or trade student, guardian, or staff information to marketers or data brokers.",
+        s2Title: "Accounts, Roles & Authentication",
+        s2P1: "Access inside Madrasah Hub is strictly role-based and provisioned through Firebase Authentication:",
+        s2L1: "<strong>Muhtamim / Admin:</strong> Authenticates via email and password. Has institutional oversight over classes (jamats), students, staff accounts, fees, exams, notices, settings, and local data exports.",
+        s2L2: "<strong>Ustad (Teacher):</strong> Authenticates via office-assigned email and password. Access is scoped by server-enforced Firestore rules strictly to their assigned jamats and specific permissions granted by the Muhtamim (e.g., attendance, messaging, student addition, or fee collection).",
+        s2L3: "<strong>Guardian (Parent):</strong> Authenticates using their registered Bangladesh mobile number and a 4–6 digit secret PIN (which they can change anytime inside Settings). Guardians have read-only access limited strictly to their linked child's attendance, fee receipts, notices, and published exam results.",
+        s2P2: "Passwords and guardian PINs are handled by <strong>Firebase Authentication</strong> and are never stored in plain text inside Cloud Firestore or included in exported office backups.",
+        s3Title: "Institutional & App Data We Process",
+        s3P1: "Depending on your madrasah's configuration and your assigned role, the app processes the following categories of data:",
+        s3L1: "<strong>Account & Profile Metadata:</strong> Display name, role (<code>admin</code>, <code>ustad</code>, <code>guardian</code>), staff email address, guardian phone number, assigned class IDs, linked student IDs, and active/inactive account status.",
+        s3L2: "<strong>Student & Academic Records:</strong> Student name, optional roll number, admission date, jamat/class assignment, monthly tuition rate, guardian name, primary/alternate guardian phone numbers, WhatsApp availability flag, daily attendance records (<code>present</code>, <code>absent</code>, <code>late</code>, <code>leave</code>), class routines, exam subjects, and exam marks.",
+        s3L3: "<strong>Tuition & Fee Collection Logs:</strong> Tuition payment months, fee types, amounts, payment dates, payment method labels (Cash, bKash, Nagad, Rocket, Bank), receipt numbers, and optional notes recorded by authorized staff.",
+        s3L4: "<strong>Staff Leave, Notices & Audit Logs:</strong> Leave dates and reason categories (<code>illness</code>, <code>family</code>, <code>emergency</code>, <code>travel</code>, <code>other</code>), madrasah notices, message dispatch history, and staff activity logs for administrative accountability.",
+        s3L5: "<strong>On-Device Worship & Reading Preferences:</strong> Quran reading progress, bookmarks, ayah notes, hifz practice state, tasbih counts, daily prayer tracker masks, typography/theme preferences, and downloaded audio/kitab files — stored locally via Android Room, SharedPreferences, and Jetpack DataStore.",
+        s4Title: "Android System Permissions",
+        s4P1: "Madrasah Hub requests runtime permissions only at the exact moment you use a corresponding feature. Click any permission badge to copy its Android identifier:",
+        pCamTitle: "Camera",
+        pCamDesc: "Used exclusively inside the in-app Receipt Camera screen so authorized staff can photograph paper tuition/fee receipts. Captured images are compressed and stored strictly inside your device's private app storage — never uploaded to cloud servers.",
+        pCamPill: "On-Device Only",
+        pLocTitle: "Location (Fine & Coarse)",
+        pLocDesc: "Requested strictly in the foreground when you calibrate the Qibla compass, refresh Prayer Times, or search Nearby Mosques. Alternatively, you can pick any Bangladesh district manually without granting location permission.",
+        pLocPill: "Foreground Only",
+        pNotifTitle: "Notifications",
+        pNotifDesc: "Used for local prayer/Quran reminders and optional Firebase Cloud Messaging (FCM) alerts for attendance updates or madrasah notices when configured.",
+        pNotifPill: "Alerts & Prayer",
+        pMediaTitle: "Foreground Media Playback",
+        pMediaDesc: "Allows Media3 ExoPlayer to stream or play downloaded Quran audio recitations smoothly in the background with lock-screen controls.",
+        pMediaPill: "Quran Audio",
+        pNetTitle: "Network, Wake Lock & Vibrate",
+        pNetDesc: "Used to synchronize Firestore madrasah records, download optional Quran/Hadith/Kitab packs, play live Makkah/Madinah streams, keep the screen awake while reading if enabled, and provide subtle Tasbih/UI haptics.",
+        pNetPill: "Sync & Utility",
+        s5Title: "Location, Qibla, Prayer Times & Mosques",
+        s5P1: "Madrasah Hub never runs background location tracking, geofencing, or location history logging. A single foreground GPS/network fix is requested only when you tap to locate inside Qibla, Prayer Times, or Nearby Mosques.",
+        s5L1: "<strong>Prayer Times (Aladhan API):</strong> Coordinates are rounded to approximately <strong>100 meters</strong> (<code>%.3f</code> precision) along with your device timezone when querying <code>api.aladhan.com</code>, then cached on-device per month.",
+        s5L2: "<strong>Nearby Mosques (OpenStreetMap):</strong> Queries public OpenStreetMap Overpass API mirrors (<code>overpass.private.coffee</code>, <code>maps.mail.ru</code>, <code>overpass-api.de</code>) and caches nearby mosque results locally. Opening directions hands off to your chosen maps app (e.g., Google Maps).",
+        s6Title: "Guardian Messaging, WhatsApp, SMS & Receipts",
+        s6P1: "When staff send attendance alerts, dues reminders, notices, marksheet PDFs, or fee receipts:",
+        s6L1: "<strong>User-Initiated Local Dispatch:</strong> In standard mode, Madrasah Hub queries whether WhatsApp or WhatsApp Business is installed and opens a pre-filled <code>wa.me</code> chat, native SMS composer, or Android Share Sheet one guardian at a time—strictly upon staff action.",
+        s6L2: "<strong>Optional Server-Side Cloud Functions Backend:</strong> If an institution deploys the optional Firebase Cloud Functions + Neon PostgreSQL API, attendance/notice templates can be dispatched via Meta WhatsApp Cloud API, an institutional Bangladesh SMS gateway, or FCM push notifications using stored device tokens.",
+        s6L3: "<strong>No Contact List Harvesting:</strong> The app never accesses or uploads your phone's address book or contacts list; only guardian phone numbers explicitly entered into student records by madrasah staff are used.",
+        s7Title: "Islamic Content, Media Streams & Third-Party Services",
+        s7P1: "Core Quran Mushafs, translations, duas, and foundational Islamic guides are bundled offline inside the app. When you stream or download optional online resources, your device connects directly to:",
+        s7L1: "<strong>Google Firebase:</strong> Firebase Authentication, Cloud Firestore (with local persistence), and Firebase Cloud Messaging for secure institutional login, data sync, and notifications.",
+        s7L2: "<strong>Quran, Tafsir & Recitation Providers:</strong> <code>api.quran.com</code>, <code>api.alquran.cloud</code>, <code>everyayah.com</code>, and <code>islamicapi.com</code> (Ruqyah audio) when downloading recitations, tafsir, or word meanings.",
+        s7L3: "<strong>Qawmi Kitab & Hadith Packs:</strong> Public content packs hosted via GitHub (<code>Arifmullikh/annur-content</code>, <code>Arifmullikh/qawmi-kitab</code>) for optional offline PDF/book downloads.",
+        s7L4: "<strong>Live Makkah & Madinah Broadcasts:</strong> Saudi Broadcasting Authority (SBA) Quran TV and Sunnah TV HLS streams distributed via Globecast/Akamai CDN (<code>cdn-globecast.akamaized.net</code>).",
+        s8Title: "Tuition & Fee Ledger Transparency",
+        s8Callout: "<strong>Important Clarification:</strong> Madrasah Hub provides a <strong>bookkeeping ledger and receipt generator</strong> for cash, bKash, Nagad, Rocket, and bank payments already settled with the madrasah office. The app does <strong>not</strong> process live card transactions, mobile-banking PINs, OTPs, or payment gateway credentials.",
+        s9Title: "Children's & Student Privacy",
+        s9P1: "Madrasah Hub is built for adult administrators, ustads, and parents/guardians. Students do not create self-service public accounts, and the app contains zero advertisements, zero social feeds, and zero unmoderated chat.",
+        s9P2: "Student enrollment, attendance, fee, and academic records are entered solely by authorized madrasah officials and are accessible strictly to authorized institutional staff and the linked guardian in accordance with applicable privacy standards.",
+        s10Title: "Data Retention, Backups & Deletion Rights",
+        s10P1: "You and your madrasah retain control over stored records:",
+        s10L1: "<strong>Institutional Record Management:</strong> Muhtamims can deactivate ustad accounts, archive or permanently delete student profiles, and export sanitized Excel (<code>.xlsx</code>) or JSON backups locally via <em>Settings → Data Backup</em>.",
+        s10L2: "<strong>Local Device Wipe:</strong> Uninstalling Madrasah Hub or clearing Android App Storage permanently removes all cached local databases, preferences, downloaded books/audio, and on-device receipt photos.",
+        s10L3: '<strong>Account & Cloud Data Deletion:</strong> To request removal of your Firebase Auth account or personal profile records, contact your Madrasah office or use our dedicated <a href="account-deletion.html">Account Deletion Portal</a>. Requests sent to <strong>arifmullikh.personal@gmail.com</strong> are verified and processed within <strong>48 hours</strong> (subject to institutional retention of required financial/audit ledgers where applicable).',
+        s10L4: "<strong>Policy Updates:</strong> Material updates to this policy will be posted on this page with an updated effective date.",
+        contactTitle: "Questions or Privacy Requests?",
+        contactDesc: "If you are a Muhtamim, Ustad, Guardian, or Play Store reviewer with questions about data handling, security rules, or deletion requests, reach AM Core Studios directly.",
+        contactEmailBtn: "Email Developer Support",
+        contactDeleteBtn: "Open Deletion Portal",
+        footerCopy: "© 2026 <strong>Madrasah Hub (মাদরাসা হাব)</strong> · Built by <strong>AM Core Studios</strong>. All rights reserved.",
+        fOverview: "Overview",
+        fPerms: "Permissions",
+        fDelete: "Account Deletion",
+        fContact: "Contact",
+        copied: "Copied to clipboard:"
+      },
+      bn: {
+        brandName: "মাদরাসা হাব",
+        brandBadge: "অফিশিয়াল",
+        brandSub: "AM Core Studios · গোপনীয়তা নীতি",
+        navDelete: "অ্যাকাউন্ট ডিলিট",
+        navPrint: "প্রিন্ট",
+        heroEyebrow: "মাদরাসা হাব · গোপনীয়তা ও নিরাপত্তা",
+        heroTitle: 'আপনার মাদরাসার তথ্য।<br><span class="serif-accent">আমানতের সাথে</span> সুরক্ষিত।',
+        heroSubtitle: "মাদরাসা হাব কীভাবে ছাত্রদের রেকর্ড, অভিভাবক প্রবেশাধিকার, হাজিরা বার্তা, বেতন রসিদ ও অফলাইন ইসলামিক ইবাদত-অধ্যয়ন সুরক্ষিত রাখে—তার স্বচ্ছ ব্যাখ্যা। সম্পূর্ণ বিজ্ঞাপন ও ট্র্যাকারমুক্ত।",
+        heroExplore: "নীতিমালা দেখুন",
+        heroDeletion: "অ্যাকাউন্ট ডিলিট পোর্টাল",
+        metaEffective: "কার্যকর তারিখ: ২৬ নভেম্বর ২০২৬",
+        metaPlay: "Google Play ২০২৬ সম্মত",
+        vaultTitle: "ট্রাস্ট ও অ্যাক্সেস ভল্ট",
+        vaultStatus: "ভূমিকাভিত্তিক নিয়ম সক্রিয়",
+        vaultNoAds: "বিজ্ঞাপনমুক্ত",
+        roleGuardianShort: "অভিভাবক",
+        roleUstadShort: "উস্তাদ",
+        roleAdminShort: "মুহতামিম",
+        pillReceipt: "ডিভাইসেই রসিদের ছবি",
+        pillLocation: "শুধু ফোরগ্রাউন্ডে কিবলা",
+        glanceKicker: "স্বচ্ছতার সারসংক্ষেপ",
+        glanceTitle: "এক নজরে গোপনীয়তা",
+        glanceDesc: "মাদরাসা হাব-এর প্রতিটি অংশ শুধু মাদরাসা পরিচালনা ও ইবাদত সহায়ক কাজের জন্য প্রয়োজনীয় তথ্যই ব্যবহার করে।",
+        b1Title: "১০০% বিজ্ঞাপন ও ট্র্যাকারমুক্ত",
+        b1Desc: "কোনো AdMob, অ্যাডভার্টাইজিং আইডি, আচরণগত অ্যানালিটিক্স বা থার্ড-পার্টি ডেটা ব্রোকার নেই। মাদরাসার তথ্য ও ইবাদত সম্পূর্ণ নিরাপদ।",
+        b1Tag: "বিজ্ঞাপনমুক্ত",
+        b2Title: "কঠোর ভূমিকাভিত্তিক নিরাপত্তা",
+        b2Desc: "সার্ভার-নিয়ন্ত্রিত Cloud Firestore নিয়ম মুহতামিম, উস্তাদ ও অভিভাবকের প্রবেশাধিকার আলাদা রাখে—প্রত্যেকে কেবল অনুমোদিত তথ্যই দেখেন।",
+        b2Tag: "সার্ভার-সুরক্ষিত",
+        b3Title: "ডিভাইসেই রসিদের ছবি",
+        b3Desc: "CameraX দিয়ে তোলা কাগজের রসিদের ছবি সংকুচিত হয়ে ফোনের নিজস্ব প্রাইভেট ফোল্ডারে থাকে; আপনি নিজে হোয়াটসঅ্যাপে না পাঠালে ক্লাউডে যায় না।",
+        b3Tag: "শুধু লোকাল স্টোরেজ",
+        b4Title: "শুধু ফোরগ্রাউন্ডে লোকেশন",
+        b4Desc: "কিবলা কম্পাস, নামাজের সময় বা নিকটস্থ মসজিদ খুঁজতে চাপ দিলেই কেবল ফোরগ্রাউন্ডে লোকেশন নেওয়া হয়। ব্যাকগ্রাউন্ডে কোনো ট্র্যাকিং হয় না।",
+        b4Tag: "ব্যাকগ্রাউন্ড GPS নেই",
+        b5Title: "অফলাইন ক্যাশ ও নিরাপদ ব্যাকআপ",
+        b5Desc: "অফলাইন Room ও Firestore ক্যাশ ইন্টারনেট ছাড়াও কাজ চালিয়ে যায়। মুহতামিমের Excel/JSON ব্যাকআপ থেকে পাসওয়ার্ড, পিন ও টোকেন স্বয়ংক্রিয়ভাবে বাদ দেওয়া হয়।",
+        b5Tag: "সুরক্ষিত ব্যাকআপ",
+        roleKicker: "ভূমিকাভিত্তিক তথ্য বিশ্লেষণ",
+        roleTitle: "আপনার ভূমিকার জন্য কোন তথ্য প্রযোজ্য?",
+        tocTitle: "এই পাতায়",
+        toc1: "পরিচিতি ও পরিধি",
+        toc2: "অ্যাকাউন্ট ও লগইন",
+        toc3: "সংরক্ষিত তথ্য",
+        toc4: "অ্যাপের অনুমতি",
+        toc5: "লোকেশন ও কিবলা",
+        toc6: "বার্তা ও রসিদ",
+        toc7: "ইসলামিক মিডিয়া",
+        toc8: "ফি ও পেমেন্ট",
+        toc9: "শিশুদের গোপনীয়তা",
+        toc10: "সংরক্ষণ ও ডিলিট",
+        searchPlaceholder: "গোপনীয়তা নীতি খুঁজুন (যেমন: ক্যামেরা, অভিভাবক, লোকেশন, ডিলিট)...",
+        searchClear: "মুছুন",
+        noResultsTitle: "কোনো মিল পাওয়া যায়নি",
+        noResultsDesc: "ক্যামেরা, লোকেশন, অভিভাবক, Firebase, WhatsApp বা ডিলিট লিখে চেষ্টা করুন।",
+        s1Title: "পরিচিতি ও পরিধি",
+        s1P1: 'এই গোপনীয়তা নীতি ব্যাখ্যা করে কীভাবে <strong>AM Core Studios</strong> নির্মিত <strong>মাদরাসা হাব (Madrasah Hub)</strong> (প্যাকেজ: <code>com.amcorestudios.madrasa1</code>) মুহতামিম, উস্তাদ ও অভিভাবকদের তথ্য সংগ্রহ, সংরক্ষণ ও সুরক্ষিত করে।',
+        s1P2: "মাদরাসা হাব প্রাতিষ্ঠানিক মাদরাসা ব্যবস্থাপনা (হাজিরা, ছাত্র তালিকা, বেতন-ফি রসিদ, পরীক্ষার মার্কশিট, নোটিশ ও স্টাফ ছুটি) এবং অফলাইন-ফার্স্ট ইসলামিক অধ্যয়ন (কুরআন, তাফসির, হাদিস, কওমী কিতাব, নামাজের সময় ও কিবলা) একত্রে প্রদান করে।",
+        s1Callout: "<strong>মূল অঙ্গীকার:</strong> মাদরাসা হাব-এ কোনো <strong>বিজ্ঞাপন</strong>, <strong>বিজ্ঞাপন SDK</strong> বা <strong>ইউজার প্রোফাইলিং</strong> নেই। আমরা কখনো ছাত্র, অভিভাবক বা স্টাফদের তথ্য বিক্রি বা বাণিজ্যিকভাবে হস্তান্তর করি না।",
+        s2Title: "অ্যাকাউন্ট, ভূমিকা ও প্রমাণীকরণ",
+        s2P1: "মাদরাসা হাব-এ প্রবেশাধিকার সম্পূর্ণ ভূমিকাভিত্তিক এবং Firebase Authentication-এর মাধ্যমে পরিচালিত:",
+        s2L1: "<strong>মুহতামিম / অ্যাডমিন:</strong> ইমেইল ও পাসওয়ার্ড দিয়ে লগইন করেন। জামাত, ছাত্র, উস্তাদ অ্যাকাউন্ট, বেতন-ফি, পরীক্ষা, নোটিশ, সেটিংস ও লোকাল ডেটা ব্যাকআপ পরিচালনা করেন।",
+        s2L2: "<strong>উস্তাদ (শিক্ষক):</strong> অফিস-প্রদত্ত ইমেইল ও পাসওয়ার্ড দিয়ে লগইন করেন। Firestore নিরাপত্তা নিয়ম উস্তাদের প্রবেশাধিকার কেবল তাঁর নির্ধারিত জামাত ও মুহতামিম-প্রদত্ত অনুমতির মধ্যে সীমাবদ্ধ রাখে।",
+        s2L3: "<strong>অভিভাবক:</strong> নিবন্ধিত বাংলাদেশী মোবাইল নম্বর এবং ৪–৬ সংখ্যার গোপন PIN দিয়ে প্রবেশ করেন (সেটিংস থেকে পিন বদলানো যায়)। অভিভাবক কেবল নিজ সন্তানের হাজিরা, বেতন রসিদ, নোটিশ ও প্রকাশিত রেজাল্ট শুধু দেখতে পারেন।",
+        s2P2: "পাসওয়ার্ড ও অভিভাবক PIN কেবল <strong>Firebase Authentication</strong> দ্বারা পরিচালিত হয়—এগুলো কখনো Cloud Firestore-এ বা ব্যাকআপ ফাইলে সাধারণ লেখা হিসেবে সংরক্ষিত হয় না।",
+        s3Title: "প্রাতিষ্ঠানিক ও অ্যাপের সংরক্ষিত তথ্য",
+        s3P1: "আপনার মাদরাসার সেটআপ ও ভূমিকা অনুযায়ী নিচের তথ্যগুলো প্রক্রিয়া করা হয়:",
+        s3L1: "<strong>অ্যাকাউন্ট ও প্রোফাইল তথ্য:</strong> নাম, ভূমিকা (<code>admin</code>, <code>ustad</code>, <code>guardian</code>), স্টাফের ইমেইল, অভিভাবকের ফোন নম্বর, নির্ধারিত জামাত আইডি, সংযুক্ত ছাত্র আইডি ও সক্রিয়/নিষ্ক্রিয় অবস্থা।",
+        s3L2: "<strong>ছাত্র ও একাডেমিক রেকর্ড:</strong> ছাত্রের নাম, রোল (ঐচ্ছিক), ভর্তির তারিখ, জামাত, মাসিক বেতন, অভিভাবকের নাম ও ফোন/বিকল্প ফোন, হোয়াটসঅ্যাপ স্ট্যাটাস, দৈনিক হাজিরা (<code>present</code>, <code>absent</code>, <code>late</code>, <code>leave</code>), ক্লাস রুটিন, পরীক্ষার বিষয় ও নম্বর।",
+        s3L3: "<strong>বেতন ও ফি আদায়ের রেকর্ড:</strong> পরিশোধের মাস, ফির ধরন, টাকার পরিমাণ, তারিখ, মাধ্যম (নগদ, বিকাশ, নগদ, রকেট, ব্যাংক), রসিদ নম্বর এবং অনুমোদিত স্টাফের নোট।",
+        s3L4: "<strong>স্টাফ ছুটি, নোটিশ ও অডিট লগ:</strong> ছুটির তারিখ ও কারণ, মাদরাসা নোটিশ, বার্তা প্রেরণের লগ এবং স্বচ্ছতার জন্য স্টাফ কার্যক্রম লগ।",
+        s3L5: "<strong>ডিভাইসে ইবাদত ও পাঠের তথ্য:</strong> কুরআন পাঠের অগ্রগতি, বুকমার্ক, আয়াত নোট, হিফজ অনুশীলন, তাসবিহ গণনা, নামাজ ট্র্যাকার, ফন্ট/থিম সেটিংস ও ডাউনলোড করা অডিও/কিতাব ফাইল—যা ডিভাইসে Room ও DataStore-এ থাকে।",
+        s4Title: "অ্যান্ড্রয়েড সিস্টেম পারমিশনসমূহ",
+        s4P1: "মাদরাসা হাব কেবল সংশ্লিষ্ট ফিচার ব্যবহারের সময়ই অনুমতি চায়। যেকোনো কোড ব্যাজে ক্লিক করে কপি করতে পারেন:",
+        pCamTitle: "ক্যামেরা",
+        pCamDesc: "শুধুমাত্র ইন-অ্যাপ রসিদ ক্যামেরা স্ক্রিনে কাগজের বেতন/ফি রসিদের ছবি তোলার জন্য ব্যবহৃত হয়। তোলা ছবি সংকুচিত হয়ে ফোনের নিজস্ব প্রাইভেট স্টোরেজে থাকে—কোনো ক্লাউড সার্ভারে আপলোড হয় না।",
+        pCamPill: "শুধু ডিভাইসে",
+        pLocTitle: "লোকেশন (সুনির্দিষ্ট ও আনুমানিক)",
+        pLocDesc: "কিবলা কম্পাস, নামাজের সময় বা নিকটস্থ মসজিদ খুঁজতে চাপ দিলেই কেবল ফোরগ্রাউন্ডে ব্যবহৃত হয়। অনুমতি না দিয়েও ম্যানুয়ালি বাংলাদেশের যেকোনো জেলা নির্বাচন করা যায়।",
+        pLocPill: "শুধু ফোরগ্রাউন্ড",
+        pNotifTitle: "নোটিফিকেশন",
+        pNotifDesc: "স্থানীয় নামাজ/কুরআন রিমাইন্ডার এবং সেটআপ থাকলে হাজিরা বা নোটিশের ঐচ্ছিক Firebase Cloud Messaging (FCM) পুশ নোটিফিকেশনের জন্য ব্যবহৃত হয়।",
+        pNotifPill: "বিজ্ঞপ্তি ও রিমাইন্ডার",
+        pMediaTitle: "ব্যাকগ্রাউন্ড মিডিয়া প্লেব্যাক",
+        pMediaDesc: "স্ক্রিন অফ থাকা অবস্থায় বা লক-স্ক্রিন কন্ট্রোলসহ নিরবচ্ছিন্ন কুরআন তিলাওয়াত অডিও চালানোর জন্য Media3 ExoPlayer ব্যবহার করে।",
+        pMediaPill: "কুরআন অডিও",
+        pNetTitle: "নেটওয়ার্ক, ওয়েক লক ও ভাইব্রেট",
+        pNetDesc: "Firestore ডেটা সিঙ্ক, কুরআন/হাদিস/কিতাব ডাউনলোড, মক্কা-মদিনা লাইভ স্ট্রিম, পড়ার সময় স্ক্রিন চালু রাখা এবং তাসবিহ হ্যাপটিক ভাইব্রেশনের জন্য ব্যবহৃত হয়।",
+        pNetPill: "সিঙ্ক ও সহায়ক",
+        s5Title: "লোকেশন, কিবলা, নামাজের সময় ও মসজিদ",
+        s5P1: "মাদরাসা হাব কখনো ব্যাকগ্রাউন্ডে লোকেশন ট্র্যাক করে না বা লোকেশন হিস্ট্রি সংরক্ষণ করে না। কেবল আপনি নিজে সক্রিয়ভাবে অবস্থান শনাক্ত করতে চাইলেই ফোরগ্রাউন্ড লোকেশন নেওয়া হয়।",
+        s5L1: "<strong>নামাজের সময় (Aladhan API):</strong> <code>api.aladhan.com</code> থেকে মাসিক সময়সূচি আনার সময় স্থানাঙ্ক প্রায় <strong>১০০ মিটার</strong> (<code>%.3f</code>) পর্যন্ত রাউন্ড করে পাঠানো হয় এবং ফোনে ক্যাশ করে রাখা হয়।",
+        s5L2: "<strong>নিকটস্থ মসজিদ (OpenStreetMap):</strong> উন্মুক্ত OpenStreetMap Overpass API মিরর (<code>overpass.private.coffee</code>, <code>maps.mail.ru</code>, <code>overpass-api.de</code>) থেকে তথ্য এনে ডিভাইসে ক্যাশ করে রাখে। দিকনির্দেশনার জন্য চাইলে Google Maps খোলা যায়।",
+        s6Title: "অভিভাবক বার্তা, হোয়াটসঅ্যাপ, এসএমএস ও রসিদ",
+        s6P1: "উস্তাদ বা মুহতামিম যখন হাজিরার তথ্য, বকেয়া রিমাইন্ডার, নোটিশ, মার্কশিট পিডিএফ বা রসিদ পাঠান:",
+        s6L1: "<strong>ব্যবহারকারীর উদ্যোগে স্থানীয় প্রেরণ:</strong> সাধারণ মোডে অ্যাপটি হোয়াটসঅ্যাপ/হোয়াটসঅ্যাপ বিজনেস ইনস্টল আছে কিনা দেখে এবং স্টাফের ট্যাপে একজন করে অভিভাবকের <code>wa.me</code> চ্যাট, ফোনের SMS অ্যাপ বা শেয়ার শিট খোলে।",
+        s6L2: "<strong>ঐচ্ছিক সার্ভার-সাইড Cloud Functions ব্যাকএন্ড:</strong> কোনো প্রতিষ্ঠান যদি Cloud Functions + Neon PostgreSQL API চালু করে, তবে Meta WhatsApp Cloud API, বাংলাদেশী SMS গেটওয়ে বা FCM ডিভাইস টোকেনের মাধ্যমে বার্তা পাঠানো যেতে পারে।",
+        s6L3: "<strong>কন্টাক্ট লিস্ট পড়া হয় না:</strong> অ্যাপ কখনো আপনার ফোনের কন্টাক্ট বা ফোনবুক পড়ে না বা আপলোড করে না; কেবল মাদরাসা স্টাফের এন্ট্রি করা অভিভাবক নম্বরই ব্যবহৃত হয়।",
+        s7Title: "ইসলামিক কনটেন্ট, লাইভ স্ট্রিম ও থার্ড-পার্টি সেবা",
+        s7P1: "মূল কুরআন মুসহাফ, বাংলা/ইংরেজি অনুবাদ, দোয়া ও ইসলামিক গাইড অ্যাপের ভেতরেই অফলাইনে যুক্ত আছে। অনলাইন রিসোর্স ব্যবহার করলে ডিভাইস সরাসরি সংযুক্ত হয়:",
+        s7L1: "<strong>Google Firebase:</strong> নিরাপদ লগইন, ভূমিকাভিত্তিক ডেটা সিঙ্ক ও নোটিফিকেশনের জন্য Firebase Authentication, Cloud Firestore ও Firebase Cloud Messaging।",
+        s7L2: "<strong>কুরআন, তাফসির ও তিলাওয়াত:</strong> <code>api.quran.com</code>, <code>api.alquran.cloud</code>, <code>everyayah.com</code> এবং <code>islamicapi.com</code> (রুকইয়াহ অডিও)।",
+        s7L3: "<strong>কওমী কিতাব ও হাদিস প্যাক:</strong> অফলাইন পিডিএফ/হাদিস প্যাক ডাউনলোডের জন্য GitHub (<code>Arifmullikh/annur-content</code>, <code>Arifmullikh/qawmi-kitab</code>)।",
+        s7L4: "<strong>মক্কা ও মদিনা লাইভ:</strong> সৌদি ব্রডকাস্টিং অথরিটি (SBA)-এর কুরআন ও সুন্নাহ টিভির HLS স্ট্রিম (<code>cdn-globecast.akamaized.net</code>)।",
+        s8Title: "বেতন ও ফি হিসাবের স্বচ্ছতা",
+        s8Callout: "<strong>গুরুত্বপূর্ণ তথ্য:</strong> মাদরাসা হাব কেবল অফিসে নগদ, বিকাশ, নগদ, রকেট বা ব্যাংকে পরিশোধিত বেতন-ফির <strong>হিসাব ও রসিদ সংরক্ষণের খাতা</strong>। অ্যাপের ভেতরে কোনো লাইভ কার্ড পেমেন্ট, মোবাইল ব্যাংকিং পিন বা ওটিপি নেওয়া হয় না।",
+        s9Title: "শিশু ও ছাত্রদের গোপনীয়তা",
+        s9P1: "মাদরাসা হাব প্রাপ্তবয়স্ক মুহতামিম, উস্তাদ ও অভিভাবকদের জন্য তৈরি। ছাত্রদের জন্য কোনো স্বয়ংক্রিয় অ্যাকাউন্ট তৈরি বা পাবলিক সোশ্যাল ফিড নেই এবং অ্যাপে কোনো বিজ্ঞাপন নেই।",
+        s9P2: "ছাত্রের ভর্তি, হাজিরা, বেতন ও পরীক্ষার তথ্য কেবল অনুমোদিত মাদরাসা স্টাফ এন্ট্রি করেন এবং কঠোর Firestore নিয়ম অনুযায়ী কেবল অনুমোদিত স্টাফ ও সংযুক্ত অভিভাবক তা দেখতে পারেন।",
+        s10Title: "ডেটা সংরক্ষণ, ব্যাকআপ ও মুছে ফেলার অধিকার",
+        s10P1: "আপনি ও আপনার মাদরাসা সংরক্ষিত তথ্যের ওপর পূর্ণ নিয়ন্ত্রণ রাখেন:",
+        s10L1: "<strong>প্রাতিষ্ঠানিক নিয়ন্ত্রণ:</strong> মুহতামিম উস্তাদ অ্যাকাউন্ট নিষ্ক্রিয় করতে, ছাত্র রেকর্ড আর্কাইভ বা স্থায়ীভাবে মুছতে এবং <em>সেটিংস → ডেটা ব্যাকআপ</em> থেকে Excel (<code>.xlsx</code>) বা JSON ব্যাকআপ সংরক্ষণ করতে পারেন।",
+        s10L2: "<strong>ডিভাইস থেকে সম্পূর্ণ মুছে ফেলা:</strong> অ্যাপ আনইনস্টল করলে বা অ্যান্ড্রয়েড সেটিংস থেকে অ্যাপ ডেটা ক্লিয়ার করলে ফোনে থাকা সব ক্যাশ, রসিদের ছবি ও ডাউনলোড করা কিতাব/অডিও স্থায়ীভাবে মুছে যায়।",
+        s10L3: '<strong>অ্যাকাউন্ট ও ক্লাউড ডেটা ডিলিট:</strong> আপনার Firebase Auth অ্যাকাউন্ট বা ব্যক্তিগত প্রোফাইল মুছতে মাদরাসা অফিসে যোগাযোগ করুন অথবা আমাদের <a href="account-deletion.html">অ্যাকাউন্ট ডিলিট পোর্টাল</a> ব্যবহার করুন। <strong>arifmullikh.personal@gmail.com</strong> ঠিকানায় পাঠানো অনুরোধ যাচাই সাপেক্ষে <strong>৪৮ ঘণ্টার</strong> মধ্যে প্রক্রিয়া করা হয় (প্রাতিষ্ঠানিক অডিট/হিসাব সংরক্ষণের নীতি প্রযোজ্য হতে পারে)।',
+        s10L4: "<strong>নীতিমালার পরিবর্তন:</strong> কোনো গুরুত্বপূর্ণ পরিবর্তন হলে কার্যকর তারিখসহ এই পাতায় আপডেট প্রকাশ করা হবে।",
+        contactTitle: "প্রশ্ন বা গোপনীয়তা সংক্রান্ত অনুরোধ?",
+        contactDesc: "আপনি মুহতামিম, উস্তাদ, অভিভাবক অথবা Play Store রিভিউয়ার হলে ডেটা নিরাপত্তা বা অ্যাকাউন্ট মুছে ফেলা সংক্রান্ত যেকোনো প্রশ্নে সরাসরি যোগাযোগ করুন।",
+        contactEmailBtn: "ইমেইল পাঠান",
+        contactDeleteBtn: "ডিলিট পোর্টাল খুলুন",
+        footerCopy: "© ২০২৬ <strong>মাদরাসা হাব (Madrasah Hub)</strong> · নির্মাতা <strong>AM Core Studios</strong>। সর্বস্বত্ব সংরক্ষিত।",
+        fOverview: "এক নজরে",
+        fPerms: "অনুমতি",
+        fDelete: "অ্যাকাউন্ট ডিলিট",
+        fContact: "যোগাযোগ",
+        copied: "কপি করা হয়েছে:"
+      }
+    };
+
+    const VAULT_DATA = {
+      en: {
+        guardian: [
+          { title: "Phone + Secret PIN Auth", sub: "Firebase Auth credential · PIN never in Firestore", badge: "Protected" },
+          { title: "Linked Child Records Only", sub: "Read-only attendance, published marks & receipts", badge: "Scoped Read" },
+          { title: "Guardian Can Update Own PIN", sub: "Self-service PIN change inside Settings", badge: "User Control" },
+          { title: "Zero Ads & Zero Profiling", sub: "No AdMob, no Analytics, no contact book access", badge: "Verified Clean" }
+        ],
+        ustad: [
+          { title: "Assigned Jamat Isolation", sub: "Firestore rules restrict reads/writes to own classes", badge: "Class-Scoped" },
+          { title: "Granular Office Permissions", sub: "Attendance, messaging, student add & fee toggles", badge: "Least Privilege" },
+          { title: "On-Device Camera Receipts", sub: "Paper receipt photos remain in local app folder", badge: "Local Only" },
+          { title: "Immutable Activity Logging", sub: "Attendance, fee & leave actions logged cleanly", badge: "Audit Trail" }
+        ],
+        admin: [
+          { title: "Full Institutional Oversight", sub: "Manage jamats, students, ustads, fees & exams", badge: "Admin Role" },
+          { title: "Sanitized Excel & JSON Backups", sub: "Passwords, PINs & tokens automatically stripped", badge: "Safe Export" },
+          { title: "Staff Activation & Student Archive", sub: "Deactivate ustads or archive/delete student rows", badge: "Full Control" },
+          { title: "User-Triggered WhatsApp / SMS", sub: "One-by-one dispatch; optional Cloud Functions relay", badge: "Transparent" }
+        ]
+      },
+      bn: {
+        guardian: [
+          { title: "ফোন নম্বর + গোপন পিন লগইন", sub: "Firebase Auth যাচাইকৃত · পিন কখনো Firestore-এ থাকে না", badge: "সুরক্ষিত" },
+          { title: "শুধু নিজ সন্তানের তথ্য", sub: "হাজিরা, প্রকাশিত রেজাল্ট ও রসিদ শুধু দেখার অনুমতি", badge: "সীমাবদ্ধ" },
+          { title: "নিজেই পিন পরিবর্তন সুবিধা", sub: "সেটিংস থেকে যেকোনো সময় পিন বদলানো যায়", badge: "পূর্ণ নিয়ন্ত্রণ" },
+          { title: "বিজ্ঞাপন ও ট্র্যাকারমুক্ত", sub: "কোনো AdMob, Analytics বা কন্টাক্ট রিডিং নেই", badge: "নিরাপদ" }
+        ],
+        ustad: [
+          { title: "নির্ধারিত জামাতে সীমাবদ্ধ", sub: "Firestore নিয়ম অন্য জামাতের তথ্যে প্রবেশ আটকে রাখে", badge: "জামাত-সীমিত" },
+          { title: "মুহতামিম-প্রদত্ত অনুমতি", sub: "হাজিরা, বার্তা, ছাত্র যোগ ও ফি আদায়ের আলাদা অনুমতি", badge: "নিয়ন্ত্রিত" },
+          { title: "ডিভাইসেই রসিদের ছবি", sub: "ক্যামেরায় তোলা রসিদ শুধু ফোনের প্রাইভেট ফোল্ডারে থাকে", badge: "লোকাল স্টোরেজ" },
+          { title: "স্বচ্ছ কার্যক্রম লগ", sub: "হাজিরা, ফি ও ছুটির আবেদন অডিট লগে সংরক্ষিত", badge: "অডিট ট্রেইল" }
+        ],
+        admin: [
+          { title: "সম্পূর্ণ প্রাতিষ্ঠানিক নিয়ন্ত্রণ", sub: "জামাত, ছাত্র, উস্তাদ, বেতন-ফি ও পরীক্ষা পরিচালনা", badge: "মুহতামিম" },
+          { title: "সুরক্ষিত Excel ও JSON ব্যাকআপ", sub: "রপ্তানির সময় পাসওয়ার্ড, পিন ও টোকেন বাদ দেওয়া হয়", badge: "নিরাপদ রপ্তানি" },
+          { title: "স্টাফ নিষ্ক্রিয় ও ছাত্র আর্কাইভ", sub: "উস্তাদ নিষ্ক্রিয় বা ছাত্র রেকর্ড আর্কাইভ/ডিলিট সুবিধা", badge: "পূর্ণ অধিকার" },
+          { title: "হোয়াটসঅ্যাপ ও এসএমএস নিয়ন্ত্রণ", sub: "ম্যানুয়াল প্রেরণ বা ঐচ্ছিক Cloud Functions রিলে", badge: "স্বচ্ছ" }
+        ]
+      }
+    };
+
+    const EXPLORER_DATA = {
+      en: [
+        {
+          cols: [
+            { label: "Sign-In & Identity", items: ["Registered mobile number + 4–6 digit PIN", "Authenticated via Firebase Authentication", "PIN can be changed anytime in Settings"] },
+            { label: "Data Accessible", items: ["Linked student attendance & 30-day calendar", "Madrasah notices & published exam marksheets", "Tuition & fee payment receipts for linked children", "Offline Quran, Tafsir, Hadith, Qibla & Prayer Times"] },
+            { label: "Strictly Restricted", items: ["Cannot view other students or other families", "Cannot edit attendance, marks, or fee ledgers", "Cannot access staff activity logs or backups"] }
+          ]
+        },
+        {
+          cols: [
+            { label: "Sign-In & Identity", items: ["Office-provisioned email & password", "Scoped to assigned jamat IDs in Firestore rules", "Instant deactivation enforced by Muhtamim"] },
+            { label: "Data Accessible", items: ["Student roster & daily attendance in assigned classes", "Fee collection & CameraX paper receipts (if permitted)", "Draft exam marks (locked after Muhtamim publishes)", "Personal staff leave requests & class routines"] },
+            { label: "Strictly Restricted", items: ["Cannot view unassigned jamats or admin settings", "Cannot alter monthly student fees or published marks", "Cannot export full madrasah backups or read all logs"] }
+          ]
+        },
+        {
+          cols: [
+            { label: "Sign-In & Identity", items: ["Email & password Firebase Admin credentials", "Creates ustad/guardian accounts securely without losing session", "Controls per-teacher feature permissions"] },
+            { label: "Data Accessible", items: ["All classes, students, attendance, notices & fee ledgers", "Staff leave approvals, message logs & audit activity logs", "Local Excel (.xlsx) & JSON backup exports", "Work Mode & Madrasah customization settings"] },
+            { label: "Privacy Safeguards", items: ["Cannot view raw user passwords or guardian PINs", "Backups automatically strip secret/token keys", "Deactivated staff cannot log in or mutate cloud data"] }
+          ]
+        }
+      ],
+      bn: [
+        {
+          cols: [
+            { label: "লগইন ও পরিচয়", items: ["নিবন্ধিত মোবাইল নম্বর ও ৪–৬ সংখ্যার পিন", "Firebase Authentication দ্বারা যাচাইকৃত", "সেটিংস থেকে যেকোনো সময় পিন পরিবর্তন করা যায়"] },
+            { label: "যা দেখতে পাবেন", items: ["নিজ সন্তানের দৈনিক হাজিরা ও ৩০ দিনের ক্যালেন্ডার", "মাদরাসার নোটিশ ও প্রকাশিত পরীক্ষার ফলাফল", "বেতন ও ফি পরিশোধের রসিদ ইতিহাস", "অফলাইন কুরআন, তাফসির, হাদিস, কিবলা ও নামাজের সময়"] },
+            { label: "যা সম্পূর্ণ সীমাবদ্ধ", items: ["অন্য কোনো ছাত্র বা পরিবারের তথ্য দেখা যায় না", "হাজিরা, নম্বর বা বেতনের হিসাব সম্পাদনা করা যায় না", "স্টাফ অডিট লগ বা ব্যাকআপে প্রবেশাধিকার নেই"] }
+          ]
+        },
+        {
+          cols: [
+            { label: "লগইন ও পরিচয়", items: ["অফিস থেকে দেওয়া ইমেইল ও পাসওয়ার্ড", "Firestore নিয়মে কেবল নির্ধারিত জামাতে সীমাবদ্ধ", "মুহতামিম যেকোনো সময় নিষ্ক্রিয় করতে পারেন"] },
+            { label: "যা পরিচালনা করবেন", items: ["নির্ধারিত জামাতের ছাত্র ও দৈনিক হাজিরা", "বেতন/ফি আদায় ও CameraX রসিদের ছবি (অনুমতি সাপেক্ষে)", "প্রকাশের আগে পরীক্ষার নম্বর এন্ট্রি ও ক্লাস রুটিন", "নিজের ছুটির আবেদন ও পেন্ডিং আবেদন বাতিল"] },
+            { label: "যা সম্পূর্ণ সীমাবদ্ধ", items: ["অন্য জামাতের ছাত্র বা অ্যাডমিন সেটিংস দেখা যায় না", "ছাত্রের মাসিক বেতন বা প্রকাশিত রেজাল্ট বদলানো যায় না", "পূর্ণ অফিস ব্যাকআপ ডাউনলোড করা যায় না"] }
+          ]
+        },
+        {
+          cols: [
+            { label: "লগইন ও পরিচয়", items: ["ইমেইল ও পাসওয়ার্ড মুহতামিম/অ্যাডমিন অ্যাকাউন্ট", "সেশন না হারিয়ে নতুন উস্তাদ বা অভিভাবক অ্যাকাউন্ট তৈরি", "প্রতিটি উস্তাদের আলাদা কাজের অনুমতি নির্ধারণ"] },
+            { label: "যা পরিচালনা করবেন", items: ["সব জামাত, ছাত্র, হাজিরা, নোটিশ ও বেতন-ফি হিসাব", "স্টাফ ছুটি অনুমোদন, বার্তা লগ ও কার্যক্রম অডিট লগ", "Excel (.xlsx) এবং JSON লোকাল ডেটা ব্যাকআপ রপ্তানি", "মাদরাসার নাম, বার্তা টেমপ্লেট ও গ্রেড সেটিংস"] },
+            { label: "গোপনীয়তা সুরক্ষা", items: ["কারও পাসওয়ার্ড বা অভিভাবক পিন দেখা যায় না", "ব্যাকআপ থেকে পাসওয়ার্ড, পিন ও টোকেন স্বয়ংক্রিয়ভাবে বাদ থাকে", "নিষ্ক্রিয় স্টাফ ক্লাউডে কোনো পরিবর্তন করতে পারেন না"] }
+          ]
+        }
+      ]
+    };
+
+    let currentLang = 'en';
+    let currentVaultRole = 'guardian';
+    let currentExplorerIndex = 0;
+
+    function renderVaultRows() {
+      const container = document.getElementById('vaultRows');
+      const items = VAULT_DATA[currentLang][currentVaultRole];
+      const icons = [
+        '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>',
+        '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/></svg>',
+        '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>',
+        '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>'
+      ];
+      container.innerHTML = items.map((item, i) => `
+        <div class="vault-row">
+          <div class="vault-row-left">
+            <span class="vault-row-icon">${icons[i % icons.length]}</span>
+            <span class="vault-row-copy">
+              <strong>${item.title}</strong>
+              <small>${item.sub}</small>
+            </span>
+          </div>
+          <span class="vault-badge">${item.badge}</span>
+        </div>
+      `).join('');
+    }
+
+    function setVaultRole(role) {
+      currentVaultRole = role;
+      document.querySelectorAll('.vault-role-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.vaultRole === role);
+      });
+      renderVaultRows();
+    }
+
+    function renderExplorer() {
+      const container = document.getElementById('roleColumns');
+      const data = EXPLORER_DATA[currentLang][currentExplorerIndex];
+      container.classList.add('is-swapping');
+      setTimeout(() => {
+        container.innerHTML = data.cols.map(col => `
+          <div class="role-col">
+            <div class="role-col-label">${col.label}</div>
+            <ul>${col.items.map(li => `<li>${li}</li>`).join('')}</ul>
+          </div>
+        `).join('');
+        container.classList.remove('is-swapping');
+      }, 140);
+    }
+
+    function selectExplorerRole(idx) {
+      currentExplorerIndex = idx;
+      document.getElementById('roleGlider').style.transform = `translateX(${idx * 100}%)`;
+      document.querySelectorAll('.role-tab').forEach((tab, i) => {
+        tab.setAttribute('aria-selected', i === idx ? 'true' : 'false');
+      });
+      renderExplorer();
+    }
+
+    function setLanguage(lang, save = true) {
+      currentLang = lang === 'bn' ? 'bn' : 'en';
+      document.documentElement.lang = currentLang;
+      document.body.classList.toggle('lang-bn', currentLang === 'bn');
+      document.getElementById('btnEn').setAttribute('aria-pressed', currentLang === 'en');
+      document.getElementById('btnBn').setAttribute('aria-pressed', currentLang === 'bn');
+
+      const dict = I18N[currentLang];
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const k = el.getAttribute('data-i18n');
+        if (dict[k] !== undefined) el.textContent = dict[k];
+      });
+      document.querySelectorAll('[data-i18n-html]').forEach(el => {
+        const k = el.getAttribute('data-i18n-html');
+        if (dict[k] !== undefined) el.innerHTML = dict[k];
+      });
+
+      const searchEl = document.getElementById('policySearch');
+      searchEl.placeholder = dict.searchPlaceholder;
+
+      renderVaultRows();
+      renderExplorer();
+      updateSearch();
+      setTimeout(updateTocIndicator, 60);
+
+      if (save) {
+        try { localStorage.setItem('mh_privacy_lang', currentLang); } catch (_) {}
+      }
+    }
+
+    /* Theme Toggle */
+    function applyTheme(theme, save = true) {
+      const t = theme === 'light' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', t);
+      const toggle = document.getElementById('themeToggle');
+      toggle.setAttribute('aria-pressed', t === 'dark' ? 'true' : 'false');
+      const metaTheme = document.querySelector('meta[name="theme-color"]');
+      if (metaTheme) metaTheme.setAttribute('content', t === 'dark' ? '#030b08' : '#f8f5ec');
+      if (save) {
+        try { localStorage.setItem('mh_privacy_theme', t); } catch (_) {}
+      }
+    }
+
+    document.getElementById('themeToggle').addEventListener('click', () => {
+      const next = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      applyTheme(next);
+    });
+
+    /* Search */
+    const searchInput = document.getElementById('policySearch');
+    const searchCount = document.getElementById('searchCount');
+    const searchClear = document.getElementById('searchClear');
+
+    function updateSearch() {
+      const q = searchInput.value.trim().toLowerCase();
+      const blocks = Array.from(document.querySelectorAll('#policyStream .policy-block:not(.contact-banner)'));
+      let matches = 0;
+
+      blocks.forEach(block => {
+        const hit = !q || block.textContent.toLowerCase().includes(q);
+        block.classList.toggle('is-hidden-by-search', !hit);
+        if (hit) matches++;
+      });
+
+      searchClear.classList.toggle('visible', q.length > 0);
+      document.getElementById('noResults').classList.toggle('visible', q.length > 0 && matches === 0);
+      if (q.length > 0) {
+        searchCount.textContent = currentLang === 'bn' ? `${matches}টি অংশ` : `${matches} match${matches === 1 ? '' : 'es'}`;
+        searchCount.classList.add('visible');
+      } else {
+        searchCount.classList.remove('visible');
+      }
+    }
+
+    function clearSearch() {
+      searchInput.value = '';
+      updateSearch();
+      searchInput.focus();
+    }
+
+    searchInput.addEventListener('input', updateSearch);
+    document.addEventListener('keydown', (e) => {
+      if (e.key === '/' && document.activeElement !== searchInput) {
+        e.preventDefault();
+        searchInput.focus();
+      } else if (e.key === 'Escape' && document.activeElement === searchInput) {
+        clearSearch();
+        searchInput.blur();
+      }
+    });
+
+    /* Copy & Toast */
+    let toastTimer = null;
+    function showToast(msg) {
+      const toast = document.getElementById('toast');
+      toast.textContent = msg;
+      toast.classList.add('show');
+      clearTimeout(toastTimer);
+      toastTimer = setTimeout(() => toast.classList.remove('show'), 2200);
+    }
+
+    function copyText(text) {
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(() => {
+          showToast(`${I18N[currentLang].copied} ${text}`);
+        }).catch(() => {});
+      }
+    }
+
+    /* Spotlight Hover Effect */
+    document.querySelectorAll('.spotlight-card').forEach(card => {
+      card.addEventListener('pointermove', (e) => {
+        const rect = card.getBoundingClientRect();
+        card.style.setProperty('--mx', `${e.clientX - rect.left}px`);
+        card.style.setProperty('--my', `${e.clientY - rect.top}px`);
+      });
+    });
+
+    /* 3D Spring Tilt on Hero Vault Card */
+    (function initVaultTilt() {
+      const stage = document.getElementById('vaultStage');
+      const card = document.getElementById('vaultCard');
+      if (!stage || !card || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+      let targetX = 0, targetY = 0, curX = 0, curY = 0, raf = null;
+
+      function tick() {
+        curX += (targetX - curX) * 0.11;
+        curY += (targetY - curY) * 0.11;
+        card.style.transform = `rotateX(${curX.toFixed(2)}deg) rotateY(${curY.toFixed(2)}deg)`;
+        if (Math.abs(targetX - curX) > 0.02 || Math.abs(targetY - curY) > 0.02) {
+          raf = requestAnimationFrame(tick);
+        } else {
+          raf = null;
+        }
+      }
+
+      stage.addEventListener('pointermove', (e) => {
+        const r = card.getBoundingClientRect();
+        const px = (e.clientX - r.left) / r.width;
+        const py = (e.clientY - r.top) / r.height;
+        targetX = (0.5 - py) * 11;
+        targetY = (px - 0.5) * 13;
+        card.style.setProperty('--mx', `${px * 100}%`);
+        card.style.setProperty('--my', `${py * 100}%`);
+        if (!raf) raf = requestAnimationFrame(tick);
+      });
+
+      stage.addEventListener('pointerleave', () => {
+        targetX = 0;
+        targetY = 0;
+        if (!raf) raf = requestAnimationFrame(tick);
+      });
+    })();
+
+    /* Scroll Progress + TOC Scrollspy */
+    function updateTocIndicator() {
+      const active = document.querySelector('.toc-link.active');
+      const ind = document.getElementById('tocIndicator');
+      if (!active || !ind) return;
+      ind.style.transform = `translateY(${active.offsetTop + 6}px)`;
+      ind.style.height = `${Math.max(20, active.offsetHeight - 12)}px`;
+      ind.style.opacity = '1';
+    }
+
+    (function initScrollSystems() {
+      const progress = document.getElementById('scrollProgress');
+      const navbar = document.getElementById('navbar');
+      const tocLinks = Array.from(document.querySelectorAll('.toc-link'));
+      const sections = tocLinks.map(l => document.querySelector(l.getAttribute('href'))).filter(Boolean);
+
+      let ticking = false;
+      function onScroll() {
+        if (ticking) return;
+        ticking = true;
+        requestAnimationFrame(() => {
+          const docH = document.documentElement.scrollHeight - window.innerHeight;
+          const pct = docH > 0 ? Math.min(1, Math.max(0, window.scrollY / docH)) : 0;
+          progress.style.transform = `scaleX(${pct})`;
+          navbar.classList.toggle('is-scrolled', window.scrollY > 24);
+
+          const marker = window.scrollY + 180;
+          let activeIdx = 0;
+          sections.forEach((sec, idx) => {
+            if (!sec.classList.contains('is-hidden-by-search') && sec.offsetTop <= marker) {
+              activeIdx = idx;
+            }
+          });
+          tocLinks.forEach((link, idx) => link.classList.toggle('active', idx === activeIdx));
+          updateTocIndicator();
+          ticking = false;
+        });
+      }
+
+      window.addEventListener('scroll', onScroll, { passive: true });
+      window.addEventListener('resize', updateTocIndicator, { passive: true });
+      onScroll();
+    })();
+
+    /* Reveal Observer */
+    (function initReveal() {
+      const els = document.querySelectorAll('.reveal');
+      if (!('IntersectionObserver' in window)) {
+        els.forEach(el => el.classList.add('is-visible'));
+        return;
+      }
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            io.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
+      els.forEach(el => io.observe(el));
+    })();
+
+    /* Subtle Ambient Celestial Starfield */
+    (function initCanvas() {
+      const canvas = document.getElementById('starfield');
+      if (!canvas || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+      const ctx = canvas.getContext('2d');
+      let w = 0, h = 0, dpr = Math.min(window.devicePixelRatio || 1, 2);
+      let particles = [];
+      let mouse = { x: -999, y: -999 };
+
+      function resize() {
+        w = window.innerWidth;
+        h = window.innerHeight;
+        canvas.width = Math.floor(w * dpr);
+        canvas.height = Math.floor(h * dpr);
+        ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+        const count = Math.min(54, Math.max(24, Math.floor(w / 28)));
+        particles = Array.from({ length: count }, (_, i) => ({
+          x: Math.random() * w,
+          y: Math.random() * h,
+          vx: (Math.random() - 0.5) * 0.24,
+          vy: (Math.random() - 0.5) * 0.24,
+          r: Math.random() * 1.6 + 0.7,
+          gold: i % 3 === 0,
+          alpha: Math.random() * 0.45 + 0.2
+        }));
+      }
+
+      window.addEventListener('resize', resize, { passive: true });
+      window.addEventListener('pointermove', (e) => { mouse.x = e.clientX; mouse.y = e.clientY; }, { passive: true });
+      resize();
+
+      function draw() {
+        if (document.hidden) { requestAnimationFrame(draw); return; }
+        ctx.clearRect(0, 0, w, h);
+        const isDark = document.documentElement.getAttribute('data-theme') !== 'light';
+
+        for (let i = 0; i < particles.length; i++) {
+          const p = particles[i];
+          p.x += p.vx;
+          p.y += p.vy;
+          if (p.x < -10) p.x = w + 10;
+          if (p.x > w + 10) p.x = -10;
+          if (p.y < -10) p.y = h + 10;
+          if (p.y > h + 10) p.y = -10;
+
+          ctx.beginPath();
+          ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+          ctx.fillStyle = p.gold
+            ? (isDark ? `rgba(242,201,104,${p.alpha})` : `rgba(180,122,18,${p.alpha * 0.8})`)
+            : (isDark ? `rgba(52,211,153,${p.alpha})` : `rgba(5,138,96,${p.alpha * 0.75})`);
+          ctx.fill();
+
+          const mdx = mouse.x - p.x;
+          const mdy = mouse.y - p.y;
+          const md = Math.hypot(mdx, mdy);
+          if (md < 140) {
+            ctx.beginPath();
+            ctx.moveTo(p.x, p.y);
+            ctx.lineTo(mouse.x, mouse.y);
+            ctx.strokeStyle = isDark ? `rgba(242,201,104,${(1 - md / 140) * 0.16})` : `rgba(5,138,96,${(1 - md / 140) * 0.14})`;
+            ctx.lineWidth = 0.8;
+            ctx.stroke();
+          }
+        }
+        requestAnimationFrame(draw);
+      }
+      requestAnimationFrame(draw);
+    })();
+
+    /* Boot Saved Preferences & Query Param */
+    (function boot() {
+      const params = new URLSearchParams(window.location.search);
+      let savedTheme = 'dark';
+      let savedLang = 'en';
+      try {
+        savedTheme = localStorage.getItem('mh_privacy_theme') || 'dark';
+        savedLang = params.get('lang') || localStorage.getItem('mh_privacy_lang') || 'en';
+      } catch (_) {}
+      applyTheme(savedTheme, false);
+      setLanguage(savedLang, false);
+    })();
+  </script>
+</body>
+</html>
