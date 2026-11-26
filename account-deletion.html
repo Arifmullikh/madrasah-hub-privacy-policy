@@ -3,102 +3,91 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Account Deletion Portal — Jamia Islamia Darul Ulum Sheikhdi</title>
-  <meta name="description" content="Official Google Play 2026 compliant Account & Data Deletion Portal for Jamia Islamia Darul Ulum Sheikhdi (জামিয়া ইসলামিয়া দারুল উলুম শেখদী) by AM Core Studios.">
-  <meta name="theme-color" content="#06080f">
+  <title>Account Deletion — Jamia Islamia Darul Ulum Sheikhdi</title>
+  <meta name="description" content="Official Google Play 2026 compliant Account & Data Deletion Portal for Jamia Islamia Darul Ulum Sheikhdi (জামিয়া ইসলামিয়া দারুল উলুম শেখদী).">
+  <meta name="theme-color" content="#000000">
   <link rel="icon" type="image/png" href="logo.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Noto+Serif+Bengali:wght@600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
     :root {
       color-scheme: dark;
-      --bg: #06080f;
-      --surface: rgba(14, 19, 32, 0.78);
-      --surface-strong: rgba(19, 26, 43, 0.94);
+      --bg: #000000;
+      --surface: rgba(22, 25, 32, 0.8);
       --surface-glass: rgba(255, 255, 255, 0.04);
-      --ink: #f8fafc;
-      --muted: #94a3b8;
-      --dim: #64748b;
-      --line: rgba(255, 255, 255, 0.09);
-      --gold: #f5c451;
-      --gold-soft: rgba(245, 196, 81, 0.12);
-      --gold-line: rgba(245, 196, 81, 0.3);
-      --emerald: #10b981;
-      --emerald-bright: #34d399;
-      --shadow: 0 28px 80px rgba(0, 0, 0, 0.58);
-      --font-en: 'Plus Jakarta Sans', system-ui, sans-serif;
-      --font-bn: 'Hind Siliguri', var(--font-en);
+      --ink: #f5f5f7;
+      --muted: #98989d;
+      --dim: #6e6e73;
+      --line: rgba(255, 255, 255, 0.1);
+      --line-strong: rgba(255, 255, 255, 0.18);
+      --teal: #14b8a6;
+      --gold: #e0b34c;
+      --gold-soft: rgba(224, 179, 76, 0.12);
+      --gold-line: rgba(224, 179, 76, 0.34);
+      --shadow: 0 28px 80px rgba(0, 0, 0, 0.65);
+      --font-sans: -apple-system, BlinkMacSystemFont, 'Plus Jakarta Sans', 'Segoe UI', sans-serif;
+      --font-bn: 'Hind Siliguri', -apple-system, sans-serif;
+      --font-bn-serif: 'Noto Serif Bengali', 'Hind Siliguri', serif;
       --font-mono: 'JetBrains Mono', monospace;
       --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
       --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
     }
-
     [data-theme="light"] {
       color-scheme: light;
-      --bg: #f6f8fb;
-      --surface: rgba(255, 255, 255, 0.88);
-      --surface-strong: rgba(255, 255, 255, 0.98);
-      --surface-glass: rgba(15, 23, 42, 0.04);
-      --ink: #0b1320;
-      --muted: #475569;
-      --dim: #64748b;
-      --line: rgba(15, 23, 42, 0.1);
-      --gold: #b45309;
-      --gold-soft: rgba(217, 119, 6, 0.1);
-      --gold-line: rgba(217, 119, 6, 0.28);
-      --emerald: #059669;
-      --emerald-bright: #047857;
-      --shadow: 0 24px 60px rgba(15, 23, 42, 0.1);
+      --bg: #fbfbfd;
+      --surface: rgba(255, 255, 255, 0.9);
+      --surface-glass: rgba(0, 0, 0, 0.035);
+      --ink: #1d1d1f;
+      --muted: #6e6e73;
+      --dim: #86868b;
+      --line: rgba(0, 0, 0, 0.09);
+      --line-strong: rgba(0, 0, 0, 0.16);
+      --teal: #03536b;
+      --gold: #9a6c11;
+      --gold-soft: rgba(180, 128, 22, 0.1);
+      --gold-line: rgba(180, 128, 22, 0.3);
+      --shadow: 0 24px 60px rgba(0, 0, 0, 0.08);
     }
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    [hidden] { display: none !important; }
     body {
       background: var(--bg); color: var(--ink);
-      font-family: var(--font-en); line-height: 1.68;
+      font-family: var(--font-sans); line-height: 1.66;
       min-height: 100vh; overflow-x: hidden;
-      transition: background-color 0.45s var(--ease-out), color 0.35s var(--ease-out);
+      transition: background-color 0.45s var(--ease-out), color 0.35s ease;
     }
-    body.lang-bn { font-family: var(--font-bn); }
-    button, input, select { font-family: inherit; }
+    body.lang-bn { font-family: var(--font-bn); line-height: 1.76; }
+    button, input, select { font: inherit; color: inherit; }
 
-    .ambient { position: fixed; inset: 0; pointer-events: none; z-index: 0; overflow: hidden; }
-    .orb-a, .orb-b { position: absolute; border-radius: 50%; filter: blur(105px); }
-    .orb-a {
-      width: 580px; height: 580px; top: -180px; left: -120px;
-      background: radial-gradient(circle, rgba(16, 185, 129, 0.2), transparent 68%);
-      animation: drift 17s ease-in-out infinite alternate;
+    .atmo { position: fixed; inset: 0; pointer-events: none; z-index: 0; overflow: hidden; }
+    .orb {
+      position: absolute; width: 620px; height: 620px; border-radius: 50%; filter: blur(125px);
+      top: -240px; left: 50%; transform: translateX(-50%);
+      background: radial-gradient(circle, rgba(20, 184, 166, 0.2), transparent 68%);
     }
-    .orb-b {
-      width: 520px; height: 520px; bottom: -160px; right: -120px;
-      background: radial-gradient(circle, rgba(245, 196, 81, 0.14), transparent 68%);
-      animation: drift 21s ease-in-out infinite alternate-reverse;
-    }
-    @keyframes drift { from { transform: translate3d(0, 0, 0); } to { transform: translate3d(38px, 30px, 0); } }
+    [data-theme="light"] .orb { background: radial-gradient(circle, rgba(3, 83, 107, 0.12), transparent 68%); }
 
-    .wrap {
-      position: relative; z-index: 1;
-      width: min(860px, calc(100% - 28px));
-      margin: 0 auto; padding: 24px 0 64px;
+    header.nav {
+      position: sticky; top: 0; z-index: 100;
+      border-bottom: 1px solid var(--line);
+      background: rgba(0, 0, 0, 0.58);
+      backdrop-filter: saturate(180%) blur(22px);
     }
-
-    .topbar {
+    [data-theme="light"] header.nav { background: rgba(251, 251, 253, 0.82); }
+    .nav-in {
+      width: min(860px, calc(100% - 32px)); margin: 0 auto; height: 60px;
       display: flex; align-items: center; justify-content: space-between; gap: 12px;
-      margin-bottom: 24px; padding: 10px 14px; border-radius: 999px;
-      background: var(--surface); backdrop-filter: blur(20px);
-      border: 1px solid var(--line); box-shadow: var(--shadow);
     }
-    .back-pill {
-      display: inline-flex; align-items: center; gap: 8px;
-      color: var(--ink); text-decoration: none; font-size: 0.84rem; font-weight: 700;
-      padding: 6px 13px; border-radius: 999px;
-      background: var(--surface-glass); border: 1px solid var(--line);
-      transition: transform 0.25s var(--ease-spring), border-color 0.25s ease;
+    .back {
+      display: inline-flex; align-items: center; gap: 7px;
+      font-size: 0.86rem; font-weight: 600; color: var(--ink); text-decoration: none;
     }
-    .back-pill:hover { transform: translateX(-2px); border-color: var(--gold-line); }
+    .back:hover { color: var(--teal); }
+    .controls { display: flex; align-items: center; gap: 10px; }
 
-    .controls { display: flex; align-items: center; gap: 8px; }
-    .lang-seg {
+    .lang-pill {
       position: relative; display: inline-grid; grid-template-columns: 1fr 1fr;
       padding: 3px; border-radius: 999px;
       background: var(--surface-glass); border: 1px solid var(--line);
@@ -106,121 +95,107 @@
     .lang-glider {
       position: absolute; top: 3px; left: 3px;
       width: calc((100% - 6px) / 2); height: calc(100% - 6px);
-      border-radius: 999px;
-      background: linear-gradient(135deg, var(--emerald), #047857);
+      border-radius: 999px; background: var(--ink);
       transition: transform 0.4s var(--ease-spring);
     }
     body.lang-bn .lang-glider { transform: translateX(100%); }
     .lang-btn {
       position: relative; z-index: 1; border: 0; background: transparent;
-      padding: 5px 12px; font-size: 0.78rem; font-weight: 700;
-      color: var(--muted); cursor: pointer;
+      padding: 4px 12px; font-size: 0.76rem; font-weight: 700; color: var(--muted); cursor: pointer;
     }
-    .lang-btn[aria-pressed="true"] { color: #ffffff; }
+    .lang-btn[aria-pressed="true"] { color: var(--bg); }
 
-    .theme-btn {
-      width: 40px; height: 34px; border-radius: 999px;
-      border: 1px solid var(--line); background: var(--surface-glass);
-      color: var(--gold); display: grid; place-items: center; cursor: pointer;
+    .theme-switch {
+      position: relative; width: 52px; height: 28px; border-radius: 999px;
+      border: 1px solid var(--line); background: #141824; cursor: pointer; padding: 0;
+    }
+    [data-theme="light"] .theme-switch { background: #7ec4f8; }
+    .switch-orb {
+      position: absolute; top: 3px; left: 3px; width: 20px; height: 20px; border-radius: 50%;
+      background: #fde047; transition: transform 0.5s var(--ease-spring), background 0.35s ease;
+    }
+    [data-theme="dark"] .switch-orb {
+      transform: translateX(24px); background: #fef3c7; box-shadow: inset -5px -2px 0 1px #141824;
     }
 
-    .card {
-      background: var(--surface); backdrop-filter: blur(22px);
-      border: 1px solid var(--line); border-radius: 26px;
-      padding: 34px; box-shadow: var(--shadow);
-      animation: fadeIn 0.65s var(--ease-out) both;
+    .wrap {
+      position: relative; z-index: 1;
+      width: min(820px, calc(100% - 32px));
+      margin: 42px auto 72px;
+      animation: fadeUp 0.7s var(--ease-out) both;
     }
-    @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(22px); } to { opacity: 1; transform: translateY(0); } }
 
-    .hero-head {
-      display: flex; align-items: center; gap: 16px;
-      padding-bottom: 22px; margin-bottom: 22px;
-      border-bottom: 1px solid var(--line);
+    .head { text-align: center; margin-bottom: 36px; }
+    .medallion {
+      width: 92px; height: 92px; margin: 0 auto 20px;
+      border-radius: 50%; background: #ffffff; padding: 6px;
+      box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.08), 0 18px 42px rgba(0, 0, 0, 0.35);
     }
-    .logo {
-      width: 56px; height: 56px; border-radius: 14px;
-      border: 1px solid var(--gold-line); object-fit: cover; flex-shrink: 0;
+    .medallion img { width: 100%; height: 100%; object-fit: contain; border-radius: 50%; display: block; }
+    h1 {
+      font-size: clamp(1.85rem, 4vw, 2.75rem); font-weight: 800;
+      letter-spacing: -0.035em; line-height: 1.12; margin-bottom: 12px;
     }
-    h1 { font-size: clamp(1.38rem, 2.8vw, 1.95rem); font-weight: 800; letter-spacing: -0.03em; line-height: 1.18; }
-    .badge {
-      display: inline-flex; align-items: center; gap: 6px; margin-top: 6px;
-      padding: 3px 10px; border-radius: 999px; font-size: 0.72rem; font-weight: 700;
-      background: var(--gold-soft); color: var(--gold); border: 1px solid var(--gold-line);
-    }
-    .lead { color: var(--muted); margin-bottom: 22px; font-size: 0.96rem; }
+    body.lang-bn h1 { font-family: var(--font-bn-serif); letter-spacing: -0.01em; line-height: 1.24; }
+    .lead { color: var(--muted); max-width: 600px; margin: 0 auto; font-size: 1rem; }
 
-    .step-box {
-      padding: 20px 22px; border-radius: 18px;
-      background: var(--surface-glass); border: 1px solid var(--line);
-      margin-bottom: 16px;
+    .panel {
+      padding: 28px 30px; border-radius: 24px;
+      background: var(--surface); border: 1px solid var(--line);
+      box-shadow: var(--shadow); margin-bottom: 18px;
     }
-    .step-box h2 {
-      font-size: 1.04rem; font-weight: 800; margin-bottom: 10px;
-      display: flex; align-items: center; gap: 9px;
-    }
-    .step-num {
-      width: 26px; height: 26px; border-radius: 8px; display: grid; place-items: center;
-      font-family: var(--font-mono); font-size: 0.75rem;
-      background: rgba(16, 185, 129, 0.14); color: var(--emerald-bright);
-      border: 1px solid rgba(16, 185, 129, 0.28);
-    }
-    .step-box ol { padding-left: 20px; color: var(--muted); font-size: 0.92rem; }
-    .step-box li { margin-bottom: 8px; }
-    .step-box strong { color: var(--ink); }
+    .panel h2 { font-size: 1.12rem; font-weight: 750; margin-bottom: 12px; }
+    .panel ol { padding-left: 20px; color: var(--muted); font-size: 0.94rem; }
+    .panel li { margin-bottom: 9px; line-height: 1.68; }
+    .panel strong { color: var(--ink); }
 
-    .builder-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 14px 0 18px; }
-    .field-group { display: flex; flex-direction: column; gap: 6px; }
-    .field-group.full { grid-column: 1 / -1; }
-    .field-group label { font-size: 0.78rem; font-weight: 700; color: var(--muted); }
+    .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 16px 0 20px; }
+    .fg { display: flex; flex-direction: column; gap: 6px; }
+    .fg.full { grid-column: 1 / -1; }
+    .fg label { font-size: 0.78rem; font-weight: 700; color: var(--muted); }
     .input {
-      width: 100%; padding: 11px 13px; border-radius: 12px;
+      width: 100%; padding: 12px 14px; border-radius: 12px;
       border: 1px solid var(--line); background: var(--surface-glass);
-      color: var(--ink); font-size: 0.9rem; outline: none;
-      transition: border-color 0.25s ease;
+      color: var(--ink); font-size: 0.92rem; outline: none;
     }
-    .input:focus { border-color: var(--emerald-bright); }
+    .input:focus { border-color: var(--teal); }
 
-    .cta-row { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
-    .btn-danger {
-      display: inline-flex; align-items: center; gap: 8px; padding: 12px 22px;
-      border-radius: 999px; background: linear-gradient(135deg, #ef4444, #b91c1c);
-      color: #ffffff; font-weight: 700; font-size: 0.9rem;
-      text-decoration: none; border: 0; cursor: pointer;
-      box-shadow: 0 10px 24px rgba(239, 68, 68, 0.34);
-      transition: transform 0.25s var(--ease-spring), box-shadow 0.25s ease;
+    .actions { display: flex; flex-wrap: wrap; gap: 10px; }
+    .btn-del {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 12px 24px; border-radius: 999px; border: 0;
+      background: #dc2626; color: #ffffff; font-weight: 700; font-size: 0.92rem;
+      text-decoration: none; cursor: pointer;
+      transition: transform 0.25s var(--ease-spring), background 0.25s ease;
     }
-    .btn-danger:hover { transform: translateY(-2px); box-shadow: 0 14px 30px rgba(239, 68, 68, 0.45); }
-    .btn-ghost {
-      display: inline-flex; align-items: center; gap: 8px; padding: 11px 18px;
-      border-radius: 999px; background: var(--surface-glass);
-      border: 1px solid var(--gold-line); color: var(--ink);
-      font-weight: 700; font-size: 0.88rem; cursor: pointer;
-      transition: transform 0.25s var(--ease-spring);
+    .btn-del:hover { transform: scale(1.02); background: #b91c1c; }
+    .btn-copy {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 12px 20px; border-radius: 999px;
+      background: transparent; border: 1px solid var(--line-strong);
+      color: var(--ink); font-weight: 600; font-size: 0.9rem; cursor: pointer;
     }
-    .btn-ghost:hover { transform: translateY(-2px); }
+    .btn-copy:hover { background: var(--surface-glass); }
 
-    .retention-note {
-      margin-top: 18px; padding: 16px 18px; border-radius: 14px;
+    .note {
+      padding: 18px 22px; border-radius: 18px;
       background: var(--gold-soft); border: 1px solid var(--gold-line);
-      font-size: 0.86rem; color: var(--muted);
+      font-size: 0.88rem; color: var(--muted); line-height: 1.68;
     }
-    .retention-note strong { color: var(--ink); }
-    .retention-note code { font-family: var(--font-mono); color: var(--gold); }
+    .note strong { color: var(--ink); }
 
     .toast {
-      position: fixed; bottom: 22px; left: 50%;
-      transform: translateX(-50%) translateY(20px);
-      padding: 10px 18px; border-radius: 999px;
-      background: var(--surface-strong); border: 1px solid var(--gold-line);
-      color: var(--ink); font-size: 0.84rem; font-weight: 700;
-      opacity: 0; pointer-events: none; z-index: 200;
+      position: fixed; bottom: 22px; left: 50%; transform: translateX(-50%) translateY(20px);
+      padding: 10px 18px; border-radius: 999px; background: var(--ink); color: var(--bg);
+      font-size: 0.82rem; font-weight: 700; opacity: 0; pointer-events: none; z-index: 200;
       transition: opacity 0.25s ease, transform 0.35s var(--ease-spring);
     }
     .toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
 
     @media (max-width: 640px) {
-      .card { padding: 22px 18px; }
-      .builder-grid { grid-template-columns: 1fr; }
+      .panel { padding: 22px 18px; }
+      .grid { grid-template-columns: 1fr; }
     }
     @media (prefers-reduced-motion: reduce) {
       *, *::before, *::after { animation: none !important; transition-duration: 0.01ms !important; }
@@ -228,192 +203,143 @@
   </style>
 </head>
 <body class="lang-en">
-  <div class="ambient" aria-hidden="true">
-    <div class="orb-a"></div>
-    <div class="orb-b"></div>
-  </div>
+  <div class="atmo" aria-hidden="true"><div class="orb"></div></div>
 
-  <div class="wrap">
-    <nav class="topbar" aria-label="Portal navigation">
-      <a href="index.html" class="back-pill">
-        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
-        <span data-i18n="backPolicy">Back to Privacy Policy</span>
+  <header class="nav">
+    <div class="nav-in">
+      <a href="index.html" class="back">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3"><path d="m15 18-6-6 6-6"/></svg>
+        <span data-en="Privacy Policy" data-bn="গোপনীয়তা নীতি">Privacy Policy</span>
       </a>
       <div class="controls">
-        <div class="lang-seg" role="group" aria-label="Language">
+        <div class="lang-pill" role="group" aria-label="Language">
           <div class="lang-glider" aria-hidden="true"></div>
-          <button type="button" class="lang-btn" id="btnEn" aria-pressed="true" onclick="setLanguage('en')">EN</button>
-          <button type="button" class="lang-btn" id="btnBn" aria-pressed="false" onclick="setLanguage('bn')">বাংলা</button>
+          <button type="button" class="lang-btn" id="btnEn" aria-pressed="true" onclick="setLang('en')">EN</button>
+          <button type="button" class="lang-btn" id="btnBn" aria-pressed="false" onclick="setLang('bn')">বাংলা</button>
         </div>
-        <button type="button" class="theme-btn" id="themeBtn" aria-label="Toggle theme" title="Toggle theme">◐</button>
+        <button type="button" class="theme-switch" id="themeSwitch" aria-label="Toggle theme" aria-pressed="true">
+          <span class="switch-orb" aria-hidden="true"></span>
+        </button>
       </div>
-    </nav>
+    </div>
+  </header>
 
-    <main class="card">
-      <div class="hero-head">
-        <img src="logo.png" alt="Jamia Islamia Darul Ulum Sheikhdi Logo" class="logo">
-        <div>
-          <h1 data-i18n="title">Jamia Islamia Darul Ulum Sheikhdi — Account Deletion</h1>
-          <div class="badge" data-i18n="badge">Google Play 2026 Compliant Deletion Portal · AM Core Studios</div>
-        </div>
-      </div>
-
-      <p class="lead" data-i18n="lead">
-        Accounts in Jamia Islamia Darul Ulum Sheikhdi (জামিয়া ইসলামিয়া দারুল উলুম শেখদী) are provisioned for Muhtamims, Ustads, and linked Guardians. Use the options below to request permanent account removal or clear local app data anytime.
+  <main class="wrap">
+    <div class="head">
+      <div class="medallion"><img src="logo.png" alt="Jamia Islamia Darul Ulum Sheikhdi Seal"></div>
+      <h1 data-en="Account &amp; Data Deletion" data-bn="অ্যাকাউন্ট ও তথ্য অপসারণ">Account &amp; Data Deletion</h1>
+      <p class="lead" data-en="Jamia Islamia Darul Ulum Sheikhdi accounts are managed for Muhtamims, Ustads, and Guardians. You can request removal through your madrasah office or directly below." data-bn="জামিয়া ইসলামিয়া দারুল উলুম শেখদী অ্যাপের অ্যাকাউন্ট মুহতামিম, উস্তাদ ও অভিভাবকদের জন্য। প্রয়োজনে মাদরাসা অফিস অথবা সরাসরি নিচের ফর্মের মাধ্যমে অ্যাকাউন্ট মুছে ফেলার অনুরোধ করতে পারেন।">
+        Jamia Islamia Darul Ulum Sheikhdi accounts are managed for Muhtamims, Ustads, and Guardians. You can request removal through your madrasah office or directly below.
       </p>
+    </div>
 
-      <section class="step-box">
-        <h2><span class="step-num">01</span> <span data-i18n="m1Title">Institutional Removal (Through Madrasah Office)</span></h2>
+    <section class="panel">
+      <h2 data-en="1. Through Your Madrasah Office" data-bn="১. মাদরাসা অফিসের মাধ্যমে">1. Through Your Madrasah Office</h2>
+      <div class="lang-en-block" data-lang="en">
         <ol>
-          <li data-i18n-html="m1L1"><strong>Ustads:</strong> The Muhtamim can immediately deactivate your access under <em>More → Ustads → Deactivate</em> and remove your Firebase Auth profile.</li>
-          <li data-i18n-html="m1L2"><strong>Guardians / Students:</strong> Contact the Madrasah office to unlink your mobile number or archive/permanently delete the student profile inside the app.</li>
-          <li data-i18n-html="m1L3"><strong>Local App Data:</strong> Clearing app data in Android Settings or uninstalling the app permanently erases all local Room caches, downloaded kitabs/audio, and on-device receipt photos.</li>
+          <li><strong>Ustads:</strong> The Muhtamim can deactivate your account immediately in <em>More → Ustads → Deactivate</em> and remove the Firebase Auth profile.</li>
+          <li><strong>Guardians:</strong> Ask the madrasah office to unlink your mobile number or archive or permanently delete the student profile.</li>
+          <li><strong>On This Phone:</strong> Uninstalling the app or clearing app data in Android Settings erases all local caches, downloaded books/audio, and receipt photos right away.</li>
         </ol>
-      </section>
-
-      <section class="step-box">
-        <h2><span class="step-num">02</span> <span data-i18n="m2Title">Direct Developer Deletion Request (Processed Within 48h)</span></h2>
-        <p style="color: var(--muted); font-size: 0.9rem; margin-bottom: 10px;" data-i18n="m2Desc">
-          Prepare a pre-filled deletion email to AM Core Studios (arifmullikh.personal@gmail.com):
-        </p>
-        <div class="builder-grid">
-          <div class="field-group">
-            <label for="roleSelect" data-i18n="lblRole">Account Role</label>
-            <select id="roleSelect" class="input">
-              <option value="Guardian">Guardian (অভিভাবক)</option>
-              <option value="Ustad">Ustad / Teacher (উস্তাদ)</option>
-              <option value="Muhtamim / Admin">Muhtamim / Admin (মুহতামিম)</option>
-            </select>
-          </div>
-          <div class="field-group">
-            <label for="idInput" data-i18n="lblId">Registered Email or Phone</label>
-            <input id="idInput" type="text" class="input" placeholder="e.g. 017XXXXXXXX or name@madrasah.bd">
-          </div>
-          <div class="field-group full">
-            <label for="madrasaInput" data-i18n="lblMadrasa">Madrasah / Branch Note (Optional)</label>
-            <input id="madrasaInput" type="text" class="input" value="Jamia Islamia Darul Ulum Sheikhdi">
-          </div>
-        </div>
-
-        <div class="cta-row">
-          <a id="mailtoBtn" class="btn-danger" href="#">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-            <span data-i18n="btnSend">Open Pre-Filled Deletion Email</span>
-          </a>
-          <button type="button" class="btn-ghost" onclick="copyTemplate()" data-i18n="btnCopy">Copy Request Text</button>
-        </div>
-      </section>
-
-      <div class="retention-note" data-i18n-html="retention">
-        <strong>What Is Deleted vs. Retained:</strong> Upon verified request, your Firebase Authentication credential, device notification tokens, and personal account profile (<code>users</code> / <code>teachers</code>) are permanently deleted within 48 hours. Institutional fee receipts and attendance audit records owned by the madrasah may be anonymized or retained only as administratively required.
       </div>
-    </main>
-  </div>
+      <div class="lang-bn-block" data-lang="bn" hidden>
+        <ol>
+          <li><strong>উস্তাদ:</strong> মুহতামিম চাইলে <em>আরও → উস্তাদ → নিষ্ক্রিয়</em> অপশন থেকে সাথে সাথেই আপনার অ্যাক্সেস বন্ধ করে Firebase অ্যাকাউন্ট মুছে দিতে পারেন।</li>
+          <li><strong>অভিভাবক:</strong> আপনার মোবাইল নম্বর সরাতে বা শিক্ষার্থীর প্রোফাইল আর্কাইভ ও স্থায়ীভাবে মুছতে মাদরাসা অফিসে জানান।</li>
+          <li><strong>এই ফোনের তথ্য:</strong> অ্যাপটি আনইনস্টল করলে অথবা ফোনের Settings থেকে অ্যাপ ডেটা ক্লিয়ার করলে সব লোকাল ক্যাশ, ডাউনলোড করা কিতাব/তিলাওয়াত এবং রসিদের ছবি তৎক্ষণাৎ মুছে যায়।</li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2 data-en="2. Direct Request to AM Core Studios (Within 48 Hours)" data-bn="২. ডেভেলপারের কাছে সরাসরি অনুরোধ (৪৮ ঘণ্টার মধ্যে)">2. Direct Request to AM Core Studios (Within 48 Hours)</h2>
+      <div class="grid">
+        <div class="fg">
+          <label for="roleSel" data-en="Your Role" data-bn="আপনার ভূমিকা">Your Role</label>
+          <select id="roleSel" class="input">
+            <option value="Guardian">Guardian (অভিভাবক)</option>
+            <option value="Ustad">Ustad (উস্তাদ)</option>
+            <option value="Muhtamim">Muhtamim (মুহতামিম)</option>
+          </select>
+        </div>
+        <div class="fg">
+          <label for="idIn" data-en="Registered Phone or Email" data-bn="নিবন্ধিত ফোন বা ইমেইল">Registered Phone or Email</label>
+          <input id="idIn" type="text" class="input" placeholder="017XXXXXXXX / name@madrasah.bd">
+        </div>
+        <div class="fg full">
+          <label for="noteIn" data-en="Madrasah / Additional Note" data-bn="মাদরাসা / অতিরিক্ত তথ্য">Madrasah / Additional Note</label>
+          <input id="noteIn" type="text" class="input" value="Jamia Islamia Darul Ulum Sheikhdi">
+        </div>
+      </div>
+
+      <div class="actions">
+        <a id="mailtoBtn" class="btn-del" href="#" data-en="Open Deletion Email" data-bn="ইমেইল অ্যাপে পাঠান">Open Deletion Email</a>
+        <button type="button" class="btn-copy" onclick="copyBody()" data-en="Copy Request Text" data-bn="অনুরোধের লেখা কপি করুন">Copy Request Text</button>
+      </div>
+    </section>
+
+    <div class="note">
+      <span class="lang-en-block" data-lang="en"><strong>What gets deleted:</strong> Verified requests delete your Firebase Auth credentials, notification device tokens, and personal user profile within 48 hours. Institutional financial receipts and attendance audit records belonging to the madrasah may be anonymized or retained only as required for official record-keeping.</span>
+      <span class="lang-bn-block" data-lang="bn" hidden><strong>যা মুছে ফেলা হয়:</strong> অনুরোধ যাচাই হওয়ার ৪৮ ঘণ্টার মধ্যে আপনার লগইন তথ্য, ডিভাইস টোকেন ও ব্যক্তিগত প্রোফাইল স্থায়ীভাবে মুছে ফেলা হয়। তবে মাদরাসার প্রাতিষ্ঠানিক হিসাব ও হাজিরার অডিট রেকর্ড প্রয়োজনে অ্যানোনিমাইজড অবস্থায় সংরক্ষিত থাকতে পারে।</span>
+    </div>
+  </main>
 
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
   <script>
-    const DICT = {
-      en: {
-        backPolicy: "Back to Privacy Policy",
-        title: "Jamia Islamia Darul Ulum Sheikhdi — Account Deletion",
-        badge: "Google Play 2026 Compliant Deletion Portal · AM Core Studios",
-        lead: "Accounts in Jamia Islamia Darul Ulum Sheikhdi (জামিয়া ইসলামিয়া দারুল উলুম শেখদী) are provisioned for Muhtamims, Ustads, and linked Guardians. Use the options below to request permanent account removal or clear local app data anytime.",
-        m1Title: "Institutional Removal (Through Madrasah Office)",
-        m1L1: "<strong>Ustads:</strong> The Muhtamim can immediately deactivate your access under <em>More → Ustads → Deactivate</em> and remove your Firebase Auth profile.",
-        m1L2: "<strong>Guardians / Students:</strong> Contact the Madrasah office to unlink your mobile number or archive/permanently delete the student profile inside the app.",
-        m1L3: "<strong>Local App Data:</strong> Clearing app data in Android Settings or uninstalling the app permanently erases all local Room caches, downloaded kitabs/audio, and on-device receipt photos.",
-        m2Title: "Direct Developer Deletion Request (Processed Within 48h)",
-        m2Desc: "Prepare a pre-filled deletion email to AM Core Studios (arifmullikh.personal@gmail.com):",
-        lblRole: "Account Role",
-        lblId: "Registered Email or Phone",
-        lblMadrasa: "Madrasah / Branch Note (Optional)",
-        btnSend: "Open Pre-Filled Deletion Email",
-        btnCopy: "Copy Request Text",
-        retention: "<strong>What Is Deleted vs. Retained:</strong> Upon verified request, your Firebase Authentication credential, device notification tokens, and personal account profile (<code>users</code> / <code>teachers</code>) are permanently deleted within 48 hours. Institutional fee receipts and attendance audit records owned by the madrasah may be anonymized or retained only as administratively required.",
-        copied: "Deletion request copied to clipboard!"
-      },
-      bn: {
-        backPolicy: "গোপনীয়তা নীতিতে ফিরুন",
-        title: "জামিয়া ইসলামিয়া দারুল উলুম শেখদী — অ্যাকাউন্ট ডিলিট",
-        badge: "Google Play ২০২৬ সম্মত ডিলিট পোর্টাল · AM Core Studios",
-        lead: "জামিয়া ইসলামিয়া দারুল উলুম শেখদী অ্যাপের অ্যাকাউন্ট মুহতামিম, উস্তাদ ও নিবন্ধিত অভিভাবকদের জন্য নির্ধারিত। নিচের যেকোনো পদ্ধতিতে অ্যাকাউন্ট অপসারণ বা ফোনের ডেটা মুছে ফেলতে পারেন।",
-        m1Title: "মাদরাসা অফিসের মাধ্যমে অপসারণ",
-        m1L1: "<strong>উস্তাদ:</strong> মুহতামিম <em>আরও → উস্তাদ → নিষ্ক্রিয়</em> থেকে তাৎক্ষণিক অ্যাক্সেস বন্ধ করতে এবং Firebase Auth অ্যাকাউন্ট মুছতে পারেন।",
-        m1L2: "<strong>অভিভাবক / ছাত্র:</strong> মোবাইল নম্বর আনলিঙ্ক করতে বা ছাত্র রেকর্ড স্থায়ীভাবে মুছতে আপনার মাদরাসা অফিসে যোগাযোগ করুন।",
-        m1L3: "<strong>ডিভাইসের লোকাল ডেটা:</strong> ফোনের Settings থেকে অ্যাপ ডেটা ক্লিয়ার করলে বা অ্যাপ আনইনস্টল করলে লোকাল ক্যাশ, ডাউনলোড করা কিতাব/অডিও ও রসিদের ছবি স্থায়ীভাবে মুছে যায়।",
-        m2Title: "ডেভেলপারকে সরাসরি ডিলিট অনুরোধ পাঠান (৪৮ ঘণ্টার মধ্যে)",
-        m2Desc: "AM Core Studios (arifmullikh.personal@gmail.com)-এ পাঠানোর জন্য ইমেইল তৈরি করুন:",
-        lblRole: "অ্যাকাউন্টের ধরন",
-        lblId: "নিবন্ধিত ইমেইল বা ফোন নম্বর",
-        lblMadrasa: "মাদরাসার নাম / নোট (ঐচ্ছিক)",
-        btnSend: "প্রি-ফিল্ড ইমেইল খুলুন",
-        btnCopy: "অনুরোধের লেখা কপি করুন",
-        retention: "<strong>কোন তথ্য মুছে ফেলা হয় বনাম সংরক্ষিত থাকে:</strong> যাচাইকৃত অনুরোধের পর ৪৮ ঘণ্টার মধ্যে আপনার Firebase Auth অ্যাকাউন্ট, ডিভাইস টোকেন ও ব্যক্তিগত প্রোফাইল (<code>users</code> / <code>teachers</code>) স্থায়ীভাবে মুছে ফেলা হয়। প্রাতিষ্ঠানিক বেতন রসিদ ও হাজিরা অডিট রেকর্ড কেবল মাদরাসার প্রাতিষ্ঠানিক প্রয়োজনে অ্যানোনিমাইজড বা সংরক্ষিত থাকতে পারে।",
-        copied: "ডিলিট অনুরোধ কপি করা হয়েছে!"
-      }
-    };
-
     let lang = 'en';
     function buildBody() {
-      const role = document.getElementById('roleSelect').value;
-      const ident = document.getElementById('idInput').value.trim() || '[Enter your registered phone or email]';
-      const madrasa = document.getElementById('madrasaInput').value.trim() || 'Jamia Islamia Darul Ulum Sheikhdi';
-      return `Please delete my Jamia Islamia Darul Ulum Sheikhdi (com.amcorestudios.madrasa1) account and personal profile records.\n\nRole: ${role}\nRegistered Phone / Email: ${ident}\nMadrasah: ${madrasa}\n\nI confirm that I am requesting permanent account deletion.`;
+      const role = document.getElementById('roleSel').value;
+      const id = document.getElementById('idIn').value.trim() || '[Phone or email]';
+      const note = document.getElementById('noteIn').value.trim() || 'Jamia Islamia Darul Ulum Sheikhdi';
+      return `Please delete my account and personal profile records from Jamia Islamia Darul Ulum Sheikhdi (com.amcorestudios.madrasa1).\n\nRole: ${role}\nRegistered Phone / Email: ${id}\nMadrasah: ${note}`;
     }
-    function updateMailto() {
-      const subject = encodeURIComponent("Jamia Islamia Darul Ulum Sheikhdi Account Deletion Request");
-      const body = encodeURIComponent(buildBody());
-      document.getElementById('mailtoBtn').href = `mailto:arifmullikh.personal@gmail.com?subject=${subject}&body=${body}`;
+    function syncMail() {
+      document.getElementById('mailtoBtn').href =
+        `mailto:arifmullikh.personal@gmail.com?subject=${encodeURIComponent('Account Deletion — Jamia Islamia Darul Ulum Sheikhdi')}&body=${encodeURIComponent(buildBody())}`;
     }
-    function copyTemplate() {
+    function copyBody() {
       if (navigator.clipboard && navigator.clipboard.writeText) {
         navigator.clipboard.writeText(buildBody()).then(() => {
           const t = document.getElementById('toast');
-          t.textContent = DICT[lang].copied;
+          t.textContent = lang === 'bn' ? 'কপি করা হয়েছে!' : 'Copied to clipboard!';
           t.classList.add('show');
           setTimeout(() => t.classList.remove('show'), 2200);
         }).catch(() => {});
       }
     }
-    function setLanguage(next, save = true) {
+    function setLang(next, save = true) {
       lang = next === 'bn' ? 'bn' : 'en';
       document.documentElement.lang = lang;
       document.body.classList.toggle('lang-bn', lang === 'bn');
       document.getElementById('btnEn').setAttribute('aria-pressed', lang === 'en');
       document.getElementById('btnBn').setAttribute('aria-pressed', lang === 'bn');
-      const d = DICT[lang];
-      document.querySelectorAll('[data-i18n]').forEach(el => {
-        const k = el.getAttribute('data-i18n');
-        if (d[k] !== undefined) el.textContent = d[k];
-      });
-      document.querySelectorAll('[data-i18n-html]').forEach(el => {
-        const k = el.getAttribute('data-i18n-html');
-        if (d[k] !== undefined) el.innerHTML = d[k];
-      });
-      if (save) { try { localStorage.setItem('jidus_privacy_lang', lang); } catch (_) {} }
+      document.querySelectorAll('[data-en][data-bn]').forEach(el => { el.textContent = el.dataset[lang]; });
+      document.querySelectorAll('[data-lang]').forEach(el => { el.hidden = el.getAttribute('data-lang') !== lang; });
+      if (save) { try { localStorage.setItem('sheikhdi_lang', lang); } catch (_) {} }
     }
     function applyTheme(t, save = true) {
       const theme = t === 'light' ? 'light' : 'dark';
       document.documentElement.setAttribute('data-theme', theme);
-      if (save) { try { localStorage.setItem('jidus_privacy_theme', theme); } catch (_) {} }
+      document.getElementById('themeSwitch').setAttribute('aria-pressed', theme === 'dark' ? 'true' : 'false');
+      if (save) { try { localStorage.setItem('sheikhdi_theme', theme); } catch (_) {} }
     }
-    document.getElementById('themeBtn').addEventListener('click', () => {
+    document.getElementById('themeSwitch').addEventListener('click', () => {
       applyTheme(document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
     });
-    ['roleSelect', 'idInput', 'madrasaInput'].forEach(id => {
-      document.getElementById(id).addEventListener('input', updateMailto);
-      document.getElementById(id).addEventListener('change', updateMailto);
+    ['roleSel', 'idIn', 'noteIn'].forEach(id => {
+      document.getElementById(id).addEventListener('input', syncMail);
+      document.getElementById(id).addEventListener('change', syncMail);
     });
     (function boot() {
       let t = 'dark', l = 'en';
       try {
-        t = localStorage.getItem('jidus_privacy_theme') || 'dark';
-        l = localStorage.getItem('jidus_privacy_lang') || 'en';
+        t = localStorage.getItem('sheikhdi_theme') || 'dark';
+        l = localStorage.getItem('sheikhdi_lang') || 'en';
       } catch (_) {}
       applyTheme(t, false);
-      setLanguage(l, false);
-      updateMailto();
+      setLang(l, false);
+      syncMail();
     })();
   </script>
 </body>
